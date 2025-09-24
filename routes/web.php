@@ -24,6 +24,7 @@ Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics')->middl
 Route::middleware('auth')->group(function () {
     // website
     Route::get('/website/testimonials', [TestimonialsController::class, 'index'])->name('website-testimonials');
+    Route::post('/website/testimonials', [TestimonialsController::class, 'store'])->name('testimonials.store');
 
     // pages
     Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
