@@ -25,6 +25,9 @@ Route::middleware('auth')->group(function () {
     // website
     Route::get('/website/testimonials', [TestimonialsController::class, 'index'])->name('website-testimonials');
     Route::post('/website/testimonials', [TestimonialsController::class, 'store'])->name('testimonials.store');
+    Route::get('/testimonials/{id}/edit', [TestimonialsController::class, 'edit'])->name('testimonials.edit');
+    Route::put('/testimonials/{id}', [TestimonialsController::class, 'update'])->name('testimonials.update');
+    Route::delete('/testimonials/{id}', [TestimonialsController::class, 'destroy'])->name('testimonials.destroy');
 
     // pages
     Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');

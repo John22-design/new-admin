@@ -103,8 +103,8 @@
 @endsection
 @section('page-script')
     <script>
-        // Initialize DataTable
-        $('#testimonialsTable').DataTable({
+        // Initialize DataTable and store the instance
+        var testimonialsTable = $('#testimonialsTable').DataTable({
             processing: true,
             serverSide: true,
             ajax: "{{ route('website-testimonials') }}",
@@ -158,6 +158,99 @@
             pagingType: "numbers"
         });
 
+        // Debug: Check if DataTable was initialized
+        console.log('DataTable initialized:', testimonialsTable);
+
+        // Function to edit testimonial
+        window.editTestimonial = function(id) {
+            $.ajax({
+                url: `/testimonials/${id}/edit`,
+                type: 'GET',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    if (response.success) {
+                        const testimonial = response.data;
+
+                        // Fill form with data
+                        $('#testimonial_id').val(testimonial.id);
+                        $('#form_method').val('PUT');
+                        $('#customer_name').val(testimonial.customer_name);
+                        $('#profession').val(testimonial.profession);
+                        $('#comment').val(testimonial.comment);
+
+                        // Show current image if exists
+                        if (testimonial.profile_image) {
+                            $('#current_image').html(
+                                `<div class="mt-2">
+                                    <p class="mb-1">Current Image:</p>
+                                    <img src="/storage/${testimonial.profile_image}" alt="Current Image" class="rounded" width="100" height="100">
+                                </div>`
+                            );
+                        } else {
+                            $('#current_image').html('');
+                        }
+
+                        // Update modal title and button
+                        $('#testimonialModalLabel').text('Edit Testimonial');
+                        $('#saveTestimonialBtn').text('Update Testimonial');
+
+                        // Show modal
+                        $('#testimonialModal').modal('show');
+                    }
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Unable to load testimonial data.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        };
+
+        // Function to delete testimonial
+        window.deleteTestimonial = function(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `/testimonials/${id}`,
+                        type: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    response.message,
+                                    'success'
+                                );
+                                testimonialsTable.ajax.reload();
+                            }
+                        },
+                        error: function(xhr) {
+                            Swal.fire(
+                                'Error!',
+                                'Something went wrong while deleting.',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        };
+
         // Reset modal when it's closed
         $('#testimonialModal').on('hidden.bs.modal', function() {
             resetForm();
@@ -170,6 +263,19 @@
             let formData = new FormData(this);
             let submitBtn = $('#saveTestimonialBtn');
             let originalText = submitBtn.text();
+            let testimonialId = $('#testimonial_id').val();
+            let method = $('#form_method').val();
+
+            // Determine URL and method
+            let url, ajaxMethod;
+            if (testimonialId && method === 'PUT') {
+                url = `/testimonials/${testimonialId}`;
+                ajaxMethod = 'POST';
+                formData.append('_method', 'PUT');
+            } else {
+                url = "{{ route('testimonials.store') }}";
+                ajaxMethod = 'POST';
+            }
 
             // Show loading state
             submitBtn.prop('disabled', true).text('Saving...');
@@ -178,8 +284,8 @@
             clearErrors();
 
             $.ajax({
-                url: "{{ route('testimonials.store') }}",
-                type: 'POST',
+                url: url,
+                type: ajaxMethod,
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -198,7 +304,18 @@
 
                         // Close modal and refresh table
                         $('#testimonialModal').modal('hide');
-                        $('#testimonialsTable').DataTable().ajax.reload();
+
+                        // Debug: Check if testimonialsTable exists
+                        console.log('Reloading table, testimonialsTable:', testimonialsTable);
+
+                        if (testimonialsTable && typeof testimonialsTable.ajax !== 'undefined') {
+                            testimonialsTable.ajax.reload();
+                        } else {
+                            console.error('DataTable instance not found, trying alternative method');
+                            // Fallback method
+                            $('#testimonialsTable').DataTable().ajax.reload();
+                        }
+
                         resetForm();
                     }
                 },
@@ -232,6 +349,7 @@
             $('#testimonial_id').val('');
             $('#form_method').val('');
             $('#testimonialModalLabel').text('Add Testimonial');
+            $('#saveTestimonialBtn').text('Save Testimonial');
             $('#current_image').html('');
             clearErrors();
         }
