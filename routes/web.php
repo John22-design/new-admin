@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\website\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\layouts\WithoutMenu;
@@ -38,6 +39,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // authentication
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
 Route::post('/auth/login', [LoginBasic::class, 'login'])->name('auth-login-submit');
 Route::post('/auth/logout', [LoginBasic::class, 'logout'])->name('auth-logout');
