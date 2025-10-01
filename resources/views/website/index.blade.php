@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<!--
-Template name: Nova
-Template author: FreeBootstrap.net
-Author website: https://freebootstrap.net/
-License: https://freebootstrap.net/license
--->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Nova Free Bootstrap Template for Agency &mdash; by FreeBootstrap.net </title>
-     
+    <title> John Field Fundraising </title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- ======= Google Font =======-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -26,7 +20,7 @@ License: https://freebootstrap.net/license
     <!-- End Styles-->
     
     <!-- ======= Theme Style =======-->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @vite(['resources/css/style.css'])
     <!-- End Theme Style-->
     
     <!-- ======= Apply theme =======-->
@@ -52,16 +46,8 @@ License: https://freebootstrap.net/license
           
           <!-- Start Logo-->
           <a class="navbar-brand w-auto" href="index.html">
-            <!-- If you use a text logo, uncomment this if it is commented-->
-            <!-- Vertex--> 
-            
-            <!-- If you plan to use an image logo, uncomment this if it is commented-->
-
-            <!-- logo dark--><img class="logo dark img-fluid" src="{{ asset('images/logo-dark.svg') }}" alt="FreeBootstrap.net image placeholder">
-
-            <!-- logo light--><img class="logo light img-fluid" src="{{ asset('images/logo-light.svg') }}" alt="FreeBootstrap.net image placeholder">
-
-            </a>
+            <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="FreeBootstrap.net image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+          </a>
           <!-- End Logo-->
           
           <!-- Start offcanvas-->
@@ -70,18 +56,10 @@ License: https://freebootstrap.net/license
             
             <div class="offcanvas-header">
               <div class="offcanvas-header-logo">
-                <!-- If you use a text logo, uncomment this if it is commented-->
-                
-                <!-- h5#fbs__net-navbarsLabel.offcanvas-title Vertex-->
-                
-                <!-- If you plan to use an image logo, uncomment this if it is commented-->
                 <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
-                  <!-- logo dark--><img class="logo dark img-fluid" src="{{ asset('images/logo-dark.svg') }}" alt="FreeBootstrap.net image placeholder"> 
-
-                  <!-- logo light--><img class="logo light img-fluid" src="{{ asset('images/logo-light.svg') }}" alt="FreeBootstrap.net image placeholder"></a>
-
+                  <img class="logo dark img-fluid" style="height:40px; width:auto; max-width:160px; border-radius:3px;" src="{{ asset('images/navbar_logo.png') }}" alt="FreeBootstrap.net image placeholder"> 
               </div>
-              <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
             </div>
             
             <div class="offcanvas-body align-items-lg-center">
@@ -90,39 +68,9 @@ License: https://freebootstrap.net/license
               <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#pricing">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#how-it-works">How It Works</a></li>
+                <li class="nav-item"><a class="nav-link scroll-link" href="#how-it-works">Blog</a></li>
                 <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown <i class="bi bi-chevron-down"></i></a>
-                  
-                  <ul class="dropdown-menu">
-                    <li><a class="nav-link scroll-link dropdown-item" href="#">Multipages</a></li>
-                    <li><a class="nav-link scroll-link dropdown-item" href="#services">Services</a></li>
-                    <li><a class="nav-link scroll-link dropdown-item" href="#pricing">Pricing</a></li>
-                    <li class="nav-item dropstart"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropstart <i class="bi bi-chevron-right"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="nav-link scroll-link dropdown-item" href="#services">Services</a></li>
-                        <li><a class="nav-link scroll-link dropdown-item" href="#pricing">Pricing</a></li>
-                        <li class="nav-item dropstart"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropstart <i class="bi bi-chevron-right"></i></a>
-                          <ul class="dropdown-menu">
-                            <li><a class="nav-link scroll-link dropdown-item" href="#services">Services</a></li>
-                            <li><a class="nav-link scroll-link dropdown-item" href="#pricing">Pricing</a></li>
-                            <li><a class="nav-link scroll-link dropdown-item" href="#">Something else here</a></li>
-                            <li class="nav-item dropend"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropend <i class="bi bi-chevron-right"></i></a>
-                              <ul class="dropdown-menu">
-                                <li><a class="nav-link scroll-link dropdown-item" href="#services">Services</a></li>
-                                <li><a class="nav-link scroll-link dropdown-item" href="#pricing">Pricing</a></li>
-                                <li><a class="nav-link scroll-link dropdown-item" href="#">Something else here</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  
-                </li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a></li>
               </ul>
               
             </div>
@@ -132,7 +80,7 @@ License: https://freebootstrap.net/license
           <div class="ms-auto w-auto">
             
             
-            <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2" href="#">Get Started</a>
+            <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2" href="#contact">Contact</a>
               
               <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
                 <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -163,10 +111,10 @@ License: https://freebootstrap.net/license
             <div class="row">
               <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="row">
-                  <div class="col-lg-11"><span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Innovative Fintech Solutions</span>
-                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Secure, Efficient, and User-Friendly Financial Services</h1>
-                    <p class="hero-description mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">Experience the future of finance with our secure, efficient, and user-friendly financial services.</p>
-                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300"><a class="btn" href="#">Get Started Now</a><a class="btn btn-white-outline" href="#">Learn More 
+                  <div class="col-lg-11"><span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
+                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Helping Charities Thrive Through Strategic Fundraising</h1>
+                    <p class="hero-description mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">Expert advice and support to secure the funding you need, grow your impact, and achieve your vision.</p>
+                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300"><a class="btn" href="#">Contact Now</a><a class="btn btn-white-outline" href="#">Learn More 
                         <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M7 7h10v10"></path>
                           <path d="M7 17 17 7"></path>
@@ -178,7 +126,7 @@ License: https://freebootstrap.net/license
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="hero-img"><img class="img-card img-fluid" src="{{ asset('images/card-expenses.png') }}" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="{{ asset('images/hero-img-1-min.jpg') }}" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
+                <div class="hero-img"><img class="img-card img-fluid" src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
               </div>
             </div>
           </div>
