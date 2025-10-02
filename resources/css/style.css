@@ -1241,3 +1241,20 @@ h6 {
   opacity: 1;
   visibility: visible;
 }
+
+/* Utility: soft secondary background */
+.bg-secondary-soft {
+  background-color: rgba(var(--bs-secondary-rgb), 0.2) !important;
+}
+
+/* Blog section styling */
+.blog__v1 .subtitle {
+  background-color: rgba(var(--bs-secondary-rgb), 0.2);
+  color: var(--bs-primary);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}

@@ -68,7 +68,7 @@
               <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#how-it-works">Blog</a></li>
+                <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li>
                 <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a></li>
               </ul>
@@ -112,7 +112,7 @@
               <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="row">
                   <div class="col-lg-11"><span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
-                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Helping Charities Thrive Through Strategic Fundraising</h1>
+                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Build Sustainable Funding For Success</h1>
                     <p class="hero-description mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">Expert advice and support to secure the funding you need, grow your impact, and achieve your vision.</p>
                     <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300"><a class="btn" href="#">Contact Now</a><a class="btn btn-white-outline" href="#">Learn More 
                         <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -141,29 +141,30 @@
               <div class="col-md-6 order-md-2">
                 <div class="row justify-content-end">
                   <div class="col-md-11 mb-4 mb-md-0"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">About us</span>
-                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">Experience the future of finance with our secure, efficient, and user-friendly financial services</h2>
+                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">I’m John Field, an experienced Trust Fundraising Consultant</h2>
                     <div data-aos="fade-up" data-aos-delay="200">
-                      <p>Founded with the vision of revolutionizing the financial industry, we are a leading fintech company dedicated to providing innovative and secure financial solutions.</p>
-                      <p>Our cutting-edge platform ensures your transactions are safe, streamlined, and easy to manage, empowering you to take control of your financial journey with confidence and convenience.</p>
+                      <p>With 25 years’ experience in trust fundraising, I can support with you with your needs. Whether that is strategic, developing your pipeline of potential funders or bid writing – I am here to help.</p>
+                      <p>I have worked with many different types of charities and have experience with a variety of funders including capital appeals, project funding or core costs.</p>
+                      <p>As a consultant, I am enjoying being more selective to work with charities that meet my vision and work together to achieve amazing things.</p>
                     </div>
                     <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">Key Values and Vision</h4>
                     <ul class="d-flex flex-row flex-wrap list-unstyled gap-3 features" data-aos="fade-up" data-aos-delay="400">
                       <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Innovation</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Security</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">User-Centric Design </span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Transparency</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Empowerment</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Collaboration</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Excellence </span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Impact</span></li>
+                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Integrity</span></li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col-md-6"> 
-                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="{{ asset('images/about_2-min.jpg') }}" alt="FreeBootstrap.net image placeholder" data-aos="fade-up" data-aos-delay="0">
+                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="{{ asset('images/about-us.jpg') }}" alt="FreeBootstrap.net image placeholder" data-aos="fade-up" data-aos-delay="0">
                   <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i></div>
                     <div>
-                      <h3 class="text-uppercase fw-bold">Mission Statement</h3>
-                      <p class="fs-5 mb-0">Our mission is to empower individuals and businesses by delivering secure, efficient, and user-friendly financial services.</p>
+                      <h3 class="text-uppercase fw-bold">Why Expertise Demands More Than Emotion</h3>
+                      <p class="fs-5 mb-0">Emotional learning may be quick, but what we consider as “expertise” usually takes a long time to develop.</p>
                     </div>
                   </div>
                 </div>
@@ -186,7 +187,7 @@
                           <div class="h-100 flex-column justify-content-between d-flex">
                             <div>
                               <h2 class="mb-4">Why Choose us</h2>
-                              <p class="mb-5">Experience the future of finance with our secure, efficient, and user-friendly financial services. Our cutting-edge platform ensures your transactions are safe, streamlined, and easy to manage, empowering you to take control of your financial journey with confidence and convenience."</p>
+                              <p class="mb-5">Experience expert fundraising guidance with 25 years of supporting charities. From strategic advice to bid writing and building a pipeline of funders, we help you secure the funding needed to make a lasting impact.</p>
                             </div>
                             <div class="align-self-start"><a class="glightbox btn btn-play d-inline-flex align-items-center gap-2" href="https://www.youtube.com/watch?v=DQx96G4yHd8" data-gallery="video"><i class="bi bi-play-fill"></i> Watch the Video</a></div>
                           </div>
@@ -199,23 +200,23 @@
                           <div class="row">
                             <div class="col-sm-6" data-aos="fade-up" data-aos-delay="0">
                               <div class="icon text-center mb-4"><i class="bi bi-person-check fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">User-Friendly Interface</h3>
-                              <p>Easy navigation with responsive design for various devices.</p>
+                              <h3 class="fs-6 fw-bold mb-3">Strategic Fundraising Support</h3>
+                              <p>Tailored strategies to develop your funding pipeline and achieve your goals.</p>
                             </div>
                             <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
                               <div class="icon text-center mb-4"><i class="bi bi-graph-up fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Financial Analytics</h3>
-                              <p>Budget tracking, expense categorization, and personalized insights.</p>
+                              <h3 class="fs-6 fw-bold mb-3">Bid Writing Expertise</h3>
+                              <p>Professional grant and proposal writing to maximize your chances of success.</p>
                             </div>
                             <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
                               <div class="icon text-center mb-4"><i class="bi bi-headset fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Customer Support</h3>
-                              <p>24/7 service via chat, email, phone, and a detailed help center.</p>
+                              <h3 class="fs-6 fw-bold mb-3">Charity Partnership</h3>
+                              <p>Collaborating with charities to ensure every project aligns with your vision and impact.</p>
                             </div>
                             <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
                               <div class="icon text-center mb-4"><i class="bi bi-shield-lock fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Security Features</h3>
-                              <p>Data encryption, fraud detection, and prevention mechanisms.</p>
+                              <h3 class="fs-6 fw-bold mb-3">Trusted Guidance</h3>
+                              <p>Advice based on 25 years of experience, ensuring ethical, efficient, and successful fundraising.</p>
                             </div>
                           </div>
                         </div>
@@ -229,40 +230,40 @@
         </section>
         <!-- End Features-->
         
-        <!-- ======= Pricing =======-->
         <section class="section pricing__v2" id="pricing">
           <div class="container">
             <div class="row mb-5">
-              <div class="col-md-5 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Pricing</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Plan for every budget</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Experience the future of finance with our secure, efficient, and user-friendly financial services</p>
+              <div class="col-md-5 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Develop Your Income</span>
+                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Fundraising Support</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Expert guidance to grow your funding opportunities and increase your income streams effectively.</p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="300">
                 <div class="p-5 rounded-4 price-table h-100">
-                  <h3>Personal</h3>
-                  <p>Choose a plan that fits your personal financial needs and start managing your finances more effectively.</p>
-                  <div class="price mb-4"><strong>$7</strong><span>/ month</span></div>
-                  <div><a class="btn" href="#">Get Started</a></div>
+                  <h3>What You Offer</h3>
+                   <ul class="list-unstyled">
+                   <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Support charities in becoming more sustainable.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Strategy writing and developing a pipeline of funders.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Advice on building better relationships with funders.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Expertise in diversifying income streams to ensure financial resources for growth.</span></li>
+                   </ul>
                 </div>
               </div>
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                 <div class="p-5 rounded-4 price-table popular h-100">
                   <div class="row">
                     <div class="col-md-6">
-                      <h3 class="mb-3">Business</h3>
-                      <p>Optimize your business financial operations with our tailored business plans.</p>
-                      <div class="price mb-4"><strong class="me-1">$29</strong><span>/ month</span></div>
-                      <div><a class="btn btn-white hover-outline" href="#">Get Started</a></div>
+                      <h3 class="mb-3">How You Deliver It / Approach</h3>
+                      <p>I carefully assess your organisation’s financial situation and tailor strategies that suit your unique needs, creating a customised plan to maximise income and ensure long-term financial growth</p>
                     </div>
                     <div class="col-md-6 pricing-features">
                       <h4 class="text-uppercase fw-bold mb-3">Features</h4>
                       <ul class="list-unstyled d-flex flex-column gap-3">
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Personalized financial insights and reports</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Priority customer support</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Access to exclusive investment opportunities</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>AI-driven financial recommendations</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Analyse your unique financial situation and needs.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Create a customised income development plan tailored to your organisation.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Tailor roles and strategies to suit specific areas of trust fundraising.</span></li>
+                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Focus on empowering you to achieve financial goals and long-term stability.</span></li>
                       </ul>
                     </div>
                   </div>
@@ -271,15 +272,14 @@
             </div>
           </div>
         </section>
-        <!-- End Pricing-->
         
         <!-- ======= How it works =======-->
         <section class="section howitworks__v1" id="how-it-works">
           <div class="container">
             <div class="row mb-5">
-              <div class="col-md-6 text-center mx-auto"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">How it works</span>
-                <h2 data-aos="fade-up" data-aos-delay="100">How It Works</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Our platform is designed to make managing your finances simple and efficient. Follow these easy steps to get started: </p>
+              <div class="col-md-6 text-center mx-auto"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Increase Your Fund List</span>
+                <h2 data-aos="fade-up" data-aos-delay="100">Increase Your Pipeline of Funders</h2>
+                <p data-aos="fade-up" data-aos-delay="200">With focused research, I can build a stronger pipeline of prospective funders to support your project’s success.</p>
               </div>
             </div>
             <div class="row g-md-5">
@@ -287,30 +287,30 @@
                 <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative" data-aos="fade-up" data-aos-delay="0">
                   <div data-aos="fade-right" data-aos-delay="500"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">1</span>
                   <div>
-                    <h3 class="fs-5 mb-4">Sign Up</h3>
-                    <p>Visit our website or download our app to sign up. Provide basic information to set up your secure account.</p>
+                    <h3 class="fs-5 mb-4">Deep Dive: Alignment & Packaging</h3>
+                    <p>Before seeking funders, be clear on what you’re funding alignment starts with clarity.</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
                 <div class="step-card reverse text-center h-100 d-flex flex-column justify-content-start position-relative">
                   <div data-aos="fade-right" data-aos-delay="1100"><img class="arch-line reverse" src="{{ asset('images/arch-line-reverse.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">2</span>
-                  <h3 class="fs-5 mb-4">Set Up Your Profile</h3>
-                  <p>Add your personal or business details to tailor the platform to your specific needs.</p>
+                  <h3 class="fs-5 mb-4">Multi-Layered Prospect Research & Discovery</h3>
+                  <p>Cast a wide net, then filter with your Funder Persona to reveal overlooked opportunities.</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="1200">
                 <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative">
                   <div data-aos="fade-right" data-aos-delay="1700"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">3</span>
-                  <h3 class="fs-5 mb-4">Explore Features</h3>
-                  <p>Access your dashboard for a summary of your finances: balances, recent transactions, and insights.</p>
+                  <h3 class="fs-5 mb-4">Qualification & Confidence Scoring</h3>
+                  <p>Focus on hot leads, not long shots, to build a realistic funding pipeline.</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="1800">
                 <div class="step-card last text-center h-100 d-flex flex-column justify-content-start position-relative"><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">4</span>
                   <div>
-                    <h3 class="fs-5 mb-4">Invest and Grow</h3>
-                    <p>Discover a variety of investment opportunities tailored to your financial goals.</p>
+                    <h3 class="fs-5 mb-4">Strategic Engagement & Pipeline Management</h3>
+                    <p>To systematically move funders through the pipeline from prospect to committed donor.</p>
                   </div>
                 </div>
               </div>
@@ -360,7 +360,7 @@
           <div class="container">
             <div class="row mb-5">
               <div class="col-md-8 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Our Services</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Empowering Financial Innovation Through Cutting-Edge Services</h2>
+                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Expert solutions to grow your fundraising and achieve lasting impact.</h2>
               </div>
             </div>
             <div class="row g-4">
@@ -375,8 +375,8 @@
                           <path d="M24.713 36.43a9.092 9.092 0 0 0 9.082-9.082c-.499-12.047-17.666-12.045-18.163 0a9.092 9.092 0 0 0 9.08 9.082Zm0-16.163a7.09 7.09 0 0 1 7.082 7.081c-.371 9.388-13.793 9.387-14.163 0a7.09 7.09 0 0 1 7.08-7.081ZM46.413 37.53l-4.757 4.757-1.68-1.68a1 1 0 0 0-1.413 1.415l2.386 2.386a1 1 0 0 0 1.414 0l5.464-5.464a1 1 0 0 0-1.414-1.414Z" fill="currentColor" opacity="1" data-original="#000000"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Digital Payments</h3>
-                    <p class="mb-4">Seamless and secure transactions through various digital platforms, enabling quick and convenient payments for businesses and consumers alike.</p>
+                    <h3 class="fs-5 mb-3">Fundraising Strategy Development</h3>
+                    <p class="mb-4">We design tailored strategies to strengthen your funding pipeline and secure long-term financial sustainability <p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -388,8 +388,8 @@
                           <path d="m57.936 58.647-4.47-11.871a9.542 9.542 0 0 0-5.914-5.693l-7.659-2.609-1.944-2.116v-2.62a13.043 13.043 0 0 0 4.739-5.175 14.256 14.256 0 0 0 3.237.14 2.909 2.909 0 0 0 2.905-2.906v-5.382a2.895 2.895 0 0 0-1.495-2.523 13.84 13.84 0 0 0-2.807-7.777 1 1 0 0 0-1.597 1.205 11.879 11.879 0 0 1 2.386 6.19c-.012-.01-2.017.036-1.987-.023-4.064-11.113-18.668-11.126-22.702.024h-1.875c.73-9.938 13.556-14.987 21.539-8.81a1 1 0 0 0 1.196-1.605c-9.394-7.24-24.311-1.02-24.754 10.758a2.895 2.895 0 0 0-1.566 2.561v5.382a2.909 2.909 0 0 0 2.905 2.906c.4-.042 2.932.115 3.213-.122a12.843 12.843 0 0 0 4.542 5.038v2.757l-1.825 2.184-7.553 2.521a9.547 9.547 0 0 0-5.917 5.695l-4.47 11.871a1.008 1.008 0 0 0 .935 1.352H49.97a1 1 0 0 0 0-2H36.123l-2.985-7.876 2.014-2.491 2.009 1.746a1.007 1.007 0 0 0 1.643-.594l1.322-8.118 6.785 2.312a7.549 7.549 0 0 1 4.682 4.504L55.555 58H53.97a1 1 0 0 0 0 2H57a1.007 1.007 0 0 0 .936-1.353zm-13.77-39.136h1.759a.906.906 0 0 1 .905.904v5.382a.906.906 0 0 1-.905.906h-1.759zm-24.334 7.192h-1.759a.906.906 0 0 1-.905-.906v-5.382a.906.906 0 0 1 .905-.904h1.76s.038 5.959 0 7.192zm12.146-15.6a10.16 10.16 0 0 1 9.15 6.288L38.85 18.43a4.677 4.677 0 0 1-4.986-.747 6.633 6.633 0 0 0-7.78-.736l-3.91 2.325c1.2-4.704 5.135-8.169 9.803-8.169zM21.832 23.168V21.8l5.273-3.133a4.632 4.632 0 0 1 5.433.51 6.72 6.72 0 0 0 7.15 1.07l2.098-.957a12.113 12.113 0 0 1 .38 2.98c-.464 14.245-18.826 15.065-20.334.9zM35.95 34.706v1.718l-3.968 5.464-4.153-5.473v-1.78a11.242 11.242 0 0 0 8.12.071zm-9.164 3.643 3.852 5.075-3.771 3.28-1.206-7.008zM8.444 58l3.96-10.516a7.551 7.551 0 0 1 4.681-4.505l6.724-2.245 1.387 8.06a1.007 1.007 0 0 0 1.641.585l2.01-1.746 2.013 2.491L27.875 58zm25.54 0h-3.97L32 52.763zm-1.985-9.65-1.642-2.03 1.642-1.428 1.642 1.427zm5.12-1.658-3.772-3.28 3.693-5.085 1.224 1.332z" fill="currentColor" opacity="1" data-original="currentColor"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Personal Finance Management</h3>
-                    <p class="mb-4">Seamless and secure transactions through various digital platforms, enabling quick and convenient payments for businesses and consumers alike.</p>
+                    <h3 class="fs-5 mb-3">Grant & Bid Writing</h3>
+                    <p class="mb-4">Professional proposal and grant writing services to maximise your chances of winning funding opportunities.</p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -402,8 +402,8 @@
                           <path d="M49.754 34.379a1.001 1.001 0 0 0-1.238-.682c-1.769.767.123 2.972 1.275 3.302a1 1 0 1 0 2-.024 3.075 3.075 0 0 0-1-5.975 1.078 1.078 0 1 1 1.053-1.306 1 1 0 0 0 1.187.77c1.894-.7-.034-3.134-1.24-3.463a1 1 0 1 0-2 .024 3.075 3.075 0 0 0 1 5.975 1.079 1.079 0 1 1-1.037 1.379z" fill="currentColor" opacity="1" data-original="#000000"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Online Lending</h3>
-                    <p class="mb-4">Fast and accessible lending services that provide personal and business loans through online platforms, simplifying the borrowing process.</p>
+                    <h3 class="fs-5 mb-3">Charity Partnerships</h3>
+                    <p class="mb-4">Building strong collaborations with charities to align projects with your mission and impact goals.</p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -416,8 +416,8 @@
                           <path d="M32.322 22.446a1.276 1.276 0 1 1-1.225 1.632 1 1 0 0 0-1.921.556 3.29 3.29 0 0 0 2.146 2.202v.352a1 1 0 0 0 2 0v-.363a3.272 3.272 0 0 0-1-6.38A1.276 1.276 0 1 1 33.57 18.9a1 1 0 0 0 1.956-.418 3.287 3.287 0 0 0-2.204-2.423c.082-.687-.226-1.374-1-1.385-.78.016-1.08.697-1 1.392a3.272 3.272 0 0 0 1 6.38z" fill="currentColor" opacity="1" data-original="#000000"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Investment Platforms</h3>
-                    <p class="mb-4">User-friendly platforms that allow individuals to invest in stocks, bonds, and other assets with minimal barriers, making investment accessible to all.</p>
+                    <h3 class="fs-5 mb-3">Income Diversification</h3>
+                    <p class="mb-4">Helping you explore and develop multiple income streams to reduce risk and increase financial stability.</p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -430,8 +430,8 @@
                           <path d="M51.798 12.238a27.71 27.71 0 0 0-3.132-2.708 1 1 0 0 0-1.186 1.609 25.317 25.317 0 0 1 2.162 1.82l-2.117 2.117A22.896 22.896 0 0 0 33.002 9.05V6.057a25.425 25.425 0 0 1 11.2 3.02 1 1 0 0 0 .946-1.761C26.702-2.634 3.907 11.036 4.02 32.012c-.31 15.036 12.945 28.294 27.983 27.983 24.827-.03 37.332-30.174 19.795-47.757zm-.734 2.126a25.768 25.768 0 0 1 6.899 16.648h-3A22.896 22.896 0 0 0 48.94 16.49zm-38.123 0 2.118 2.117A22.815 22.815 0 0 0 9.05 31.012H6.043a25.768 25.768 0 0 1 6.898-16.648zM6.043 33.01h2.999a22.896 22.896 0 0 0 6.025 14.524L12.94 49.66A25.768 25.768 0 0 1 6.043 33.01zm24.96 24.96a25.768 25.768 0 0 1-16.648-6.898l2.125-2.125a22.896 22.896 0 0 0 14.523 6.025zm-19.988-25.96a20.892 20.892 0 0 1 11.64-18.784 1 1 0 0 0-.892-1.788 23.283 23.283 0 0 0-5.294 3.626l-2.114-2.114a25.768 25.768 0 0 1 16.648-6.9v3.01a22.7 22.7 0 0 0-5.356.865 1 1 0 0 0 .558 1.918c13.1-3.976 26.996 6.454 26.785 20.168-1.15 27.836-40.823 27.84-41.975 0zm21.987 25.96v-2.998a22.896 22.896 0 0 0 14.523-6.025l2.125 2.125a25.768 25.768 0 0 1-16.648 6.899zm18.062-8.311-2.125-2.125a22.896 22.896 0 0 0 6.024-14.524h3a25.768 25.768 0 0 1-6.9 16.649z" fill="currentColor" opacity="1" data-original="#000000"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Cryptocurrency Trading</h3>
-                    <p class="mb-4">Services that facilitate the buying, selling, and trading of cryptocurrencies, offering users a gateway to the digital currency market.</p>
+                    <h3 class="fs-5 mb-3">Donor & Funder Engagement</h3>
+                    <p class="mb-4">Guidance on cultivating stronger relationships with funders and donors for sustainable growth.</p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -444,8 +444,8 @@
                           <path d="M33.472 52.52a1 1 0 0 0 0 2h6.89a1 1 0 0 0 0-2zM37.844 37.294a1 1 0 0 0-1.414 1.415l2.387 2.387a1 1 0 0 0 1.414 0l5.464-5.465a1 1 0 0 0-1.414-1.414l-4.757 4.757zM13.29 33.143a1 1 0 0 0 0 2h2.45a1 1 0 0 0 0-2z" fill="currentColor" opacity="1" data-original="#000000"></path>
                         </g>
                       </svg></span>
-                    <h3 class="fs-5 mb-3">Insurtech Solutions</h3>
-                    <p class="mb-4">Innovative insurance services that leverage technology to offer personalized policies, faster claims processing, and enhanced customer experiences.</p>
+                    <h3 class="fs-5 mb-3">Ongoing Mentorship & Support</h3>
+                    <p class="mb-4">Continuous advice and hands-on support to help you adapt, grow, and achieve fundraising success</p>
                   </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
                 </div>
               </div>
@@ -454,91 +454,174 @@
         </section>
         <!-- Services-->
         
+        <!-- ======= Blog =======-->
+        <section class="section blog__v1" id="blog">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-8 mx-auto text-center">
+                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Insights</span>
+                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">From the Fundraising Desk</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Practical tips, real-world lessons, and strategies to help your charity grow sustainable income.</p>
+              </div>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-1-min.jpg') }}" alt="Building a strong funder pipeline"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Sep 18, 2025</span><span><i class="bi bi-clock"></i> 4 min read</span></div>
+                    <h3 class="fs-5 mb-1">Build a Strong Funder Pipeline</h3>
+                    <p class="mb-2">Turn scattered prospects into a focused pipeline with clear qualification and engagement steps.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-3-min.jpg') }}" alt="Writing grants that win"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Sep 7, 2025</span><span><i class="bi bi-clock"></i> 5 min read</span></div>
+                    <h3 class="fs-5 mb-1">Grant Writing that Wins</h3>
+                    <p class="mb-2">What funders look for: clarity, outcomes, evidence, and why your project truly matters.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-4-min.jpg') }}" alt="Diversifying income streams"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Aug 29, 2025</span><span><i class="bi bi-clock"></i> 6 min read</span></div>
+                    <h3 class="fs-5 mb-1">Diversify Income, Reduce Risk</h3>
+                    <p class="mb-2">Practical ways to add new revenue streams without losing focus on your mission.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-10-min.jpg') }}" alt="Cultivating funder relationships"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Aug 12, 2025</span><span><i class="bi bi-clock"></i> 4 min read</span></div>
+                    <h3 class="fs-5 mb-1">Cultivating Funder Relationships</h3>
+                    <p class="mb-2">From first contact to stewardship—simple steps to build trust and long-term support.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-11-min.jpg') }}" alt="Impact stories that convert"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Jul 30, 2025</span><span><i class="bi bi-clock"></i> 5 min read</span></div>
+                    <h3 class="fs-5 mb-1">Impact Stories that Convert</h3>
+                    <p class="mb-2">Frame outcomes, evidence, and urgency to inspire action—from bids to newsletters.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                  <div class="ratio ratio-4x3 "><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-12-min.jpg') }}" alt="Trust fundraising readiness checklist"></div>
+                  <div class="p-4 d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Jul 12, 2025</span><span><i class="bi bi-clock"></i> 6 min read</span></div>
+                    <h3 class="fs-5 mb-1">Trust Fundraising Readiness</h3>
+                    <p class="mb-2">A quick checklist to ensure your case for support is clear, evidenced, and funder-ready.</p>
+                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Blog -->
+
         <!-- ======= Testimonials =======-->
         <section class="section testimonials__v2" id="testimonials">
           <div class="container">
             <div class="row mb-5">
-              <div class="col-lg-5 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Testimonials</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">What Our Users Are Saying</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Real Stories of Success and Satisfaction from Our Diverse Community</p>
+              <div class="col-lg-5 mx-auto text-center">
+                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Testimonials</span>
+                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Real Stories of Impact and Hope from Our Community</p>
               </div>
             </div>
-            <div class="row g-4" data-masonry="{&quot;percentPosition&quot;: true }">
+
+            <div class="row g-4" data-masonry='{ "percentPosition": true }'>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    This platform has completely transformed the way I manage my business finances. The real-time transaction tracking and seamless payment options have saved me so much time and effort!
-                    &rdquo;
+                    &ldquo;Thanks to this platform, I was able to support meaningful projects and see the tangible difference my contribution made in people's lives.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-2-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">John Davis</strong><span>Small Business Owner</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-2-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">John Davis</strong><span>Community Supporter</span></div>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    As a freelancer, managing my finances can be overwhelming. The budgeting tools and personalized insights have made it so much easier to stay on top of my expenses and plan for the future.
-                    &rdquo;
+                    &ldquo;Being part of this fundraising platform made it easy to connect with causes I care about. The transparency and updates kept me motivated to keep supporting.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-1-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">Emily Smith</strong><span>Freelancer</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-1-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">Emily Smith</strong><span>Philanthropist</span></div>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    The investment options and portfolio management tools on this platform are top-notch. The variety of choices caters to all types of investors, from conservative to aggressive. I especially appreciate how the tailored recommendations align perfectly with my financial goals. It’s a game-changer for anyone serious about growing their wealth.
-                    &rdquo;
+                    &ldquo;The projects featured here are inspiring. I love how the platform helps fund initiatives that create real change in local communities.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-5-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">Michael Rodriguez</strong><span>Investor</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-5-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">Michael Rodriguez</strong><span>Volunteer</span></div>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    I never thought managing money could be this simple! The user-friendly interface and secure transaction process give me the confidence to handle my finances independently.
-                    &rdquo;
+                    &ldquo;Supporting campaigns on this platform is simple and rewarding. I feel connected to the impact and see the results of my contributions.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-3-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">Sarah Lee</strong><span>College Student</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-3-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">Sarah Lee</strong><span>Donor</span></div>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    The security features are outstanding. Knowing that my financial data is protected gives me peace of mind, and the platform's efficiency makes it a pleasure to use.
-                    &rdquo;
+                    &ldquo;The transparency and updates make me trust this platform. I’m proud to support campaigns that are making a real difference.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-7-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">James Kim</strong><span>IT Consultant</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-7-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">James Kim</strong><span>Charity Enthusiast</span></div>
                   </div>
                 </div>
               </div>
+
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="testimonial rounded-4 p-4">
                   <blockquote class="mb-3">
-                     &ldquo;
-                    The platform’s intuitive design and robust features have been a game-changer for my startup. It’s helped me streamline operations and focus on growing my business.
-                    &rdquo;
+                    &ldquo;This platform empowers me to be part of meaningful projects. I love seeing the impact of my support and being part of a bigger mission.&rdquo;
                   </blockquote>
                   <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-8-min.jpg') }}" alt="FreeBootstrap.net image placeholder"></div>
-                    <div class="lh-base"><strong class="d-block">Laura Brown</strong><span>Entrepreneur</span></div>
+                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-8-min.jpg') }}" alt="Supporter image"></div>
+                    <div class="lh-base"><strong class="d-block">Laura Brown</strong><span>Active Donor</span></div>
                   </div>
                 </div>
               </div>
@@ -546,60 +629,89 @@
           </div>
         </section>
         <!-- Testimonials-->
+
         
         <!-- ======= FAQ =======-->
         <section class="section faq__v2" id="faq">
           <div class="container">
             <div class="row mb-4">
-              <div class="col-md-6 col-lg-7 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">FAQ</span>
+              <div class="col-md-6 col-lg-7 mx-auto text-center">
+                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">FAQ</span>
                 <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Frequently Asked Questions</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Utilize our tools to develop your concepts and bring your vision to life. Once complete, effortlessly share your creations.</p>
+                <p data-aos="fade-up" data-aos-delay="100">Answers to common questions about fundraising strategy, income development, and building sustainable funding.</p>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <div class="faq-content">
                   <div class="accordion custom-accordion" id="accordionPanelsStayOpenExample">
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"> What services does your web agency offer? </button>
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                          What kind of fundraising support do you provide?
+                        </button>
                       </h2>
                       <div class="accordion-collapse collapse show" id="panelsStayOpen-collapseOne">
-                        <div class="accordion-body">Our web agency offers a comprehensive range of services including web design and development, e-commerce solutions, SEO optimization, content creation, website maintenance, and digital marketing strategies. We tailor our services to meet the unique needs of each client, ensuring a customized approach to every project.</div>
+                        <div class="accordion-body">
+                          I provide tailored support for charities, including developing income strategies, writing fundraising strategies, creating a pipeline of funders, and offering advice on building stronger relationships with funders.
+                        </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo"> How much does it cost to build a website? </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                          How do you customise fundraising strategies for different organisations?
+                        </button>
                       </h2>
                       <div class="accordion-collapse collapse" id="panelsStayOpen-collapseTwo">
-                        <div class="accordion-body">The cost of building a website can vary widely depending on the complexity, features, and specific requirements of your project. We offer several pricing packages to accommodate different budgets and needs. After an initial consultation, we can provide a detailed quote based on your specific goals and objectives.</div>
+                        <div class="accordion-body">
+                          Every organisation is unique. I analyse your financial situation, goals, and needs to create a tailored income development plan that is specific to your charity and the areas of fundraising most relevant to you.
+                        </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree"> How long does it take to design and develop a website? </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          Can you help diversify income streams for my charity?
+                        </button>
                       </h2>
                       <div class="accordion-collapse collapse" id="panelsStayOpen-collapseThree">
-                        <div class="accordion-body">The timeline for designing and developing a website depends on the project&apos;s complexity and scope. Typically, a standard business website takes about 4-6 weeks to complete, while more complex projects like e-commerce sites or custom applications may take longer. We work closely with our clients to establish a realistic timeline and keep you informed throughout the process.</div>
+                        <div class="accordion-body">
+                          Yes. I specialise in helping organisations diversify their income streams to ensure financial stability and growth, giving you the resources needed to thrive and continue your mission.
+                        </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour"> Will my website be mobile-friendly? </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                          Do you provide ongoing support after the strategy is developed?
+                        </button>
                       </h2>
                       <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFour">
-                        <div class="accordion-body">Absolutely! All the websites we design and develop are fully responsive, meaning they are optimized to work seamlessly across all devices, including desktops, tablets, and smartphones. Ensuring a great user experience on mobile devices is a top priority in our development process.</div>
+                        <div class="accordion-body">
+                          Absolutely. I provide ongoing guidance and support to help you implement your fundraising strategies effectively and maximise your income potential over time.
+                        </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive"> Do you provide ongoing support and maintenance for websites? </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                          What makes your approach to fundraising different?
+                        </button>
                       </h2>
                       <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFive">
-                        <div class="accordion-body">Yes, we offer ongoing support and maintenance services to ensure your website remains up-to-date, secure, and functioning smoothly. Our maintenance packages can include regular updates, security monitoring, backups, and technical support to address any issues that may arise. We&apos;re here to help you keep your website running efficiently long after it&apos;s launched.</div>
+                        <div class="accordion-body">
+                          My approach is highly personalised and strategy-driven. I focus on understanding your organisation, identifying the best opportunities for funding, and building sustainable, long-term relationships with funders to ensure lasting impact.
+                        </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -608,6 +720,7 @@
           <!-- End FAQ-->
         </section>
         <!-- End FAQ-->
+
         
         <!-- ======= Contact =======-->
         <section class="section contact__v2" id="contact">
@@ -720,18 +833,9 @@
               </div>
             </div>
             <div class="row credits pt-3">
-              <div class="col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
-                <!--
-                Note:
-                =>>> Please keep all the footer links intact. <<<=
-                =>>> You can only remove the links if you buy the pro version. <<<=
-                =>>> Buy the pro version, which includes a functional PHP/AJAX contact form and many additional features.: https://freebootstrap.net/template/vertex-pro-bootstrap-website-template-for-portfolio/ <<<=
-                --> 
-                &copy;
-                <script>document.write(new Date().getFullYear());</script> Nova. 
-                 All rights reserved. Designed with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://freebootstrap.net">FreeBootstrap.net</a>
+              <div class="col-12 text-center">
+              <script>document.write(new Date().getFullYear());</script> John Field Fundraising Ltd: Company Number (England and Wales): 13040151
               </div>
-              <div class="col-xl-4 justify-content-start justify-content-xl-end quick-links d-flex flex-column flex-xl-row text-center text-xl-start gap-1">Distributed by<a href="https://themewagon.com" target="_blank">ThemeWagon</a></div>
             </div>
           </div>
         </footer>
