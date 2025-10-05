@@ -3,7 +3,6 @@
 
 /public/build
 /public/hot
-/public/storage
 /storage/*.key
 /vendor
 
@@ -22,8 +21,4 @@ yarn-error.log
 /.idea
 /.vscode
 
-!/public/assets
-!/public/assets/*
-/public/css
-/public/js
 composer.lock
