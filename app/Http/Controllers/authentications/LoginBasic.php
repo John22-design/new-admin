@@ -46,7 +46,7 @@ class LoginBasic extends Controller
       $request->session()->regenerate();
 
       // Redirect to intended page or dashboard
-      return redirect()->intended('/')->with('success', 'Welcome back!');
+      return redirect()->intended('/dashboard')->with('success', 'Welcome back!');
     }
 
     // Authentication failed
@@ -62,6 +62,6 @@ class LoginBasic extends Controller
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return redirect('/auth/login-basic')->with('success', 'You have been logged out successfully.');
+    return redirect('/auth/login')->with('success', 'You have been logged out successfully.');
   }
 }

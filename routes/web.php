@@ -19,7 +19,7 @@ use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\TestimonialsController;
 
 // Main Page Route
-Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics')->middleware('auth');
+Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics')->middleware('auth');
 
 // layout
 Route::middleware('auth')->group(function () {
@@ -40,8 +40,8 @@ Route::middleware('auth')->group(function () {
 
 // authentication
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('auth-login-basic');
+Route::get('/auth/login', [LoginBasic::class, 'index'])->name('auth-login');
 Route::post('/auth/login', [LoginBasic::class, 'login'])->name('auth-login-submit');
 Route::post('/auth/logout', [LoginBasic::class, 'logout'])->name('auth-logout');
-Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
-Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+// Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
+// Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');

@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/dashboard",
       "name": "Dashboards",
       "icon": "menu-icon tf-icons bx bx-home-smile",
       "slug": "dashboard",
@@ -11,7 +11,7 @@
       ],
       "submenu": [
         {
-          "url": "/",
+          "url": "/dashboard",
           "name": "Analytics",
           "slug": "dashboard-analytics"
         }
@@ -60,9 +60,9 @@
       "slug": "auth",
       "submenu": [
         {
-          "url": "auth/login-basic",
+          "url": "auth/login",
           "name": "Login",
-          "slug": "auth-login-basic",
+          "slug": "auth-login",
           "target": "_blank"
         },
         {
