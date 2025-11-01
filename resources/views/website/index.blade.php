@@ -22,7 +22,8 @@
     <!-- ======= Theme Style =======-->
     @vite(['resources/css/style.css'])
     <!-- End Theme Style-->
-    
+    <!-- ======= Preloader CSS =======-->
+    <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
     <!-- ======= Apply theme =======-->
     <script>
       // Apply the theme as early as possible to avoid flicker
@@ -34,6 +35,7 @@
   </head>
   <body>
     
+    <x-preloader theme="gradient" variant="progress"/>
     
     <!-- ======= Site Wrap =======-->
     <div class="site-wrap">
@@ -126,7 +128,7 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="hero-img"><img class="img-card img-fluid" src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
+                <div class="hero-img"><img class="img-card img-fluid animate-bounce" src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
               </div>
             </div>
           </div>
@@ -857,6 +859,9 @@
     <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('vendors/aos/aos.js') }}"></script>
     <script src="{{ asset('vendors/purecounter/purecounter.js') }}"></script>
+    <!-- Preloader Script -->
+    <script src="{{ asset('js/preloader.js') }}"></script>
+    <!-- Custom Scripts -->
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/send_email.js') }}"></script>
     <!-- End JavaScripts-->

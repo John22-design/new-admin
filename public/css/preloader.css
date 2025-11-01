@@ -1,0 +1,516 @@
+/**
+ * Modern Preloader CSS - Redesigned 2025
+ * 
+ * Purpose: Stunning, gradient-based preloader with progress bar
+ * 
+ * Features:
+ * - Glass morphism design
+ * - Gradient animations
+ * - Particle effects
+ * - Smooth transitions
+ * - Fully responsive
+ * - Accessibility focused
+ */
+
+/* ============================================
+   CSS Variables - Modern Color Palette
+   ============================================ */
+
+:root {
+  /* Gradient Theme (Based on #007A93) */
+  --preloader-gradient-1: #005f73;
+  --preloader-gradient-2: #007a93;
+  --preloader-gradient-3: #0a9396;
+  --preloader-gradient-4: #00b4d8;
+
+  /* Common */
+  --preloader-transition: 0.6s;
+  --preloader-z-index: 999999;
+}
+
+/* ============================================
+   Preloader Container
+   ============================================ */
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--preloader-z-index);
+  transition:
+    opacity var(--preloader-transition) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--preloader-transition) cubic-bezier(0.4, 0, 0.2, 1),
+    transform var(--preloader-transition) cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--preloader-gradient-1) 0%,
+    var(--preloader-gradient-2) 50%,
+    var(--preloader-gradient-3) 100%
+  );
+  color: #ffffff;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hidden State with Scale Effect */
+.preloader.preloader--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+/* ============================================
+   Background Particles
+   ============================================ */
+
+.preloader__particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.preloader__particle {
+  position: absolute;
+  background: currentColor;
+  border-radius: 50%;
+  animation: particleFloat 15s infinite ease-in-out;
+}
+
+.preloader__particle:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  left: 10%;
+  animation-delay: 0s;
+}
+.preloader__particle:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  left: 20%;
+  animation-delay: 1s;
+}
+.preloader__particle:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  left: 30%;
+  animation-delay: 2s;
+}
+.preloader__particle:nth-child(4) {
+  width: 5px;
+  height: 5px;
+  left: 40%;
+  animation-delay: 3s;
+}
+.preloader__particle:nth-child(5) {
+  width: 4px;
+  height: 4px;
+  left: 50%;
+  animation-delay: 4s;
+}
+.preloader__particle:nth-child(6) {
+  width: 6px;
+  height: 6px;
+  left: 60%;
+  animation-delay: 5s;
+}
+.preloader__particle:nth-child(7) {
+  width: 3px;
+  height: 3px;
+  left: 70%;
+  animation-delay: 6s;
+}
+.preloader__particle:nth-child(8) {
+  width: 5px;
+  height: 5px;
+  left: 80%;
+  animation-delay: 7s;
+}
+.preloader__particle:nth-child(9) {
+  width: 4px;
+  height: 4px;
+  left: 90%;
+  animation-delay: 8s;
+}
+.preloader__particle:nth-child(10) {
+  width: 6px;
+  height: 6px;
+  left: 15%;
+  animation-delay: 9s;
+}
+.preloader__particle:nth-child(11) {
+  width: 3px;
+  height: 3px;
+  left: 25%;
+  animation-delay: 10s;
+}
+.preloader__particle:nth-child(12) {
+  width: 5px;
+  height: 5px;
+  left: 35%;
+  animation-delay: 11s;
+}
+.preloader__particle:nth-child(13) {
+  width: 4px;
+  height: 4px;
+  left: 45%;
+  animation-delay: 12s;
+}
+.preloader__particle:nth-child(14) {
+  width: 6px;
+  height: 6px;
+  left: 55%;
+  animation-delay: 13s;
+}
+.preloader__particle:nth-child(15) {
+  width: 3px;
+  height: 3px;
+  left: 65%;
+  animation-delay: 14s;
+}
+.preloader__particle:nth-child(16) {
+  width: 5px;
+  height: 5px;
+  left: 75%;
+  animation-delay: 0.5s;
+}
+.preloader__particle:nth-child(17) {
+  width: 4px;
+  height: 4px;
+  left: 85%;
+  animation-delay: 1.5s;
+}
+.preloader__particle:nth-child(18) {
+  width: 6px;
+  height: 6px;
+  left: 95%;
+  animation-delay: 2.5s;
+}
+.preloader__particle:nth-child(19) {
+  width: 3px;
+  height: 3px;
+  left: 5%;
+  animation-delay: 3.5s;
+}
+.preloader__particle:nth-child(20) {
+  width: 5px;
+  height: 5px;
+  left: 12%;
+  animation-delay: 4.5s;
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Main Content Container
+   ============================================ */
+
+.preloader__content {
+  text-align: center;
+  animation: contentFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================================
+   Logo Section
+   ============================================ */
+
+.preloader__logo-container {
+  margin-bottom: 2.5rem;
+}
+
+.preloader__logo-wrapper {
+  position: relative;
+  display: inline-block;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.preloader__logo-img {
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(0, 122, 147, 0.3));
+}
+
+/* Animated Rings Around Logo */
+.preloader__logo-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  animation: ringPulse 2s ease-out infinite;
+}
+
+.preloader__logo-ring--delayed {
+  animation-delay: 1s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Progress Bar Section (Glass Morphism)
+   ============================================ */
+
+.preloader__progress-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader__glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  min-width: 320px;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Track */
+.preloader__progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Progress Fill with Gradient */
+.preloader__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--preloader-gradient-4) 0%, var(--preloader-gradient-3) 100%);
+  border-radius: 100px;
+  width: 0%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+}
+
+/* Glow Effect */
+.preloader__progress-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6));
+  animation: progressGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Status Row */
+.preloader__status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.preloader__status-text {
+  margin: 0;
+  opacity: 0.9;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.preloader__percentage {
+  font-weight: 700;
+  font-size: 1rem;
+  color: currentColor;
+  min-width: 40px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   Loading Dots
+   ============================================ */
+
+.preloader__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.preloader__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+
+.preloader__dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.preloader__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.preloader__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  30% {
+    transform: translateY(-12px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Accessibility & Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader,
+  .preloader__content,
+  .preloader__logo-wrapper,
+  .preloader__logo-ring,
+  .preloader__dot,
+  .preloader__particle,
+  .preloader__progress-glow {
+    animation: none !important;
+  }
+
+  .preloader {
+    background: linear-gradient(135deg, var(--preloader-gradient-1) 0%, var(--preloader-gradient-2) 100%);
+  }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 576px) {
+  .preloader__glass-card {
+    min-width: 280px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .preloader__logo-img {
+    height: 60px;
+  }
+}
+
+/* ============================================
+   Print & High Contrast
+   ============================================ */
+
+@media print {
+  .preloader {
+    display: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .preloader {
+    backdrop-filter: none;
+    background: linear-gradient(135deg, var(--preloader-gradient-1) 0%, var(--preloader-gradient-2) 100%);
+  }
+}
