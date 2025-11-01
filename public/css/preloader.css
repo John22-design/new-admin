@@ -325,7 +325,7 @@
    ============================================ */
 
 .preloader__progress-wrapper {
-  margin-top: 2rem;
+  margin-top: 4.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

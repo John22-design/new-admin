@@ -75,12 +75,12 @@ h6 {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 50px 0;
   scroll-margin-top: 60px;
 }
 @media (max-width: 767.98px) {
   .section {
-    padding: 40px 0;
+    padding: 25px 0;
   }
 }
 .section.first-section {
@@ -765,6 +765,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -853,6 +854,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -899,6 +901,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -947,6 +950,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -988,6 +992,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -1028,6 +1033,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -1141,6 +1147,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -1161,6 +1168,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;
@@ -1257,6 +1265,7 @@ h6 {
   display: inline-block;
   padding: 5px 12px;
   border-radius: 7px;
+  border: 2px solid var(--bs-primary);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 10px;

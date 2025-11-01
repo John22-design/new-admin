@@ -111,7 +111,7 @@
         <section class="hero__v6 section" id="home">
           <div class="container">
             <div class="row">
-              <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="col-lg-6 mb-1 mb-lg-0">
                 <div class="row">
                   <div class="col-lg-11"><span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
                     <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Build Sustainable Funding For Success</h1>
@@ -142,7 +142,7 @@
             <div class="row">
               <div class="col-md-6 order-md-2">
                 <div class="row justify-content-end">
-                  <div class="col-md-11 mb-4 mb-md-0"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">About us</span>
+                  <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">About us</span>
                     <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">I’m John Field, an experienced Trust Fundraising Consultant</h2>
                     <div data-aos="fade-up" data-aos-delay="200">
                       <p>With 25 years’ experience in trust fundraising, I can support with you with your needs. Whether that is strategic, developing your pipeline of potential funders or bid writing – I am here to help.</p>
@@ -150,7 +150,7 @@
                       <p>As a consultant, I am enjoying being more selective to work with charities that meet my vision and work together to achieve amazing things.</p>
                     </div>
                     <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">Key Values and Vision</h4>
-                    <ul class="d-flex flex-row flex-wrap list-unstyled gap-3 features" data-aos="fade-up" data-aos-delay="400">
+                    <ul class="d-flex flex-row flex-wrap list-unstyled gap-3 features justify-content-center justify-content-md-start" data-aos="fade-up" data-aos-delay="400">
                       <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Innovation</span></li>
                       <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Collaboration</span></li>
                       <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Excellence </span></li>
