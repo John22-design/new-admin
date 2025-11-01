@@ -42,13 +42,13 @@
       
       
       <!-- ======= Header =======-->
-      <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="freebootstrap.net navbar">
+      <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="navbar">
         <div class="container d-flex align-items-center justify-content-between">
           
           
           <!-- Start Logo-->
           <a class="navbar-brand w-auto" href="index.html">
-            <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="FreeBootstrap.net image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+            <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
           </a>
           <!-- End Logo-->
           
@@ -59,7 +59,7 @@
             <div class="offcanvas-header">
               <div class="offcanvas-header-logo">
                 <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
-                  <img class="logo dark img-fluid" style="height:40px; width:auto; max-width:160px; border-radius:3px;" src="{{ asset('images/navbar_logo.png') }}" alt="FreeBootstrap.net image placeholder"> 
+                  <img class="logo dark img-fluid" style="height:40px; width:auto; max-width:160px; border-radius:3px;" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder"> 
               </div>
               {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
             </div>
@@ -161,7 +161,7 @@
                 </div>
               </div>
               <div class="col-md-6"> 
-                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="{{ asset('images/about-us.jpg') }}" alt="FreeBootstrap.net image placeholder" data-aos="fade-up" data-aos-delay="0">
+                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="{{ asset('images/about-us.jpg') }}" alt="image placeholder" data-aos="fade-up" data-aos-delay="0">
                   <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i></div>
                     <div>
@@ -287,7 +287,7 @@
             <div class="row g-md-5">
               <div class="col-md-6 col-lg-3">
                 <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative" data-aos="fade-up" data-aos-delay="0">
-                  <div data-aos="fade-right" data-aos-delay="500"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">1</span>
+                  <div data-aos="fade-right" data-aos-delay="500"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">1</span>
                   <div>
                     <h3 class="fs-5 mb-4">Deep Dive: Alignment & Packaging</h3>
                     <p>Before seeking funders, be clear on what you’re funding alignment starts with clarity.</p>
@@ -296,14 +296,14 @@
               </div>
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
                 <div class="step-card reverse text-center h-100 d-flex flex-column justify-content-start position-relative">
-                  <div data-aos="fade-right" data-aos-delay="1100"><img class="arch-line reverse" src="{{ asset('images/arch-line-reverse.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">2</span>
+                  <div data-aos="fade-right" data-aos-delay="1100"><img class="arch-line reverse" src="{{ asset('images/arch-line-reverse.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">2</span>
                   <h3 class="fs-5 mb-4">Multi-Layered Prospect Research & Discovery</h3>
                   <p>Cast a wide net, then filter with your Funder Persona to reveal overlooked opportunities.</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="1200">
                 <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative">
-                  <div data-aos="fade-right" data-aos-delay="1700"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="FreeBootstrap.net image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">3</span>
+                  <div data-aos="fade-right" data-aos-delay="1700"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">3</span>
                   <h3 class="fs-5 mb-4">Qualification & Confidence Scoring</h3>
                   <p>Focus on hot leads, not long shots, to build a realistic funding pipeline.</p>
                 </div>
