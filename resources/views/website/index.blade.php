@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> John Field Fundraising </title>
@@ -10,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
     <!-- End Google Font-->
-    
+
     <!-- ======= Styles =======-->
     <link href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet">
@@ -18,7 +19,7 @@
     <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet">
     <!-- End Styles-->
-    
+
     <!-- ======= Theme Style =======-->
     @vite(['resources/css/style.css'])
     <!-- End Theme Style-->
@@ -26,830 +27,1083 @@
     <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
     <!-- ======= Apply theme =======-->
     <script>
-      // Apply the theme as early as possible to avoid flicker
-      (function() {
-      const storedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-bs-theme', storedTheme);
-      })();
+        // Apply the theme as early as possible to avoid flicker
+        (function() {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        })();
     </script>
-  </head>
-  <body>
-    
-    <x-preloader theme="gradient" variant="progress"/>
-    
+</head>
+
+<body>
+
+    <x-preloader theme="gradient" variant="progress" />
+
     <!-- ======= Site Wrap =======-->
     <div class="site-wrap">
-      
-      
-      <!-- ======= Header =======-->
-      <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="navbar">
-        <div class="container d-flex align-items-center justify-content-between">
-          
-          
-          <!-- Start Logo-->
-          <a class="navbar-brand w-auto" href="index.html">
-            <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
-          </a>
-          <!-- End Logo-->
-          
-          <!-- Start offcanvas-->
-          <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1" aria-labelledby="fbs__net-navbarsLabel">
-            
-            
-            <div class="offcanvas-header">
-              <div class="offcanvas-header-logo">
-                <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
-                  <img class="logo dark img-fluid" style="height:40px; width:auto; max-width:160px; border-radius:3px;" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder"> 
-              </div>
-              {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
-            </div>
-            
-            <div class="offcanvas-body align-items-lg-center">
-              
-              
-              <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a></li>
-              </ul>
-              
-            </div>
-          </div>
-          <!-- End offcanvas-->
-          
-          <div class="ms-auto w-auto">
-            
-            
-            <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2" href="#contact">Contact</a>
-              
-              <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
-                <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="21" x2="3" y1="6" y2="6"></line>
-                  <line x1="15" x2="3" y1="12" y2="12"></line>
-                  <line x1="17" x2="3" y1="18" y2="18"></line>
-                </svg>
-                <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 6 6 18"></path>
-                  <path d="m6 6 12 12"></path>
-                </svg>
-              </button>
-              
-            </div>
-            
-          </div>
-        </div>
-      </header>
-      <!-- End Header-->
-      
-      <!-- ======= Main =======-->
-      <main>
-        
-        
-        <!-- ======= Hero =======-->
-        <section class="hero__v6 section" id="home">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 mb-1 mb-lg-0">
-                <div class="row">
-                  <div class="col-lg-11"><span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
-                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Build Sustainable Funding For Success</h1>
-                    <p class="hero-description mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">Expert advice and support to secure the funding you need, grow your impact, and achieve your vision.</p>
-                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300"><a class="btn" href="#">Contact Now</a><a class="btn btn-white-outline" href="#">Learn More 
-                        <svg class="lucide lucide-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M7 7h10v10"></path>
-                          <path d="M7 17 17 7"></path>
-                        </svg></a></div>
-                    <div class="logos mb-4" data-aos="fade-up" data-aos-delay="400"><span class="logos-title text-uppercase mb-4 d-block">Trusted by major companies worldwide</span>
-                      <div class="logos-images d-flex gap-4 align-items-center"><img class="img-fluid js-img-to-inline-svg" src="{{ asset('images/logo/actual-size/logo-air-bnb__black.svg') }}" alt="Company 1" style="width: 110px;"><img class="img-fluid js-img-to-inline-svg" src="{{ asset('images/logo/actual-size/logo-ibm__black.svg') }}" alt="Company 2" style="width: 80px;"><img class="img-fluid js-img-to-inline-svg" src="{{ asset('images/logo/actual-size/logo-google__black.svg') }}" alt="Company 3" style="width: 110px;"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="hero-img"><img class="img-card img-fluid animate-bounce" src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down" data-aos-delay="600"><img class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in" data-aos-delay="500"></div>
-              </div>
-            </div>
-          </div>
-          <!-- End Hero-->
-        </section>
-        <!-- End Hero-->
-        
-        <!-- ======= About =======-->
-        <section class="about__v4 section" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 order-md-2">
-                <div class="row justify-content-end">
-                  <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">About us</span>
-                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">I’m John Field, an experienced Trust Fundraising Consultant</h2>
-                    <div data-aos="fade-up" data-aos-delay="200">
-                      <p>With 25 years’ experience in trust fundraising, I can support with you with your needs. Whether that is strategic, developing your pipeline of potential funders or bid writing – I am here to help.</p>
-                      <p>I have worked with many different types of charities and have experience with a variety of funders including capital appeals, project funding or core costs.</p>
-                      <p>As a consultant, I am enjoying being more selective to work with charities that meet my vision and work together to achieve amazing things.</p>
-                    </div>
-                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">Key Values and Vision</h4>
-                    <ul class="d-flex flex-row flex-wrap list-unstyled gap-3 features justify-content-center justify-content-md-start" data-aos="fade-up" data-aos-delay="400">
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Innovation</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Collaboration</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Excellence </span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Impact</span></li>
-                      <li class="d-flex align-items-center gap-2"><span class="icon rounded-circle text-center"><i class="bi bi-check"></i></span><span class="text">Integrity</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6"> 
-                <div class="img-wrap position-relative"><img class="img-fluid rounded-4" src="{{ asset('images/about-us.jpg') }}" alt="image placeholder" data-aos="fade-up" data-aos-delay="0">
-                  <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i></div>
-                    <div>
-                      <h3 class="text-uppercase fw-bold">Why Expertise Demands More Than Emotion</h3>
-                      <p class="fs-5 mb-0">Emotional learning may be quick, but what we consider as “expertise” usually takes a long time to develop.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End About-->
-        
-        <!-- ======= Features =======-->
-        <section class="section features__v2" id="features">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="d-lg-flex p-5 rounded-4 content" data-aos="fade-in" data-aos-delay="0">
-                  <div class="row">
-                    <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
-                      <div class="row"> 
-                        <div class="col-lg-11">
-                          <div class="h-100 flex-column justify-content-between d-flex">
-                            <div>
-                              <h2 class="mb-4">Why Choose us</h2>
-                              <p class="mb-5">Experience expert fundraising guidance with 25 years of supporting charities. From strategic advice to bid writing and building a pipeline of funders, we help you secure the funding needed to make a lasting impact.</p>
-                            </div>
-                            <div class="align-self-start"><a class="glightbox btn btn-play d-inline-flex align-items-center gap-2" href="https://www.youtube.com/watch?v=DQx96G4yHd8" data-gallery="video"><i class="bi bi-play-fill"></i> Watch the Video</a></div>
-                          </div>
+
+
+        <!-- ======= Header =======-->
+        <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="navbar">
+            <div class="container d-flex align-items-center justify-content-between">
+
+
+                <!-- Start Logo-->
+                <a class="navbar-brand w-auto" href="index.html">
+                    <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder"
+                        style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+                </a>
+                <!-- End Logo-->
+
+                <!-- Start offcanvas-->
+                <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
+                    aria-labelledby="fbs__net-navbarsLabel">
+
+
+                    <div class="offcanvas-header">
+                        <div class="offcanvas-header-logo">
+                            <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
+                                <img class="logo dark img-fluid"
+                                    style="height:40px; width:auto; max-width:160px; border-radius:3px;"
+                                    src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder">
                         </div>
-                      </div>
+                        {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
                     </div>
-                    <div class="col-lg-7">
-                      <div class="row justify-content-end">
-                        <div class="col-lg-11">
-                          <div class="row">
-                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="0">
-                              <div class="icon text-center mb-4"><i class="bi bi-person-check fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Strategic Fundraising Support</h3>
-                              <p>Tailored strategies to develop your funding pipeline and achieve your goals.</p>
-                            </div>
-                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                              <div class="icon text-center mb-4"><i class="bi bi-graph-up fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Bid Writing Expertise</h3>
-                              <p>Professional grant and proposal writing to maximize your chances of success.</p>
-                            </div>
-                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                              <div class="icon text-center mb-4"><i class="bi bi-headset fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Charity Partnership</h3>
-                              <p>Collaborating with charities to ensure every project aligns with your vision and impact.</p>
-                            </div>
-                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                              <div class="icon text-center mb-4"><i class="bi bi-shield-lock fs-4"></i></div>
-                              <h3 class="fs-6 fw-bold mb-3">Trusted Guidance</h3>
-                              <p>Advice based on 25 years of experience, ensuring ethical, efficient, and successful fundraising.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+
+                    <div class="offcanvas-body align-items-lg-center">
+
+
+                        <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page"
+                                    href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a>
+                            </li>
+                        </ul>
+
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End Features-->
-        
-        <section class="section pricing__v2" id="pricing">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-5 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Develop Your Income</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Fundraising Support</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Expert guidance to grow your funding opportunities and increase your income streams effectively.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="300">
-                <div class="p-5 rounded-4 price-table h-100">
-                  <h3>What You Offer</h3>
-                   <ul class="list-unstyled">
-                   <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Support charities in becoming more sustainable.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Strategy writing and developing a pipeline of funders.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Advice on building better relationships with funders.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Expertise in diversifying income streams to ensure financial resources for growth.</span></li>
-                   </ul>
-                </div>
-              </div>
-              <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                <div class="p-5 rounded-4 price-table popular h-100">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h3 class="mb-3">How You Deliver It / Approach</h3>
-                      <p>I carefully assess your organisation’s financial situation and tailor strategies that suit your unique needs, creating a customised plan to maximise income and ensure long-term financial growth</p>
-                    </div>
-                    <div class="col-md-6 pricing-features">
-                      <h4 class="text-uppercase fw-bold mb-3">Features</h4>
-                      <ul class="list-unstyled d-flex flex-column gap-3">
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Analyse your unique financial situation and needs.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Create a customised income development plan tailored to your organisation.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Tailor roles and strategies to suit specific areas of trust fundraising.</span></li>
-                        <li class="d-flex gap-2 align-items-start mb-0"><span class="icon rounded-circle position-relative mt-1"><i class="bi bi-check"></i></span><span>Focus on empowering you to achieve financial goals and long-term stability.</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <!-- ======= How it works =======-->
-        <section class="section howitworks__v1" id="how-it-works">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-6 text-center mx-auto"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Increase Your Fund List</span>
-                <h2 data-aos="fade-up" data-aos-delay="100">Increase Your Pipeline of Funders</h2>
-                <p data-aos="fade-up" data-aos-delay="200">With focused research, I can build a stronger pipeline of prospective funders to support your project’s success.</p>
-              </div>
-            </div>
-            <div class="row g-md-5">
-              <div class="col-md-6 col-lg-3">
-                <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative" data-aos="fade-up" data-aos-delay="0">
-                  <div data-aos="fade-right" data-aos-delay="500"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">1</span>
-                  <div>
-                    <h3 class="fs-5 mb-4">Deep Dive: Alignment & Packaging</h3>
-                    <p>Before seeking funders, be clear on what you’re funding alignment starts with clarity.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
-                <div class="step-card reverse text-center h-100 d-flex flex-column justify-content-start position-relative">
-                  <div data-aos="fade-right" data-aos-delay="1100"><img class="arch-line reverse" src="{{ asset('images/arch-line-reverse.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">2</span>
-                  <h3 class="fs-5 mb-4">Multi-Layered Prospect Research & Discovery</h3>
-                  <p>Cast a wide net, then filter with your Funder Persona to reveal overlooked opportunities.</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="1200">
-                <div class="step-card text-center h-100 d-flex flex-column justify-content-start position-relative">
-                  <div data-aos="fade-right" data-aos-delay="1700"><img class="arch-line" src="{{ asset('images/arch-line.svg') }}" alt="image placeholder"></div><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">3</span>
-                  <h3 class="fs-5 mb-4">Qualification & Confidence Scoring</h3>
-                  <p>Focus on hot leads, not long shots, to build a realistic funding pipeline.</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="1800">
-                <div class="step-card last text-center h-100 d-flex flex-column justify-content-start position-relative"><span class="step-number rounded-circle text-center fw-bold mb-5 mx-auto">4</span>
-                  <div>
-                    <h3 class="fs-5 mb-4">Strategic Engagement & Pipeline Management</h3>
-                    <p>To systematically move funders through the pipeline from prospect to committed donor.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End How it works-->
-        
-        <!-- ======= Stats =======-->
-        <section class="stats__v3 section">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="d-flex flex-wrap content rounded-4" data-aos="fade-up" data-aos-delay="0">
-                  <div class="rounded-borders">
-                    <div class="rounded-border-1"></div>
-                    <div class="rounded-border-2"></div>
-                    <div class="rounded-border-3"></div>
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item">
-                      <h3 class="fs-1 fw-bold"><span class="purecounter" data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="2">0</span><span>K+</span></h3>
-                      <p class="mb-0">Customer Satisfaction</p>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item">
-                      <h3 class="fs-1 fw-bold"> <span class="purecounter" data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="2">0</span><span>%+</span></h3>
-                      <p class="mb-0">Revenue Increase</p>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item">
-                      <h3 class="fs-1 fw-bold"><span class="purecounter" data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2">0</span><span>x</span></h3>
-                      <p class="mb-0">Business Growth</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End Stats-->
-        
-        <!-- ======= Services =======-->
-        <section class="section services__v3" id="services">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-8 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Our Services</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">Expert solutions to grow your fundraising and achieve lasting impact.</h2>
-              </div>
-            </div>
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="M50.327 4H25.168a6.007 6.007 0 0 0-6 6v5.11h-8.375a3.154 3.154 0 0 0-3.12 3.18v5.47a1 1 0 0 0 .724.961 3.204 3.204 0 0 1 0 6.097 1 1 0 0 0-.724.962v5.49a3.154 3.154 0 0 0 3.12 3.18H34.5c-2.147 8.057 9.408 12.135 12.77 4.441a1 1 0 0 0-1.841-.779 4.778 4.778 0 1 1-4.403-6.636c1.039-.159 2.453 1.082 3.063-.225.449-1.37-1.383-1.598-2.336-1.734V31.8a1 1 0 0 0-.72-.96 3.21 3.21 0 0 1 0-6.11 1 1 0 0 0 .72-.96v-5.48a3.154 3.154 0 0 0-3.12-3.18H21.168V10a4.004 4.004 0 0 1 4-4h3.21l1.24 3.066a3.982 3.982 0 0 0 3.708 2.503h8.826a3.984 3.984 0 0 0 3.71-2.503L47.1 6h3.228a4.004 4.004 0 0 1 4 4v1.6a1 1 0 0 0 2 0V10a6.007 6.007 0 0 0-6-6ZM38.633 17.11a1.153 1.153 0 0 1 1.12 1.18v4.792a5.234 5.234 0 0 0 0 9.405V35.6a6.789 6.789 0 0 0-4.333 2.85H10.793a1.153 1.153 0 0 1-1.12-1.18v-4.8a5.232 5.232 0 0 0 0-9.401V18.29a1.153 1.153 0 0 1 1.12-1.18Zm5.375-8.793a1.994 1.994 0 0 1-1.856 1.252h-8.826a1.991 1.991 0 0 1-1.854-1.252l-.934-2.312H44.94Z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M55.327 14.6a1 1 0 0 0-1 1V54a4.004 4.004 0 0 1-4 4H25.168a4.004 4.004 0 0 1-4-4V43.45a1 1 0 0 0-2 0V54a6.007 6.007 0 0 0 6 6h25.16a6.007 6.007 0 0 0 6-6V15.6a1 1 0 0 0-1-1Z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M41.185 54.52a1 1 0 0 0 0-2h-6.891a1 1 0 0 0 0 2ZM24.713 28.383a.853.853 0 1 1-.835 1.028.998.998 0 0 0-1.184-.775c-1.765.61-.18 2.94 1.017 3.265-.271 1.919 2.27 1.926 2-.003a2.852 2.852 0 0 0-.998-5.515.851.851 0 1 1 .821-1.084 1 1 0 0 0 1.926-.54 2.857 2.857 0 0 0-1.749-1.893v-.518a1 1 0 0 0-2 0v.521a2.852 2.852 0 0 0 1.002 5.514Z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M24.713 36.43a9.092 9.092 0 0 0 9.082-9.082c-.499-12.047-17.666-12.045-18.163 0a9.092 9.092 0 0 0 9.08 9.082Zm0-16.163a7.09 7.09 0 0 1 7.082 7.081c-.371 9.388-13.793 9.387-14.163 0a7.09 7.09 0 0 1 7.08-7.081ZM46.413 37.53l-4.757 4.757-1.68-1.68a1 1 0 0 0-1.413 1.415l2.386 2.386a1 1 0 0 0 1.414 0l5.464-5.464a1 1 0 0 0-1.414-1.414Z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Fundraising Strategy Development</h3>
-                    <p class="mb-4">We design tailored strategies to strengthen your funding pipeline and secure long-term financial sustainability <p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="m57.936 58.647-4.47-11.871a9.542 9.542 0 0 0-5.914-5.693l-7.659-2.609-1.944-2.116v-2.62a13.043 13.043 0 0 0 4.739-5.175 14.256 14.256 0 0 0 3.237.14 2.909 2.909 0 0 0 2.905-2.906v-5.382a2.895 2.895 0 0 0-1.495-2.523 13.84 13.84 0 0 0-2.807-7.777 1 1 0 0 0-1.597 1.205 11.879 11.879 0 0 1 2.386 6.19c-.012-.01-2.017.036-1.987-.023-4.064-11.113-18.668-11.126-22.702.024h-1.875c.73-9.938 13.556-14.987 21.539-8.81a1 1 0 0 0 1.196-1.605c-9.394-7.24-24.311-1.02-24.754 10.758a2.895 2.895 0 0 0-1.566 2.561v5.382a2.909 2.909 0 0 0 2.905 2.906c.4-.042 2.932.115 3.213-.122a12.843 12.843 0 0 0 4.542 5.038v2.757l-1.825 2.184-7.553 2.521a9.547 9.547 0 0 0-5.917 5.695l-4.47 11.871a1.008 1.008 0 0 0 .935 1.352H49.97a1 1 0 0 0 0-2H36.123l-2.985-7.876 2.014-2.491 2.009 1.746a1.007 1.007 0 0 0 1.643-.594l1.322-8.118 6.785 2.312a7.549 7.549 0 0 1 4.682 4.504L55.555 58H53.97a1 1 0 0 0 0 2H57a1.007 1.007 0 0 0 .936-1.353zm-13.77-39.136h1.759a.906.906 0 0 1 .905.904v5.382a.906.906 0 0 1-.905.906h-1.759zm-24.334 7.192h-1.759a.906.906 0 0 1-.905-.906v-5.382a.906.906 0 0 1 .905-.904h1.76s.038 5.959 0 7.192zm12.146-15.6a10.16 10.16 0 0 1 9.15 6.288L38.85 18.43a4.677 4.677 0 0 1-4.986-.747 6.633 6.633 0 0 0-7.78-.736l-3.91 2.325c1.2-4.704 5.135-8.169 9.803-8.169zM21.832 23.168V21.8l5.273-3.133a4.632 4.632 0 0 1 5.433.51 6.72 6.72 0 0 0 7.15 1.07l2.098-.957a12.113 12.113 0 0 1 .38 2.98c-.464 14.245-18.826 15.065-20.334.9zM35.95 34.706v1.718l-3.968 5.464-4.153-5.473v-1.78a11.242 11.242 0 0 0 8.12.071zm-9.164 3.643 3.852 5.075-3.771 3.28-1.206-7.008zM8.444 58l3.96-10.516a7.551 7.551 0 0 1 4.681-4.505l6.724-2.245 1.387 8.06a1.007 1.007 0 0 0 1.641.585l2.01-1.746 2.013 2.491L27.875 58zm25.54 0h-3.97L32 52.763zm-1.985-9.65-1.642-2.03 1.642-1.428 1.642 1.427zm5.12-1.658-3.772-3.28 3.693-5.085 1.224 1.332z" fill="currentColor" opacity="1" data-original="currentColor"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Grant & Bid Writing</h3>
-                    <p class="mb-4">Professional proposal and grant writing services to maximise your chances of winning funding opportunities.</p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="M35.719 21.413a1 1 0 0 0-1.586 1.218 15.554 15.554 0 0 1 1.806 3.012h-6.1a19.93 19.93 0 0 0-3.417-8.42 15.637 15.637 0 0 1 5.012 2.652 1 1 0 0 0 1.245-1.565 17.676 17.676 0 1 0-11.002 31.51c14.511.067 22.936-16.94 14.042-28.407zm.966 6.23a15.507 15.507 0 0 1 .001 8.994h-6.533a35.942 35.942 0 0 0-.001-8.995zM29.84 38.635h6.102a15.688 15.688 0 0 1-9.534 8.447 19.91 19.91 0 0 0 3.432-8.447zm-1.402-6.491a34.461 34.461 0 0 1-.292 4.492h-12.94a34.731 34.731 0 0 1 .001-8.995h12.938a34.461 34.461 0 0 1 .293 4.503zm-6.812-15.67c2.533-.006 5.021 3.488 6.193 9.168H15.535c1.138-5.63 3.672-9.12 6.092-9.168zm-4.683.734a19.903 19.903 0 0 0-3.429 8.434H7.417a15.707 15.707 0 0 1 9.527-8.434zM6 32.149a15.682 15.682 0 0 1 .671-4.507h6.53a35.936 35.936 0 0 0 0 8.995H6.67A15.558 15.558 0 0 1 6 32.15zm1.413 6.487h6.1a19.912 19.912 0 0 0 3.43 8.446 15.69 15.69 0 0 1-9.53-8.446zm8.118 0h12.29c-2.589 12.171-9.703 12.166-12.29 0zM16.844 8.31H38.91a8.42 8.42 0 0 1 8.4 8.106l-2.018-2.018a1 1 0 0 0-1.414 1.414l3.74 3.74a1 1 0 0 0 1.414 0l3.74-3.74a1 1 0 0 0-1.413-1.414l-2.048 2.047A10.421 10.421 0 0 0 38.911 6.31H16.844a1 1 0 0 0 0 2zM50.105 44.448a1 1 0 0 0-1.413 0l-3.74 3.74a1 1 0 1 0 1.413 1.414l2.018-2.018a8.419 8.419 0 0 1-8.4 8.107H17.916a1 1 0 0 0 0 2h22.067a10.42 10.42 0 0 0 10.401-10.136l2.048 2.047a1 1 0 0 0 1.413-1.414zM58.589 27.13a1 1 0 0 0-1.694 1.062 7.174 7.174 0 1 1-2.549-2.453 1 1 0 1 0 .992-1.736 9.2 9.2 0 1 0-4.545 17.195c7.082.128 11.668-8.14 7.796-14.068z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M49.754 34.379a1.001 1.001 0 0 0-1.238-.682c-1.769.767.123 2.972 1.275 3.302a1 1 0 1 0 2-.024 3.075 3.075 0 0 0-1-5.975 1.078 1.078 0 1 1 1.053-1.306 1 1 0 0 0 1.187.77c1.894-.7-.034-3.134-1.24-3.463a1 1 0 1 0-2 .024 3.075 3.075 0 0 0 1 5.975 1.079 1.079 0 1 1-1.037 1.379z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Charity Partnerships</h3>
-                    <p class="mb-4">Building strong collaborations with charities to align projects with your mission and impact goals.</p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="M59 47.487h-1.81v-27.61a5.223 5.223 0 0 0-5-5.409h-3.71a1 1 0 0 0 0 2h3.71a3.228 3.228 0 0 1 3 3.41v27.609H26.03a1.013 1.013 0 0 0-.996 1.02 34.358 34.358 0 0 0 1.49 3.57 2 2 0 0 0 1.828 1.188h7.296a2 2 0 0 0 1.828-1.188l1.149-2.589L58 49.487v2.74a2.823 2.823 0 0 1-2.82 2.82H8.82A2.823 2.823 0 0 1 6 52.227v-2.74h16.03a1 1 0 0 0 0-2H8.81v-27.61a3.228 3.228 0 0 1 3-3.41h6.89c-3.535 9.154 3.658 19.594 13.63 19.48 11.076.08 18.127-12.336 12.587-21.706a14.54 14.54 0 0 0-25.162-.073 1.646 1.646 0 0 1-.163.299H11.81a5.223 5.223 0 0 0-5 5.41v27.61H5a1 1 0 0 0-1 1v3.74a4.825 4.825 0 0 0 4.82 4.82h46.36a4.825 4.825 0 0 0 4.82-4.82v-3.74a1 1 0 0 0-1-1zm-23.352 3.778h-7.296l-.788-1.775h8.872zm-4.332-17.37a12.517 12.517 0 0 1-9.29-5.372l2.072-1.196a10.137 10.137 0 0 0 7.218 4.188zm2 .001v-2.38a10.12 10.12 0 0 0 7.224-4.178l2.073 1.197a12.5 12.5 0 0 1-9.297 5.361zm11.521-12.471A12.435 12.435 0 0 1 43.61 26.8l-2.064-1.192a10.127 10.127 0 0 0 .008-8.344l2.064-1.192a12.412 12.412 0 0 1 1.22 5.353zM33.33 8.967a12.503 12.503 0 0 1 9.295 5.37l-2.073 1.196a10.124 10.124 0 0 0-7.222-4.187zm7.129 12.458a8.144 8.144 0 0 1-8.13 8.14c-10.794-.446-10.804-15.824 0-16.27a8.138 8.138 0 0 1 8.13 8.13zM31.329 8.966v2.38a10.138 10.138 0 0 0-7.226 4.177l-2.073-1.196a12.518 12.518 0 0 1 9.3-5.36zm-10.295 7.095 2.064 1.192a10.022 10.022 0 0 0-.003 8.343l-2.064 1.192a12.473 12.473 0 0 1 .003-10.727z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M32.322 22.446a1.276 1.276 0 1 1-1.225 1.632 1 1 0 0 0-1.921.556 3.29 3.29 0 0 0 2.146 2.202v.352a1 1 0 0 0 2 0v-.363a3.272 3.272 0 0 0-1-6.38A1.276 1.276 0 1 1 33.57 18.9a1 1 0 0 0 1.956-.418 3.287 3.287 0 0 0-2.204-2.423c.082-.687-.226-1.374-1-1.385-.78.016-1.08.697-1 1.392a3.272 3.272 0 0 0 1 6.38z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Income Diversification</h3>
-                    <p class="mb-4">Helping you explore and develop multiple income streams to reduce risk and increase financial stability.</p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="M38.972 31.507a7.01 7.01 0 0 0-4.32-12.487H23.604a3.001 3.001 0 0 0-2.998 2.998v19.988a3.001 3.001 0 0 0 2.998 2.998h12.8c7.723-.104 9.639-10.635 2.568-13.497zm-16.367-9.49a1 1 0 0 1 1-.999h11.047a4.997 4.997 0 1 1 0 9.994H22.605zm13.798 20.988H23.604a1 1 0 0 1-.999-1v-8.994h13.798a4.997 4.997 0 0 1 0 9.994z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M51.798 12.238a27.71 27.71 0 0 0-3.132-2.708 1 1 0 0 0-1.186 1.609 25.317 25.317 0 0 1 2.162 1.82l-2.117 2.117A22.896 22.896 0 0 0 33.002 9.05V6.057a25.425 25.425 0 0 1 11.2 3.02 1 1 0 0 0 .946-1.761C26.702-2.634 3.907 11.036 4.02 32.012c-.31 15.036 12.945 28.294 27.983 27.983 24.827-.03 37.332-30.174 19.795-47.757zm-.734 2.126a25.768 25.768 0 0 1 6.899 16.648h-3A22.896 22.896 0 0 0 48.94 16.49zm-38.123 0 2.118 2.117A22.815 22.815 0 0 0 9.05 31.012H6.043a25.768 25.768 0 0 1 6.898-16.648zM6.043 33.01h2.999a22.896 22.896 0 0 0 6.025 14.524L12.94 49.66A25.768 25.768 0 0 1 6.043 33.01zm24.96 24.96a25.768 25.768 0 0 1-16.648-6.898l2.125-2.125a22.896 22.896 0 0 0 14.523 6.025zm-19.988-25.96a20.892 20.892 0 0 1 11.64-18.784 1 1 0 0 0-.892-1.788 23.283 23.283 0 0 0-5.294 3.626l-2.114-2.114a25.768 25.768 0 0 1 16.648-6.9v3.01a22.7 22.7 0 0 0-5.356.865 1 1 0 0 0 .558 1.918c13.1-3.976 26.996 6.454 26.785 20.168-1.15 27.836-40.823 27.84-41.975 0zm21.987 25.96v-2.998a22.896 22.896 0 0 0 14.523-6.025l2.125 2.125a25.768 25.768 0 0 1-16.648 6.899zm18.062-8.311-2.125-2.125a22.896 22.896 0 0 0 6.024-14.524h3a25.768 25.768 0 0 1-6.9 16.649z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Donor & Funder Engagement</h3>
-                    <p class="mb-4">Guidance on cultivating stronger relationships with funders and donors for sustainable growth.</p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-                <div class="service-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between gap-5">
-                  <div><span class="icon mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                        <g>
-                          <path d="M49.5 4H24.34a6.007 6.007 0 0 0-6 6v5.29a1 1 0 0 0 2 0V10a4.005 4.005 0 0 1 4-4h3.218l1.237 3.066a3.984 3.984 0 0 0 3.71 2.503h8.826a3.984 3.984 0 0 0 3.71-2.503L46.277 6H49.5a4.004 4.004 0 0 1 4 4v44a4.004 4.004 0 0 1-4 4H24.34a4.005 4.005 0 0 1-4-4V39.42h11.8a6.774 6.774 0 0 0 12.998 2.159 1 1 0 0 0-1.842-.78 4.778 4.778 0 1 1-2.638-6.3 1 1 0 0 0 1.298-.56c.446-1.634-1.965-1.701-3.062-1.776a6.785 6.785 0 0 0-6.6 5.257H13.502a3.003 3.003 0 0 1-3-3v-7.932h27.4v2.672a1 1 0 0 0 2 0v-5.87a5.006 5.006 0 0 0-5-5H13.5a5.006 5.006 0 0 0-5 5c.007 1.424-.005 9.521 0 11.13a5.006 5.006 0 0 0 5 5h4.84V54a6.007 6.007 0 0 0 6 6H49.5a6.007 6.007 0 0 0 6-6V10a6.007 6.007 0 0 0-6-6zm-6.314 4.317a1.994 1.994 0 0 1-1.855 1.252h-8.827a1.992 1.992 0 0 1-1.854-1.252l-.934-2.312H44.12zM10.501 23.29a3.003 3.003 0 0 1 3-3h21.4a3.003 3.003 0 0 1 3 3v1.198H10.5z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                          <path d="M33.472 52.52a1 1 0 0 0 0 2h6.89a1 1 0 0 0 0-2zM37.844 37.294a1 1 0 0 0-1.414 1.415l2.387 2.387a1 1 0 0 0 1.414 0l5.464-5.465a1 1 0 0 0-1.414-1.414l-4.757 4.757zM13.29 33.143a1 1 0 0 0 0 2h2.45a1 1 0 0 0 0-2z" fill="currentColor" opacity="1" data-original="#000000"></path>
-                        </g>
-                      </svg></span>
-                    <h3 class="fs-5 mb-3">Ongoing Mentorship & Support</h3>
-                    <p class="mb-4">Continuous advice and hands-on support to help you adapt, grow, and achieve fundraising success</p>
-                  </div><a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"> </i></span><span>Read more</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Services-->
-        
-        <!-- ======= Blog =======-->
-        <section class="section blog__v1" id="blog">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-8 mx-auto text-center">
-                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Insights</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">From the Fundraising Desk</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Practical tips, real-world lessons, and strategies to help your charity grow sustainable income.</p>
-              </div>
-            </div>
+                <!-- End offcanvas-->
 
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-1-min.jpg') }}" alt="Building a strong funder pipeline"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Sep 18, 2025</span><span><i class="bi bi-clock"></i> 4 min read</span></div>
-                    <h3 class="fs-5 mb-1">Build a Strong Funder Pipeline</h3>
-                    <p class="mb-2">Turn scattered prospects into a focused pipeline with clear qualification and engagement steps.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
+                <div class="ms-auto w-auto">
 
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-3-min.jpg') }}" alt="Writing grants that win"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Sep 7, 2025</span><span><i class="bi bi-clock"></i> 5 min read</span></div>
-                    <h3 class="fs-5 mb-1">Grant Writing that Wins</h3>
-                    <p class="mb-2">What funders look for: clarity, outcomes, evidence, and why your project truly matters.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
 
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-4-min.jpg') }}" alt="Diversifying income streams"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Aug 29, 2025</span><span><i class="bi bi-clock"></i> 6 min read</span></div>
-                    <h3 class="fs-5 mb-1">Diversify Income, Reduce Risk</h3>
-                    <p class="mb-2">Practical ways to add new revenue streams without losing focus on your mission.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
+                    <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2"
+                            href="#contact">Contact</a>
 
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-10-min.jpg') }}" alt="Cultivating funder relationships"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Aug 12, 2025</span><span><i class="bi bi-clock"></i> 4 min read</span></div>
-                    <h3 class="fs-5 mb-1">Cultivating Funder Relationships</h3>
-                    <p class="mb-2">From first contact to stewardship—simple steps to build trust and long-term support.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-11-min.jpg') }}" alt="Impact stories that convert"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Jul 30, 2025</span><span><i class="bi bi-clock"></i> 5 min read</span></div>
-                    <h3 class="fs-5 mb-1">Impact Stories that Convert</h3>
-                    <p class="mb-2">Frame outcomes, evidence, and urgency to inspire action—from bids to newsletters.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                <article class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
-                  <div class="ratio ratio-4x3 "><img class="w-100 h-100 object-fit-cover" src="{{ asset('images/img-12-min.jpg') }}" alt="Trust fundraising readiness checklist"></div>
-                  <div class="p-4 d-flex flex-column gap-2">
-                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i class="bi bi-calendar2-event"></i> Jul 12, 2025</span><span><i class="bi bi-clock"></i> 6 min read</span></div>
-                    <h3 class="fs-5 mb-1">Trust Fundraising Readiness</h3>
-                    <p class="mb-2">A quick checklist to ensure your case for support is clear, evidenced, and funder-ready.</p>
-                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none" href="#"><span class="icons"><i class="icon-1 bi bi-arrow-right-short"></i><i class="icon-2 bi bi-arrow-right-short"></i></span><span>Read more</span></a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End Blog -->
-
-        <!-- ======= Testimonials =======-->
-        <section class="section testimonials__v2" id="testimonials">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-lg-5 mx-auto text-center">
-                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Testimonials</span>
-                <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
-                <p data-aos="fade-up" data-aos-delay="200">Real Stories of Impact and Hope from Our Community</p>
-              </div>
-            </div>
-
-            <div class="row g-4" data-masonry='{ "percentPosition": true }'>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;Thanks to this platform, I was able to support meaningful projects and see the tangible difference my contribution made in people's lives.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-2-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">John Davis</strong><span>Community Supporter</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;Being part of this fundraising platform made it easy to connect with causes I care about. The transparency and updates kept me motivated to keep supporting.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-1-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">Emily Smith</strong><span>Philanthropist</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;The projects featured here are inspiring. I love how the platform helps fund initiatives that create real change in local communities.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-5-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">Michael Rodriguez</strong><span>Volunteer</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;Supporting campaigns on this platform is simple and rewarding. I feel connected to the impact and see the results of my contributions.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-3-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">Sarah Lee</strong><span>Donor</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;The transparency and updates make me trust this platform. I’m proud to support campaigns that are making a real difference.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-7-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">James Kim</strong><span>Charity Enthusiast</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                <div class="testimonial rounded-4 p-4">
-                  <blockquote class="mb-3">
-                    &ldquo;This platform empowers me to be part of meaningful projects. I love seeing the impact of my support and being part of a bigger mission.&rdquo;
-                  </blockquote>
-                  <div class="testimonial-author d-flex gap-3 align-items-center">
-                    <div class="author-img"><img class="rounded-circle img-fluid" src="{{ asset('images/person-sq-8-min.jpg') }}" alt="Supporter image"></div>
-                    <div class="lh-base"><strong class="d-block">Laura Brown</strong><span>Active Donor</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Testimonials-->
-
-        
-        <!-- ======= FAQ =======-->
-        <section class="section faq__v2" id="faq">
-          <div class="container">
-            <div class="row mb-4">
-              <div class="col-md-6 col-lg-7 mx-auto text-center">
-                <span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">FAQ</span>
-                <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Frequently Asked Questions</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Answers to common questions about fundraising strategy, income development, and building sustainable funding.</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <div class="faq-content">
-                  <div class="accordion custom-accordion" id="accordionPanelsStayOpenExample">
-
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                          What kind of fundraising support do you provide?
+                        <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto"
+                            data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars"
+                            aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
+                            <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="21" x2="3" y1="6" y2="6"></line>
+                                <line x1="15" x2="3" y1="12" y2="12"></line>
+                                <line x1="17" x2="3" y1="18" y2="18"></line>
+                            </svg>
+                            <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
                         </button>
-                      </h2>
-                      <div class="accordion-collapse collapse show" id="panelsStayOpen-collapseOne">
-                        <div class="accordion-body">
-                          I provide tailored support for charities, including developing income strategies, writing fundraising strategies, creating a pipeline of funders, and offering advice on building stronger relationships with funders.
-                        </div>
-                      </div>
+
                     </div>
 
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                          How do you customise fundraising strategies for different organisations?
-                        </button>
-                      </h2>
-                      <div class="accordion-collapse collapse" id="panelsStayOpen-collapseTwo">
-                        <div class="accordion-body">
-                          Every organisation is unique. I analyse your financial situation, goals, and needs to create a tailored income development plan that is specific to your charity and the areas of fundraising most relevant to you.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                          Can you help diversify income streams for my charity?
-                        </button>
-                      </h2>
-                      <div class="accordion-collapse collapse" id="panelsStayOpen-collapseThree">
-                        <div class="accordion-body">
-                          Yes. I specialise in helping organisations diversify their income streams to ensure financial stability and growth, giving you the resources needed to thrive and continue your mission.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                          Do you provide ongoing support after the strategy is developed?
-                        </button>
-                      </h2>
-                      <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFour">
-                        <div class="accordion-body">
-                          Absolutely. I provide ongoing guidance and support to help you implement your fundraising strategies effectively and maximise your income potential over time.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-                          What makes your approach to fundraising different?
-                        </button>
-                      </h2>
-                      <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFive">
-                        <div class="accordion-body">
-                          My approach is highly personalised and strategy-driven. I focus on understanding your organisation, identifying the best opportunities for funding, and building sustainable, long-term relationships with funders to ensure lasting impact.
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <!-- End FAQ-->
-        </section>
-        <!-- End FAQ-->
+        </header>
+        <!-- End Header-->
 
-        
-        <!-- ======= Contact =======-->
-        <section class="section contact__v2" id="contact">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-6 col-lg-7 mx-auto text-center"><span class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">Contact</span>
-                <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Contact Us</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Utilize our tools to develop your concepts and bring your vision to life. Once complete, effortlessly share your creations.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="d-flex gap-5 flex-column">
-                  <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="0">
-                    <div class="icon d-block"><i class="bi bi-telephone"></i></div><span> <span class="d-block">Phone</span><strong>+(01 234 567 890)</strong></span>
-                  </div>
-                  <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon d-block"><i class="bi bi-send"></i></div><span> <span class="d-block">Email</span><strong>info@mydomain.com</strong></span>
-                  </div>
-                  <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon d-block"><i class="bi bi-geo-alt"></i></div><span> <span class="d-block">Address</span>
-                      <address class="fw-bold">123 Main Street Apt 4B Springfield, <br> IL 62701 United States</address></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-wrapper" data-aos="fade-up" data-aos-delay="300">
-                  <form id="contactForm">
-                    <div class="row gap-3 mb-3">
-                      <div class="col-md-12">
-                        <label class="mb-2" for="name">Name</label>
-                        <input class="form-control" id="name" type="text" name="name" required="">
-                      </div>
-                      <div class="col-md-12">
-                        <label class="mb-2" for="email">Email</label>
-                        <input class="form-control" id="email" type="email" name="email" required="">
-                      </div>
+        <!-- ======= Main =======-->
+        <main>
+
+
+            <!-- ======= Hero =======-->
+            <section class="hero__v6 section bg-light" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 mb-1 mb-lg-0">
+                            <div class="row">
+                                <div class="col-lg-11"><span class="hero-subtitle text-uppercase mb-3"
+                                        data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
+                                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Building
+                                        Sustainable Funding for the Future</h1>
+                                    <p class="hero-description mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+                                        I help charities and non-profits secure long-term funding through clear
+                                        strategy, strong cases for support, and practical trust fundraising advice. My
+                                        work is about helping you plan ahead, build lasting funder relationships, and
+                                        secure the resources you need to make a real difference.</p>
+                                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up"
+                                        data-aos-delay="300"><a class="btn" href="#">Contact Now</a><a
+                                            class="btn btn-white-outline" href="#">Learn More
+                                            <svg class="lucide lucide-arrow-up-right"
+                                                xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M7 7h10v10"></path>
+                                                <path d="M7 17 17 7"></path>
+                                            </svg></a></div>
+                                    <div class="logos mb-4" data-aos="fade-up" data-aos-delay="400"><span
+                                            class="logos-title text-uppercase mb-4 d-block">Trusted by major companies
+                                            worldwide</span>
+                                        <div class="logos-images d-flex gap-4 align-items-center"><img
+                                                class="img-fluid js-img-to-inline-svg"
+                                                src="{{ asset('images/logo/actual-size/logo-air-bnb__black.svg') }}"
+                                                alt="Company 1" style="width: 110px;"><img
+                                                class="img-fluid js-img-to-inline-svg"
+                                                src="{{ asset('images/logo/actual-size/logo-ibm__black.svg') }}"
+                                                alt="Company 2" style="width: 80px;"><img
+                                                class="img-fluid js-img-to-inline-svg"
+                                                src="{{ asset('images/logo/actual-size/logo-google__black.svg') }}"
+                                                alt="Company 3" style="width: 110px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-img"><img class="img-card img-fluid animate-bounce"
+                                    src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down"
+                                    data-aos-delay="600"><img class="img-main img-fluid rounded-4"
+                                    src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in"
+                                    data-aos-delay="500"></div>
+                        </div>
                     </div>
-                    <div class="row gap-3 mb-3">
-                      <div class="col-md-12">
-                        <label class="mb-2" for="subject">Subject</label>
-                        <input class="form-control" id="subject" type="text" name="subject">
-                      </div>
-                    </div>
-                    <div class="row gap-3 gap-md-0 mb-3">
-                      <div class="col-md-12">
-                        <label class="mb-2" for="message">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required=""></textarea>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary fw-semibold" type="submit">Send Message</button>
-                  </form>
-                  <div class="mt-3 d-none alert alert-success" id="successMessage">Message sent successfully!</div>
-                  <div class="mt-3 d-none alert alert-danger" id="errorMessage">Message sending failed. Please try again later.</div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- End Contact-->
-        
-        <!-- ======= Footer =======-->
-        <footer class="footer pt-5 pb-5">
-          <div class="container">
-            <div class="row mb-5 pb-4">
-              <div class="col-md-7">
-                <h2 class="fs-5">Join our newsletter</h2>
-                <p>Stay updated with our latest templates and offers—join our newsletter today!</p>
-              </div>
-              <div class="col-md-5">
-                <form class="d-flex gap-2">
-                  <input class="form-control" type="email" placeholder="Email your email" required="">
-                  <button class="btn btn-primary fs-6" type="submit">Subscribe</button>
-                </form>
-              </div>
-            </div>
-            <div class="row justify-content-between mb-5 g-xl-5">
-              <div class="col-md-4 mb-5 mb-lg-0">
-                <h3 class="mb-3">About</h3>
-                <p class="mb-4">Utilize our tools to develop your concepts and bring your vision to life. Once complete, effortlessly share your creations.</p>
-              </div>
-              <div class="col-md-7">
-                <div class="row g-2">
-                  <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="mb-3">Company</h3>
-                    <ul class="list-unstyled">
-                      <li><a href="page-about.html">Leadership</a></li>
-                      <li><a href="page-careers.html">Careers <span class="badge ms-1">we're hiring</span></a></li>
-                      <li><a href="page-case-studies.html">Case Studies</a></li>
-                      <li><a href="page-terms-conditions.html">Terms &amp; Conditions</a></li>
-                      <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-                      <li><a href="page-404.html">404 page</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="mb-3">Accounts</h3>
-                    <ul class="list-unstyled">
-                      <li><a href="page-signup.html">Register</a></li>
-                      <li><a href="page-signin.html">Sign in</a></li>
-                      <li><a href="page-forgot-password.html">Fogot Password</a></li>
-                      <li><a href="page-coming-soon.html">Coming soon</a></li>
-                      <li><a href="page-portfolio-masonry.html">Portfolio Masonry</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 quick-contact">
-                    <h3 class="mb-3">Contact</h3>
-                    <p class="d-flex mb-3"><i class="bi bi-geo-alt-fill me-3"></i><span>123 Main Street Apt 4B Springfield, <br> IL 62701 United States</span></p><a class="d-flex mb-3" href="mailto:info@mydomain.com"><i class="bi bi-envelope-fill me-3"></i><span>info@mydomain.com</span></a><a class="d-flex mb-3" href="tel://+123456789900"><i class="bi bi-telephone-fill me-3"></i><span>+1 (234) 5678 9900</span></a><a class="d-flex mb-3" href="https://freebootstrap.net"><i class="bi bi-globe me-3"></i><span>FreeBootstrap.net</span></a>
-                  </div>
+                <!-- End Hero-->
+            </section>
+            <!-- End Hero-->
+
+            <!-- ======= Work  =======-->
+            <section class="about__v4 section bg-light" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 order-md-2">
+                            <div class="row justify-content-end">
+                                <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span
+                                        class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">My
+                                        Approach</span>
+                                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">How I Work / My
+                                        Approach</h2>
+                                    <div data-aos="fade-up" data-aos-delay="200">
+                                        <p>Every organisation is different, so I start by understanding where you are
+                                            now, your funding mix, your challenges, and your goals for the future. From
+                                            there, I work with you to build a clear and realistic plan to grow your
+                                            income from trusts and foundations.</p>
+                                    </div>
+                                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">My
+                                        approach focuses on:</h4>
+                                    <ul class="list-unstyled" data-aos="fade-up" data-aos-delay="400">
+                                        <li class="d-flex gap-3 mb-3">
+                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                                    class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Reviewing your current funding and identifying
+                                                opportunities for growth</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3">
+                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                                    class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Creating a simple, practical strategy that supports
+                                                multi-year funding and long-term sustainability</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3">
+                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                                    class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Helping you build a manageable pipeline of potential
+                                                funders</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3">
+                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                                    class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Supporting you to write clear, convincing cases for
+                                                support that funders connect with</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3">
+                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                                    class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Strengthening your trust fundraising skills and good
+                                                practice for the future</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
+                                    src="{{ asset('images/about-us.jpg') }}" alt="image placeholder"
+                                    data-aos="fade-up" data-aos-delay="0">
+                                <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up"
+                                    data-aos-delay="100">
+                                    <div class="mission-icon text-center rounded-circle"><i
+                                            class="bi bi-lightbulb fs-4"></i></div>
+                                    <div>
+                                        <h3 class="text-uppercase fw-bold">Why Expertise Demands More Than Emotion</h3>
+                                        <p class="fs-5 mb-0">Emotional learning may be quick, but what we consider as
+                                            “expertise” usually takes a long time to develop.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="row credits pt-3">
-              <div class="col-12 text-center">
-              <script>document.write(new Date().getFullYear());</script> John Field Fundraising Ltd: Company Number (England and Wales): 13040151
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!-- End Footer-->
-        
-      </main>
+            </section>
+            <!-- Work -->
+
+            <!-- ======= My Process =======-->
+            <section class="section process__v1 bg-light" id="my-process">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md-8 mx-auto text-center">
+                            <h2 class="mb-2" data-aos="fade-up" data-aos-delay="100">My Process</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">This is how I usually work with
+                                clients, in a way that is structured, supportive, and focused on real results.</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Step 1 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span
+                                        class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">1</span>
+                                    <h3 class="fs-5 fw-bold mb-0">Understanding and Alignment</h3>
+                                </div>
+                                <p class="mb-0 text-muted">We start by getting clear on what you are funding and why it
+                                    matters. I help you align your projects, outcomes, and impact so your priorities are
+                                    easy to explain to funders.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span
+                                        class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">2</span>
+                                    <h3 class="fs-5 fw-bold mb-0">Research and Funder Mapping</h3>
+                                </div>
+                                <p class="mb-0 text-muted">Next, we look at who's out there. I help you build a strong,
+                                    realistic pipeline of trusts and foundations that genuinely fit your work, not just
+                                    a long list of names.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span
+                                        class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">3</span>
+                                    <h3 class="fs-5 fw-bold mb-0">Case for Support Development</h3>
+                                </div>
+                                <p class="mb-0 text-muted">Together, we shape your story into a clear and honest case
+                                    for support that highlights your impact, evidence, and the difference funders can
+                                    make by supporting you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span
+                                        class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">4</span>
+                                    <h3 class="fs-5 fw-bold mb-0">Bid Writing and Submission</h3>
+                                </div>
+                                <p class="mb-0 text-muted">I then help you write, review, or refine your funding bids
+                                    so your proposals are persuasive and reflect your organisation's voice and values.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
+                                <div class="d-flex align-items-center mb-4">
+                                    <span
+                                        class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                        style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">5</span>
+                                    <h3 class="fs-5 fw-bold mb-0">Relationship Building</h3>
+                                </div>
+                                <p class="mb-0 text-muted">Finally, I help you plan how to keep funders engaged through
+                                    good communication and reporting that builds lasting trust.</p>
+                            </div>
+                        </div>
+
+                        <!-- Visual Element -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                            <div
+                                class="p-4 rounded-4 h-100 bg-primary text-white d-flex flex-column justify-content-center">
+                                <div class="text-center">
+                                    <i class="bi bi-arrow-repeat fs-1 mb-3 d-block opacity-75"></i>
+                                    <h4 class="fw-bold mb-3">Continuous Support</h4>
+                                    <p class="mb-0">Every step is collaborative, flexible, and designed to build your
+                                        confidence and capacity for long-term success.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End My Process -->
+
+            <!-- ======= Services =======-->
+            <section class="section services__v3 bg-light position-relative overflow-hidden" id="services">
+                <!-- Decorative Background Elements -->
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0; opacity: 0.05;">
+                    <div class="position-absolute"
+                        style="top: 10%; left: 5%; width: 300px; height: 300px; background: radial-gradient(circle, var(--bs-primary) 0%, transparent 70%);">
+                    </div>
+                    <div class="position-absolute"
+                        style="bottom: 10%; right: 5%; width: 400px; height: 400px; background: radial-gradient(circle, var(--bs-primary) 0%, transparent 70%);">
+                    </div>
+                </div>
+
+                <div class="container position-relative px-4" style="z-index: 1;">
+                    <div class="row mb-5 pb-4">
+                        <div class="col-md-10 col-lg-8 mx-auto text-center">
+                            <h2 class="mb-2 fw-bold" data-aos="fade-up" data-aos-delay="100"
+                                style="line-height: 1.3;">
+                                Services
+                            </h2>
+                            <div data-aos="fade-up" data-aos-delay="100">
+                                <p>
+                                    Practical, strategic support to strengthen your trust fundraising and secure
+                                    long-term
+                                    income.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Items -->
+                    <div class="row g-5 mb-4">
+                        <!-- Service 1 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <!-- Number Badge -->
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            01
+                                        </div>
+                                        <!-- Icon -->
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-clipboard-data"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Fundraising Strategy
+                                        Development</h3>
+                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
+                                        Developing clear, realistic fundraising strategies that support multi-year
+                                        funding and long-term sustainability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            02
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-search"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Trust and Foundation
+                                        Research</h3>
+                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
+                                        Identifying the right funders for your work and building a strong, focused
+                                        prospect pipeline.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            03
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-pen"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Case for Support
+                                        Writing</h3>
+                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
+                                        Helping you explain your story and impact in a way that funders connect with and
+                                        want to invest in.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            04
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-file-earmark-text"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Grant and Bid Writing
+                                    </h3>
+                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
+                                        Support with writing and refining high-quality funding bids, including
+                                        multi-year and strategic applications.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            05
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-people"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Funder Relationships
+                                        and Stewardship</h3>
+                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
+                                        Guidance on maintaining good funder relationships, reporting well, and building
+                                        ongoing support.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 6 -->
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
+                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
+                                <div class="flex-shrink-0">
+                                    <div class="position-relative">
+                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
+                                            06
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
+                                            <i class="bi bi-lightbulb"
+                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 pt-2">
+                                    <h3 class="fs-4 fw-bold" style="color: var(--bs-dark); margin-bottom: 1.29rem;">
+                                        Mentoring and Ongoing
+                                        Support</h3>
+                                    <p class="text-muted mb-4 lh-lg" style="font-size: 0.95rem;">
+                                        Practical, one-to-one help to strengthen your fundraising skills and confidence
+                                        over time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Services-->
+
+            <!-- ======= Blog =======-->
+            <section class="section blog__v1" id="blog">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md-8 mx-auto text-center">
+                            <span class="subtitle text-uppercase mb-3" data-aos="fade-up"
+                                data-aos-delay="0">Insights</span>
+                            <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">From the Fundraising Desk</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">Practical tips, real-world lessons, and
+                                strategies to help your charity grow sustainable income.</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-1-min.jpg') }}"
+                                        alt="Building a strong funder pipeline">
+                                </div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Sep 18, 2025</span><span><i
+                                                class="bi bi-clock"></i> 4 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Build a Strong Funder Pipeline</h3>
+                                    <p class="mb-2">Turn scattered prospects into a focused pipeline with clear
+                                        qualification and engagement steps.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-3-min.jpg') }}" alt="Writing grants that win">
+                                </div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Sep 7, 2025</span><span><i
+                                                class="bi bi-clock"></i> 5 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Grant Writing that Wins</h3>
+                                    <p class="mb-2">What funders look for: clarity, outcomes, evidence, and why your
+                                        project truly matters.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-4-min.jpg') }}" alt="Diversifying income streams">
+                                </div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Aug 29, 2025</span><span><i
+                                                class="bi bi-clock"></i> 6 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Diversify Income, Reduce Risk</h3>
+                                    <p class="mb-2">Practical ways to add new revenue streams without losing focus on
+                                        your mission.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-10-min.jpg') }}"
+                                        alt="Cultivating funder relationships">
+                                </div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Aug 12, 2025</span><span><i
+                                                class="bi bi-clock"></i> 4 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Cultivating Funder Relationships</h3>
+                                    <p class="mb-2">From first contact to stewardship—simple steps to build trust and
+                                        long-term support.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3"><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-11-min.jpg') }}" alt="Impact stories that convert">
+                                </div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Jul 30, 2025</span><span><i
+                                                class="bi bi-clock"></i> 5 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Impact Stories that Convert</h3>
+                                    <p class="mb-2">Frame outcomes, evidence, and urgency to inspire action—from bids
+                                        to newsletters.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                            <article
+                                class="h-100 d-flex flex-column rounded-4 overflow-hidden border-0 shadow-sm bg-secondary-soft">
+                                <div class="ratio ratio-4x3 "><img class="w-100 h-100 object-fit-cover"
+                                        src="{{ asset('images/img-12-min.jpg') }}"
+                                        alt="Trust fundraising readiness checklist"></div>
+                                <div class="p-4 d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center gap-3 small text-muted"><span><i
+                                                class="bi bi-calendar2-event"></i> Jul 12, 2025</span><span><i
+                                                class="bi bi-clock"></i> 6 min read</span></div>
+                                    <h3 class="fs-5 mb-1">Trust Fundraising Readiness</h3>
+                                    <p class="mb-2">A quick checklist to ensure your case for support is clear,
+                                        evidenced, and funder-ready.</p>
+                                    <a class="special-link d-inline-flex gap-2 align-items-center text-decoration-none"
+                                        href="#"><span class="icons"><i
+                                                class="icon-1 bi bi-arrow-right-short"></i><i
+                                                class="icon-2 bi bi-arrow-right-short"></i></span><span>Read
+                                            more</span></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Blog -->
+
+            <!-- ======= Testimonials =======-->
+            <section class="section testimonials__v2" id="testimonials">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-lg-5 mx-auto text-center">
+                            <span class="subtitle text-uppercase mb-3" data-aos="fade-up"
+                                data-aos-delay="0">Testimonials</span>
+                            <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">Real Stories of Impact and Hope from Our
+                                Community</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4" data-masonry='{ "percentPosition": true }'>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;Thanks to this platform, I was able to support meaningful projects and see
+                                    the tangible difference my contribution made in people's lives.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-2-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">John Davis</strong><span>Community
+                                            Supporter</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;Being part of this fundraising platform made it easy to connect with causes I
+                                    care about. The transparency and updates kept me motivated to keep
+                                    supporting.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-1-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">Emily
+                                            Smith</strong><span>Philanthropist</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;The projects featured here are inspiring. I love how the platform helps fund
+                                    initiatives that create real change in local communities.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-5-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">Michael
+                                            Rodriguez</strong><span>Volunteer</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;Supporting campaigns on this platform is simple and rewarding. I feel
+                                    connected to the impact and see the results of my contributions.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-3-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">Sarah Lee</strong><span>Donor</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;The transparency and updates make me trust this platform. I’m proud to
+                                    support campaigns that are making a real difference.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-7-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">James Kim</strong><span>Charity
+                                            Enthusiast</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                            <div class="testimonial rounded-4 p-4">
+                                <blockquote class="mb-3">
+                                    &ldquo;This platform empowers me to be part of meaningful projects. I love seeing
+                                    the impact of my support and being part of a bigger mission.&rdquo;
+                                </blockquote>
+                                <div class="testimonial-author d-flex gap-3 align-items-center">
+                                    <div class="author-img"><img class="rounded-circle img-fluid"
+                                            src="{{ asset('images/person-sq-8-min.jpg') }}" alt="Supporter image">
+                                    </div>
+                                    <div class="lh-base"><strong class="d-block">Laura Brown</strong><span>Active
+                                            Donor</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials-->
+
+
+            <!-- ======= FAQ =======-->
+            <section class="section faq__v2" id="faq">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-md-6 col-lg-7 mx-auto text-center">
+                            <span class="subtitle text-uppercase mb-3" data-aos="fade-up"
+                                data-aos-delay="0">FAQ</span>
+                            <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Frequently Asked
+                                Questions</h2>
+                            <p data-aos="fade-up" data-aos-delay="100">Answers to common questions about fundraising
+                                strategy, income development, and building sustainable funding.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
+                            <div class="faq-content">
+                                <div class="accordion custom-accordion" id="accordionPanelsStayOpenExample">
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapseOne">
+                                                What kind of fundraising support do you provide?
+                                            </button>
+                                        </h2>
+                                        <div class="accordion-collapse collapse show" id="panelsStayOpen-collapseOne">
+                                            <div class="accordion-body">
+                                                I provide tailored support for charities, including developing income
+                                                strategies, writing fundraising strategies, creating a pipeline of
+                                                funders, and offering advice on building stronger relationships with
+                                                funders.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                How do you customise fundraising strategies for different organisations?
+                                            </button>
+                                        </h2>
+                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseTwo">
+                                            <div class="accordion-body">
+                                                Every organisation is unique. I analyse your financial situation, goals,
+                                                and needs to create a tailored income development plan that is specific
+                                                to your charity and the areas of fundraising most relevant to you.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseThree">
+                                                Can you help diversify income streams for my charity?
+                                            </button>
+                                        </h2>
+                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseThree">
+                                            <div class="accordion-body">
+                                                Yes. I specialise in helping organisations diversify their income
+                                                streams to ensure financial stability and growth, giving you the
+                                                resources needed to thrive and continue your mission.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseFour">
+                                                Do you provide ongoing support after the strategy is developed?
+                                            </button>
+                                        </h2>
+                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFour">
+                                            <div class="accordion-body">
+                                                Absolutely. I provide ongoing guidance and support to help you implement
+                                                your fundraising strategies effectively and maximise your income
+                                                potential over time.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapseFive">
+                                                What makes your approach to fundraising different?
+                                            </button>
+                                        </h2>
+                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFive">
+                                            <div class="accordion-body">
+                                                My approach is highly personalised and strategy-driven. I focus on
+                                                understanding your organisation, identifying the best opportunities for
+                                                funding, and building sustainable, long-term relationships with funders
+                                                to ensure lasting impact.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End FAQ-->
+            </section>
+            <!-- End FAQ-->
+
+
+            <!-- ======= Contact =======-->
+            <section class="section contact__v2" id="contact">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md-6 col-lg-7 mx-auto text-center"><span class="subtitle text-uppercase mb-3"
+                                data-aos="fade-up" data-aos-delay="0">Contact</span>
+                            <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Contact Us</h2>
+                            <p data-aos="fade-up" data-aos-delay="100">Utilize our tools to develop your concepts and
+                                bring your vision to life. Once complete, effortlessly share your creations.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex gap-5 flex-column">
+                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="0">
+                                    <div class="icon d-block"><i class="bi bi-telephone"></i></div><span> <span
+                                            class="d-block">Phone</span><strong>+(01 234 567 890)</strong></span>
+                                </div>
+                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="icon d-block"><i class="bi bi-send"></i></div><span> <span
+                                            class="d-block">Email</span><strong>info@mydomain.com</strong></span>
+                                </div>
+                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="icon d-block"><i class="bi bi-geo-alt"></i></div><span> <span
+                                            class="d-block">Address</span>
+                                        <address class="fw-bold">123 Main Street Apt 4B Springfield, <br> IL 62701
+                                            United States</address>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="300">
+                                <form id="contactForm">
+                                    <div class="row gap-3 mb-3">
+                                        <div class="col-md-12">
+                                            <label class="mb-2" for="name">Name</label>
+                                            <input class="form-control" id="name" type="text" name="name"
+                                                required="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="mb-2" for="email">Email</label>
+                                            <input class="form-control" id="email" type="email" name="email"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="row gap-3 mb-3">
+                                        <div class="col-md-12">
+                                            <label class="mb-2" for="subject">Subject</label>
+                                            <input class="form-control" id="subject" type="text"
+                                                name="subject">
+                                        </div>
+                                    </div>
+                                    <div class="row gap-3 gap-md-0 mb-3">
+                                        <div class="col-md-12">
+                                            <label class="mb-2" for="message">Message</label>
+                                            <textarea class="form-control" id="message" name="message" rows="5" required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary fw-semibold" type="submit">Send Message</button>
+                                </form>
+                                <div class="mt-3 d-none alert alert-success" id="successMessage">Message sent
+                                    successfully!</div>
+                                <div class="mt-3 d-none alert alert-danger" id="errorMessage">Message sending failed.
+                                    Please try again later.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Contact-->
+
+            <!-- ======= Footer =======-->
+            <footer class="footer pt-5 pb-5">
+                <div class="container">
+                    <div class="row mb-5 pb-4">
+                        <div class="col-md-7">
+                            <h2 class="fs-5">Join our newsletter</h2>
+                            <p>Stay updated with our latest templates and offers—join our newsletter today!</p>
+                        </div>
+                        <div class="col-md-5">
+                            <form class="d-flex gap-2">
+                                <input class="form-control" type="email" placeholder="Email your email"
+                                    required="">
+                                <button class="btn btn-primary fs-6" type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between mb-5 g-xl-5">
+                        <div class="col-md-4 mb-5 mb-lg-0">
+                            <h3 class="mb-3">About</h3>
+                            <p class="mb-4">Utilize our tools to develop your concepts and bring your vision to life.
+                                Once complete, effortlessly share your creations.</p>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row g-2">
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                                    <h3 class="mb-3">Company</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="page-about.html">Leadership</a></li>
+                                        <li><a href="page-careers.html">Careers <span class="badge ms-1">we're
+                                                    hiring</span></a></li>
+                                        <li><a href="page-case-studies.html">Case Studies</a></li>
+                                        <li><a href="page-terms-conditions.html">Terms &amp; Conditions</a></li>
+                                        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+                                        <li><a href="page-404.html">404 page</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                                    <h3 class="mb-3">Accounts</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="page-signup.html">Register</a></li>
+                                        <li><a href="page-signin.html">Sign in</a></li>
+                                        <li><a href="page-forgot-password.html">Fogot Password</a></li>
+                                        <li><a href="page-coming-soon.html">Coming soon</a></li>
+                                        <li><a href="page-portfolio-masonry.html">Portfolio Masonry</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 quick-contact">
+                                    <h3 class="mb-3">Contact</h3>
+                                    <p class="d-flex mb-3"><i class="bi bi-geo-alt-fill me-3"></i><span>123 Main
+                                            Street Apt 4B Springfield, <br> IL 62701 United States</span></p><a
+                                        class="d-flex mb-3" href="mailto:info@mydomain.com"><i
+                                            class="bi bi-envelope-fill me-3"></i><span>info@mydomain.com</span></a><a
+                                        class="d-flex mb-3" href="tel://+123456789900"><i
+                                            class="bi bi-telephone-fill me-3"></i><span>+1 (234) 5678 9900</span></a><a
+                                        class="d-flex mb-3" href="https://freebootstrap.net"><i
+                                            class="bi bi-globe me-3"></i><span>FreeBootstrap.net</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row credits pt-3">
+                        <div class="col-12 text-center">
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> John Field Fundraising Ltd: Company Number (England and Wales):
+                            13040151
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer-->
+
+        </main>
     </div>
-    
+
     <!-- ======= Back to Top =======-->
     <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
     <!-- End Back to top-->
-    
+
     <!-- ======= Javascripts =======-->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendors/gsap/gsap.min.js') }}"></script>
@@ -865,5 +1119,6 @@
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/send_email.js') }}"></script>
     <!-- End JavaScripts-->
-  </body>
+</body>
+
 </html>
