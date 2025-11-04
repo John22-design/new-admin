@@ -129,17 +129,21 @@
                         <div class="col-lg-6 mb-1 mb-lg-0">
                             <div class="row">
                                 <div class="col-lg-11"><span class="hero-subtitle text-uppercase mb-3"
-                                        data-aos="fade-up" data-aos-delay="0">Together, We Create Change</span>
-                                    <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">Building
+                                        data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">Together, We
+                                        Create Change</span>
+                                    <h1 class="hero-title mb-3" data-aos="fade-right" data-aos-delay="100"
+                                        data-aos-duration="1000">Building
                                         Sustainable Funding for the Future</h1>
-                                    <p class="hero-description mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+                                    <p class="hero-description mb-4 mb-lg-4" data-aos="fade-right"
+                                        data-aos-delay="200" data-aos-duration="1000">
                                         I help charities and non-profits secure long-term funding through clear
                                         strategy, strong cases for support, and practical trust fundraising advice. My
                                         work is about helping you plan ahead, build lasting funder relationships, and
                                         secure the resources you need to make a real difference.</p>
-                                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-up"
-                                        data-aos-delay="300"><a class="btn" href="#">Contact Now</a><a
-                                            class="btn btn-white-outline" href="#">Learn More
+                                    <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-right"
+                                        data-aos-delay="300" data-aos-duration="1000"><a class="btn"
+                                            href="#">Contact Now</a><a class="btn btn-white-outline"
+                                            href="#">Learn More
                                             <svg class="lucide lucide-arrow-up-right"
                                                 xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 viewbox="0 0 24 24" fill="none" stroke="currentColor"
@@ -147,7 +151,8 @@
                                                 <path d="M7 7h10v10"></path>
                                                 <path d="M7 17 17 7"></path>
                                             </svg></a></div>
-                                    <div class="logos mb-4" data-aos="fade-up" data-aos-delay="400"><span
+                                    <div class="logos mb-4" data-aos="zoom-in" data-aos-delay="400"
+                                        data-aos-duration="1000"><span
                                             class="logos-title text-uppercase mb-4 d-block">Trusted by major companies
                                             worldwide</span>
                                         <div class="logos-images d-flex gap-4 align-items-center"><img
@@ -166,10 +171,11 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="hero-img"><img class="img-card img-fluid animate-bounce"
-                                    src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-down"
-                                    data-aos-delay="600"><img class="img-main img-fluid rounded-4"
-                                    src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="fade-in"
-                                    data-aos-delay="500"></div>
+                                    src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-left"
+                                    data-aos-delay="400" data-aos-duration="1000"><img
+                                    class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}"
+                                    alt="Hero Image" data-aos="zoom-in" data-aos-delay="200"
+                                    data-aos-duration="1200"></div>
                         </div>
                     </div>
                 </div>
@@ -184,49 +190,53 @@
                         <div class="col-md-6 order-md-2">
                             <div class="row justify-content-end">
                                 <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span
-                                        class="subtitle text-uppercase mb-3" data-aos="fade-up" data-aos-delay="0">My
+                                        class="subtitle text-uppercase mb-3" data-aos="fade-left" data-aos-delay="0"
+                                        data-aos-duration="800">My
                                         Approach</span>
-                                    <h2 class="mb-4" data-aos="fade-up" data-aos-delay="100">How I Work / My
+                                    <h2 class="mb-4" data-aos="fade-left" data-aos-delay="100"
+                                        data-aos-duration="1000">How I Work / My
                                         Approach</h2>
-                                    <div data-aos="fade-up" data-aos-delay="200">
+                                    <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                                         <p>Every organisation is different, so I start by understanding where you are
                                             now, your funding mix, your challenges, and your goals for the future. From
                                             there, I work with you to build a clear and realistic plan to grow your
                                             income from trusts and foundations.</p>
                                     </div>
-                                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-up" data-aos-delay="300">My
+                                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-left" data-aos-delay="300"
+                                        data-aos-duration="1000">My
                                         approach focuses on:</h4>
-                                    <ul class="list-unstyled" data-aos="fade-up" data-aos-delay="400">
+                                    <ul class="list-unstyled text-start" data-aos="fade-left" data-aos-delay="400"
+                                        data-aos-duration="1000">
                                         <li class="d-flex gap-3 mb-3">
-                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                            <span class="icon rounded-circle flex-shrink-0"><i
                                                     class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
                                             <span class="text">Reviewing your current funding and identifying
                                                 opportunities for growth</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3">
-                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                            <span class="icon rounded-circle flex-shrink-0"><i
                                                     class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
                                             <span class="text">Creating a simple, practical strategy that supports
                                                 multi-year funding and long-term sustainability</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3">
-                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                            <span class="icon rounded-circle flex-shrink-0"><i
                                                     class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
                                             <span class="text">Helping you build a manageable pipeline of potential
                                                 funders</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3">
-                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                            <span class="icon rounded-circle flex-shrink-0"><i
                                                     class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
                                             <span class="text">Supporting you to write clear, convincing cases for
                                                 support that funders connect with</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3">
-                                            <span class="icon rounded-circle text-center flex-shrink-0"><i
+                                            <span class="icon rounded-circle flex-shrink-0"><i
                                                     class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
                                             <span class="text">Strengthening your trust fundraising skills and good
@@ -239,9 +249,9 @@
                         <div class="col-md-6">
                             <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
                                     src="{{ asset('images/about-us.jpg') }}" alt="image placeholder"
-                                    data-aos="fade-up" data-aos-delay="0">
-                                <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="fade-up"
-                                    data-aos-delay="100">
+                                    data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000">
+                                <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="flip-left"
+                                    data-aos-delay="300" data-aos-duration="1000">
                                     <div class="mission-icon text-center rounded-circle"><i
                                             class="bi bi-lightbulb fs-4"></i></div>
                                     <div>
@@ -262,15 +272,18 @@
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-8 mx-auto text-center">
-                            <h2 class="mb-2" data-aos="fade-up" data-aos-delay="100">My Process</h2>
-                            <p data-aos="fade-up" data-aos-delay="200">This is how I usually work with
+                            <h2 class="mb-2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">My
+                                Process</h2>
+                            <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">This is how I usually
+                                work with
                                 clients, in a way that is structured, supportive, and focused on real results.</p>
                         </div>
                     </div>
 
                     <div class="row g-4">
                         <!-- Step 1 -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0"
+                            data-aos-duration="800">
                             <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
                                 <div class="d-flex align-items-center mb-4">
                                     <span
@@ -285,7 +298,8 @@
                         </div>
 
                         <!-- Step 2 -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"
+                            data-aos-duration="800">
                             <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
                                 <div class="d-flex align-items-center mb-4">
                                     <span
@@ -300,7 +314,8 @@
                         </div>
 
                         <!-- Step 3 -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200"
+                            data-aos-duration="800">
                             <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
                                 <div class="d-flex align-items-center mb-4">
                                     <span
@@ -315,7 +330,8 @@
                         </div>
 
                         <!-- Step 4 -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300"
+                            data-aos-duration="800">
                             <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
                                 <div class="d-flex align-items-center mb-4">
                                     <span
@@ -330,7 +346,8 @@
                         </div>
 
                         <!-- Step 5 -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400"
+                            data-aos-duration="800">
                             <div class="p-4 rounded-4 h-100 bg-white shadow border-0 position-relative">
                                 <div class="d-flex align-items-center mb-4">
                                     <span
@@ -344,7 +361,8 @@
                         </div>
 
                         <!-- Visual Element -->
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500"
+                            data-aos-duration="1000">
                             <div
                                 class="p-4 rounded-4 h-100 bg-primary text-white d-flex flex-column justify-content-center">
                                 <div class="text-center">
@@ -375,11 +393,11 @@
                 <div class="container position-relative px-4" style="z-index: 1;">
                     <div class="row mb-5 pb-4">
                         <div class="col-md-10 col-lg-8 mx-auto text-center">
-                            <h2 class="mb-2 fw-bold" data-aos="fade-up" data-aos-delay="100"
+                            <h2 class="mb-2 fw-bold" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000"
                                 style="line-height: 1.3;">
                                 Services
                             </h2>
-                            <div data-aos="fade-up" data-aos-delay="100">
+                            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                                 <p>
                                     Practical, strategic support to strengthen your trust fundraising and secure
                                     long-term
@@ -392,7 +410,7 @@
                     <!-- Service Items -->
                     <div class="row g-5 mb-4">
                         <!-- Service 1 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -422,7 +440,7 @@
                         </div>
 
                         <!-- Service 2 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -450,7 +468,7 @@
                         </div>
 
                         <!-- Service 3 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -478,7 +496,7 @@
                         </div>
 
                         <!-- Service 4 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -506,7 +524,7 @@
                         </div>
 
                         <!-- Service 5 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -534,7 +552,7 @@
                         </div>
 
                         <!-- Service 6 -->
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="800">
                             <div class="d-flex gap-4 align-items-start position-relative pb-5"
                                 style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
                                 <div class="flex-shrink-0">
@@ -1118,6 +1136,19 @@
     <!-- Custom Scripts -->
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/send_email.js') }}"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll) with sensible defaults
+        if (window.AOS) {
+            AOS.init({
+                // values can be overridden on individual elements via data-aos-*
+                duration: 900, // global animation duration in ms
+                offset: 120, // offset (in px) from the original trigger point
+                easing: 'ease-out-cubic',
+                once: true, // whether animation should happen only once - while scrolling down
+                mirror: false // whether elements should animate out while scrolling past them
+            });
+        }
+    </script>
     <!-- End JavaScripts-->
 </body>
 
