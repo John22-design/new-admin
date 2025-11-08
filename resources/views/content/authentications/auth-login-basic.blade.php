@@ -4,10 +4,11 @@
 
 @section('page-style')
     @vite(['resources/assets/vendor/scss/pages/page-auth.scss'])
+    <link rel="stylesheet" href="{{ asset('css/preloader.css') }}">
     <style>
         /* Enhanced auth styles - optimized for performance */
         .auth-enhanced-wrapper {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #144B4B 0%, #0097B2 100%);
             min-height: 100vh;
             position: relative;
             overflow: hidden;
@@ -71,8 +72,8 @@
         }
 
         .form-control-enhanced:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #0097B2;
+            box-shadow: 0 0 0 3px rgba(0, 151, 178, 0.1);
         }
 
         .form-control-enhanced:hover {
@@ -85,7 +86,7 @@
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #144B4B 0%, #0097B2 100%);
             border: none;
             position: relative;
             overflow: hidden;
@@ -108,7 +109,7 @@
 
         .btn-enhanced:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 25px rgba(45, 170, 153, 0.4);
         }
 
         .password-toggle-icon {
@@ -117,7 +118,7 @@
         }
 
         .password-toggle-icon:hover {
-            color: #667eea;
+            color: #0097B2;
         }
 
         .alert-enhanced {
@@ -213,6 +214,10 @@
 @endsection
 
 @section('content')
+    <!-- Preloader -->
+        <x-preloader theme="gradient" variant="progress" />
+    <!-- /Preloader -->
+
     <div class="auth-enhanced-wrapper">
         <div class="container-xxl">
             <div class="authentication-wrapper authentication-basic container-p-y">
@@ -227,11 +232,10 @@
                                         'withbg' => 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                                     ])</span>
                                     <span
-                                        class="app-brand-text demo text-heading fw-bold">{{ config('variables.templateName') }}</span>
+                                        class="app-brand-text demo text-heading fw-bold">Welcome Back!</span>
                                 </a>
                             </div>
                             <!-- /Logo -->
-                            <h4 class="mb-2 text-center fw-bold" style="color: #2d3748;">Welcome Back!</h4>
                             <p class="mb-4 text-center" style="color: #718096; font-size: 14px;">Sign in to continue to your
                                 account</p>
 
@@ -311,4 +315,7 @@
             </div>
         </div>
     </div>
+
+    <!-- Preloader Script -->
+    <script src="{{ asset('js/preloader.js') }}" defer></script>
 @endsection
