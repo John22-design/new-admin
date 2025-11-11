@@ -2,6 +2,10 @@
 
 @section('title', 'Website | Testimonials')
 
+@section('vendor-style')
+    <link rel="stylesheet" href="{{ asset('css/datatable-custom.css') }}">
+@endsection
+
 @section('vendor-script')
     @vite('resources/assets/vendor/libs/masonry/masonry.js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -25,27 +29,21 @@
 
     <!-- DataTable -->
     <div class="card">
-        <div class="card-header">
-            <h5 class="card-title">All Testimonials</h5>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="testimonialsTable" class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Profile Image</th>
-                            <th>Customer Name</th>
-                            <th>Profession</th>
-                            <th>Comment</th>
-                            <th>Created At</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
+        <div class="card-body table-responsive">
+            <table id="testimonialsTable" class="table table-bordered table-responsive</table>ius-3">
+                <thead>
+                    <tr>
+                        <th>Profile Image</th>
+                        <th>Customer Name</th>
+                        <th>Profession</th>
+                        <th>Comment</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -93,8 +91,8 @@
                     </div>
 
                     <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary me-2" id="saveTestimonialBtn">Save</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" id="saveTestimonialBtn">Save Testimonial</button>
                     </div>
                 </form>
             </div>
@@ -109,10 +107,6 @@
             serverSide: true,
             ajax: "{{ route('website-testimonials') }}",
             columns: [{
-                    data: 'id',
-                    name: 'id'
-                },
-                {
                     data: 'profile_image',
                     name: 'profile_image',
                     render: function(data, type, row) {
@@ -145,7 +139,12 @@
                     data: 'created_at',
                     name: 'created_at',
                     render: function(data, type, row) {
-                        return new Date(data).toLocaleDateString();
+                        const date = new Date(data);
+                        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        const month = months[date.getMonth()];
+                        const day = String(date.getDate()).padStart(2, '0');
+                        const year = date.getFullYear();
+                        return `${month}/${day}/${year}`;
                     }
                 },
                 {

@@ -19,12 +19,23 @@ class TestimonialsController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     return '
-                        <button onclick="editTestimonial(' . $row->id . ')" class="btn btn-sm btn-primary">
-                            <i class="bx bx-edit"></i> Edit
-                        </button>
-                        <button onclick="deleteTestimonial(' . $row->id . ')" class="btn btn-sm btn-danger">
-                            <i class="bx bx-trash"></i> Delete
-                        </button>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Action
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0);" onclick="editTestimonial(' . $row->id . ')">
+                                        <i class="bx bx-edit me-1"></i> Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="javascript:void(0);" onclick="deleteTestimonial(' . $row->id . ')">
+                                        <i class="bx bx-trash me-1"></i> Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     ';
                 })
                 ->rawColumns(['action'])

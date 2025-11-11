@@ -1,0 +1,35 @@
+/* DataTables Custom Styles */
+
+/* DataTable wrapper elements alignment */
+div.dataTables_wrapper div.dataTables_length,
+div.dataTables_wrapper div.dataTables_info,
+div.dataTables_wrapper div.dataTables_paginate {
+  margin-bottom: 1rem;
+}
+
+/* Table header background */
+#testimonialsTable thead tr {
+  background-color: #eae9ee;
+}
+
+/* Table border radius */
+#testimonialsTable {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#testimonialsTable thead tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
+
+#testimonialsTable thead tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
+
+#testimonialsTable tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+#testimonialsTable tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
