@@ -49,7 +49,7 @@
 
 
                 <!-- Start Logo-->
-                <a class="navbar-brand w-auto" href="index.html">
+                <a class="navbar-brand w-auto" href="#home">
                     <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder"
                         style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
@@ -151,31 +151,30 @@
                                                 <path d="M7 7h10v10"></path>
                                                 <path d="M7 17 17 7"></path>
                                             </svg></a></div>
-                                    <div class="logos mb-4" data-aos="zoom-in" data-aos-delay="400"
-                                        data-aos-duration="1000"><span
-                                            class="logos-title text-uppercase mb-4 d-block">Trusted by major companies
-                                            worldwide</span>
-                                        <div class="logos-images d-flex gap-4 align-items-center"><img
-                                                class="img-fluid js-img-to-inline-svg"
-                                                src="{{ asset('images/logo/actual-size/logo-air-bnb__black.svg') }}"
-                                                alt="Company 1" style="width: 110px;"><img
-                                                class="img-fluid js-img-to-inline-svg"
-                                                src="{{ asset('images/logo/actual-size/logo-ibm__black.svg') }}"
-                                                alt="Company 2" style="width: 80px;"><img
-                                                class="img-fluid js-img-to-inline-svg"
-                                                src="{{ asset('images/logo/actual-size/logo-google__black.svg') }}"
-                                                alt="Company 3" style="width: 110px;"></div>
+                                    <div class="hero-highlight d-inline-flex align-items-center gap-3 px-4 py-3 rounded-pill bg-white border shadow-sm mb-3"
+                                        data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                                        <span
+                                            class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                                            style="height: 44px; width: 44px; background-color: rgba(var(--bs-primary-rgb), 0.12);">
+                                            <i class="bi bi-lightning-charge-fill text-primary fs-5"></i>
+                                        </span>
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-semibold text-uppercase small text-primary">John Field
+                                                Fundraising Ltd</span>
+                                            <span class="text-muted small">Trusted partner for strategic trust
+                                                fundraising.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="hero-img"><img class="img-card img-fluid animate-bounce"
-                                    src="{{ asset('images/hero-3.jpg') }}" alt="Image card" data-aos="fade-left"
-                                    data-aos-delay="400" data-aos-duration="1000"><img
-                                    class="img-main img-fluid rounded-4" src="{{ asset('images/hero-4.jpg') }}"
-                                    alt="Hero Image" data-aos="zoom-in" data-aos-delay="200"
-                                    data-aos-duration="1200"></div>
+                            <div class="hero-img"><img class="img-card img-fluid animate-bounce border-white"
+                                    src="{{ asset('images/hero-3.jpg') }}" style="border: 2px white solid"
+                                    alt="Image card" data-aos="fade-left" data-aos-delay="400"
+                                    data-aos-duration="1000"><img class="img-main img-fluid rounded-4"
+                                    src="{{ asset('images/hero-4.jpg') }}" alt="Hero Image" data-aos="zoom-in"
+                                    data-aos-delay="200" data-aos-duration="1200"></div>
                         </div>
                     </div>
                 </div>
@@ -972,7 +971,7 @@
 
 
             <!-- ======= Contact =======-->
-            <section class="section contact__v2" id="contact">
+            <section class="section contact__v2 bg-secondary-soft" id="contact">
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-6 col-lg-7 mx-auto text-center"><span class="subtitle text-uppercase mb-3"
@@ -982,55 +981,67 @@
                                 bring your vision to life. Once complete, effortlessly share your creations.</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="d-flex gap-5 flex-column">
-                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="0">
-                                    <div class="icon d-block"><i class="bi bi-telephone"></i></div><span> <span
-                                            class="d-block">Phone</span><strong>+(01 234 567 890)</strong></span>
-                                </div>
-                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="icon d-block"><i class="bi bi-send"></i></div><span> <span
-                                            class="d-block">Email</span><strong>info@mydomain.com</strong></span>
-                                </div>
-                                <div class="d-flex align-items-start gap-3" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="icon d-block"><i class="bi bi-geo-alt"></i></div><span> <span
-                                            class="d-block">Address</span>
-                                        <address class="fw-bold">123 Main Street Apt 4B Springfield, <br> IL 62701
-                                            United States</address>
-                                    </span>
+                    <div class="row g-4 align-items-stretch">
+                        <div class="col-lg-5">
+                            <div class="h-100 rounded-4 border shadow-sm bg-white p-4 p-lg-5 d-flex flex-column"
+                                data-aos="fade-up" data-aos-delay="0">
+                                <span
+                                    class="text-uppercase small text-primary fw-semibold d-inline-flex align-items-center gap-2">
+                                    <i class="bi bi-stars"></i>
+                                    Let's collaborate
+                                </span>
+                                <h3 class="mt-3 mb-3">Share your fundraising goals</h3>
+                                <p class="text-muted mb-4">Tell me where you want to take your trust fundraising and
+                                    I'll recommend the right next steps—whether you need a roadmap, a partner, or a
+                                    second pair of eyes.</p>
+
+                                <div class="d-flex flex-column gap-3 mt-auto">
+                                    <a class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                        href="https://www.linkedin.com/in/johnfieldfundraising/" target="_blank"
+                                        rel="noopener">
+                                        <i class="bi bi-linkedin"></i>
+                                        Message on LinkedIn
+                                    </a>
+                                    <div class="d-flex align-items-center gap-2 text-muted small">
+                                        <i class="bi bi-clock-history text-primary"></i>
+                                        <span>Replies within two business days.</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 text-muted small">
+                                        <i class="bi bi-people text-primary"></i>
+                                        <span>Designed for charity leaders and in-house fundraisers.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="300">
-                                <form id="contactForm">
-                                    <div class="row gap-3 mb-3">
-                                        <div class="col-md-12">
+                        <div class="col-lg-7">
+                            <div class="form-wrapper rounded-4 border shadow-sm bg-white p-4 p-lg-5"
+                                data-aos="fade-up" data-aos-delay="150">
+                                <h3 class="h4 mb-3">Send a message</h3>
+                                <p class="text-muted small mb-4">Outline your challenge or idea and I'll be in touch
+                                    with a tailored response.</p>
+                                <form id="contactForm" class="d-flex flex-column gap-3">
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
                                             <label class="mb-2" for="name">Name</label>
                                             <input class="form-control" id="name" type="text" name="name"
                                                 required="">
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-sm-6">
                                             <label class="mb-2" for="email">Email</label>
                                             <input class="form-control" id="email" type="email" name="email"
                                                 required="">
                                         </div>
                                     </div>
-                                    <div class="row gap-3 mb-3">
-                                        <div class="col-md-12">
-                                            <label class="mb-2" for="subject">Subject</label>
-                                            <input class="form-control" id="subject" type="text"
-                                                name="subject">
-                                        </div>
+                                    <div>
+                                        <label class="mb-2" for="subject">Subject</label>
+                                        <input class="form-control" id="subject" type="text" name="subject">
                                     </div>
-                                    <div class="row gap-3 gap-md-0 mb-3">
-                                        <div class="col-md-12">
-                                            <label class="mb-2" for="message">Message</label>
-                                            <textarea class="form-control" id="message" name="message" rows="5" required=""></textarea>
-                                        </div>
+                                    <div>
+                                        <label class="mb-2" for="message">Message</label>
+                                        <textarea class="form-control" id="message" name="message" rows="3" required=""></textarea>
                                     </div>
-                                    <button class="btn btn-primary fw-semibold" type="submit">Send Message</button>
+                                    <button class="btn btn-primary fw-semibold align-self-end" type="submit"><i class="bi bi-send me-2"></i>Send
+                                        Message</button>
                                 </form>
                                 <div class="mt-3 d-none alert alert-success" id="successMessage">Message sent
                                     successfully!</div>

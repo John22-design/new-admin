@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
   )
   ->withMiddleware(function (Middleware $middleware) {
     // Configure authentication middleware to redirect to login page
-    $middleware->redirectGuestsTo('/auth/login-basic');
+    $middleware->redirectGuestsTo('/auth/login');
   })
   ->withExceptions(function (Exceptions $exceptions) {
     //
