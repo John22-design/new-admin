@@ -9,6 +9,11 @@
 @section('vendor-script')
     @vite('resources/assets/vendor/libs/masonry/masonry.js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .swal2-toast .swal2-title {
+            margin: 0 !important;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -81,9 +86,9 @@
                             <div class="invalid-feedback" id="comment_error"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="profile_image" class="form-label">Profile Image</label>
-                            <input type="file" class="form-control" id="profile_image" name="profile_image"
-                                accept="image/*">
+                            <label for="profile_image" class="form-label">Profile Image <span class="text-danger">*</span> </label>
+                                <input type="file" class="form-control" id="profile_image" name="profile_image"
+                                    accept="image/*">
                             <div class="invalid-feedback" id="profile_image_error"></div>
                             <small class="text-muted">Allowed formats: jpeg, png, jpg, gif. Max size: 2MB</small>
                             <div id="current_image" class="mt-2"></div>
@@ -101,6 +106,20 @@
 @endsection
 @section('page-script')
     <script>
+        const toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: popup => {
+                const container = popup.parentElement;
+                if (container) {
+                    container.style.zIndex = '2005';
+                }
+            }
+        });
+
         // Initialize DataTable and store the instance
         var testimonialsTable = $('#testimonialsTable').DataTable({
             processing: true,
@@ -140,7 +159,9 @@
                     name: 'created_at',
                     render: function(data, type, row) {
                         const date = new Date(data);
-                        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+                            'Oct', 'Nov', 'Dec'
+                        ];
                         const month = months[date.getMonth()];
                         const day = String(date.getDate()).padStart(2, '0');
                         const year = date.getFullYear();
@@ -213,13 +234,19 @@
         // Function to delete testimonial
         window.deleteTestimonial = function(id) {
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Yes, delete it!'
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            didOpen: popup => {
+                const container = popup.parentElement;
+                if (container) {
+                container.style.zIndex = '2005';
+                }
+            }
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
@@ -230,11 +257,10 @@
                         },
                         success: function(response) {
                             if (response.success) {
-                                Swal.fire(
-                                    'Deleted!',
-                                    response.message,
-                                    'success'
-                                );
+                                toast.fire({
+                                    icon: 'success',
+                                    title: 'Deleted successfully'
+                                });
                                 testimonialsTable.ajax.reload();
                             }
                         },
@@ -293,12 +319,9 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        // Show success message
-                        Swal.fire({
-                            title: 'Success!',
-                            text: response.message,
+                        toast.fire({
                             icon: 'success',
-                            confirmButtonText: 'OK'
+                            title: testimonialId && method === 'PUT' ? 'Updated Successfully' : 'Created Successfully'
                         });
 
                         // Close modal and refresh table

@@ -169,7 +169,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="hero-img"><img class="img-card img-fluid animate-bounce border-white"
+                            <div class="hero-img"><img class="img-card img-fluid border-white"
                                     src="{{ asset('images/hero-3.jpg') }}" style="border: 2px white solid"
                                     alt="Image card" data-aos="fade-left" data-aos-delay="400"
                                     data-aos-duration="1000"><img class="img-main img-fluid rounded-4"
@@ -1040,7 +1040,8 @@
                                         <label class="mb-2" for="message">Message</label>
                                         <textarea class="form-control" id="message" name="message" rows="3" required=""></textarea>
                                     </div>
-                                    <button class="btn btn-primary fw-semibold align-self-end" type="submit"><i class="bi bi-send me-2"></i>Send
+                                    <button class="btn btn-primary fw-semibold align-self-end" type="submit"><i
+                                            class="bi bi-send me-2"></i>Send
                                         Message</button>
                                 </form>
                                 <div class="mt-3 d-none alert alert-success" id="successMessage">Message sent
@@ -1055,72 +1056,99 @@
             <!-- End Contact-->
 
             <!-- ======= Footer =======-->
-            <footer class="footer pt-5 pb-5">
+            <footer class="footer bg-light pt-5 pb-4 border-top">
                 <div class="container">
-                    <div class="row mb-5 pb-4">
-                        <div class="col-md-7">
-                            <h2 class="fs-5">Join our newsletter</h2>
-                            <p>Stay updated with our latest templates and offers—join our newsletter today!</p>
+                    <div class="row g-4 align-items-center pb-4">
+                        <div class="col-lg-8">
+                            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-4">
+                                <img class="img-fluid" src="{{ asset('images/navbar_logo.png') }}"
+                                    alt="John Field Fundraising logo" style="max-height: 52px;">
+                                <div>
+                                    <h2 class="fs-5 mb-2">Helping charities build sustainable trust income</h2>
+                                    <p class="mb-0 text-muted">Strategy, mentoring, and bid support tailored to your
+                                        fundraising goals.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                            <form class="d-flex gap-2">
-                                <input class="form-control" type="email" placeholder="Email your email"
-                                    required="">
-                                <button class="btn btn-primary fs-6" type="submit">Subscribe</button>
-                            </form>
+                        <div class="col-lg-4 text-lg-end">
+                            <a class="btn btn-primary text-white" href="#contact">Start a conversation</a>
                         </div>
                     </div>
-                    <div class="row justify-content-between mb-5 g-xl-5">
-                        <div class="col-md-4 mb-5 mb-lg-0">
-                            <h3 class="mb-3">About</h3>
-                            <p class="mb-4">Utilize our tools to develop your concepts and bring your vision to life.
-                                Once complete, effortlessly share your creations.</p>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
+                                <h3 class="fs-6 text-uppercase text-muted mb-2">Get in touch</h3>
+                                <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
+                                    {{-- <li>
+                                        <a class="text-reset text-decoration-none d-flex align-items-center gap-2"
+                                            href="mailto:john@johnfieldfundraising.co.uk">
+                                            <i class="bi bi-envelope text-primary"></i>
+                                            <span>john@johnfieldfundraising.co.uk</span>
+                                        </a>
+                                    </li> --}}
+                                    <li class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-clock text-primary mt-1"></i>
+                                        <div>
+                                            <span class="d-block">Replies within two business days.</span>
+                                            <small>Based in Sheffield, UK · GMT</small>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="text-reset text-decoration-none d-flex align-items-center gap-2"
+                                            href="https://www.linkedin.com/in/johnfieldfundraising/" target="_blank"
+                                            rel="noopener">
+                                            <i class="bi bi-linkedin text-primary"></i>
+                                            <span>LinkedIn: John Field</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-md-7">
-                            <div class="row g-2">
-                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                                    <h3 class="mb-3">Company</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a href="page-about.html">Leadership</a></li>
-                                        <li><a href="page-careers.html">Careers <span class="badge ms-1">we're
-                                                    hiring</span></a></li>
-                                        <li><a href="page-case-studies.html">Case Studies</a></li>
-                                        <li><a href="page-terms-conditions.html">Terms &amp; Conditions</a></li>
-                                        <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-                                        <li><a href="page-404.html">404 page</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                                    <h3 class="mb-3">Accounts</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a href="page-signup.html">Register</a></li>
-                                        <li><a href="page-signin.html">Sign in</a></li>
-                                        <li><a href="page-forgot-password.html">Fogot Password</a></li>
-                                        <li><a href="page-coming-soon.html">Coming soon</a></li>
-                                        <li><a href="page-portfolio-masonry.html">Portfolio Masonry</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 quick-contact">
-                                    <h3 class="mb-3">Contact</h3>
-                                    <p class="d-flex mb-3"><i class="bi bi-geo-alt-fill me-3"></i><span>123 Main
-                                            Street Apt 4B Springfield, <br> IL 62701 United States</span></p><a
-                                        class="d-flex mb-3" href="mailto:info@mydomain.com"><i
-                                            class="bi bi-envelope-fill me-3"></i><span>info@mydomain.com</span></a><a
-                                        class="d-flex mb-3" href="tel://+123456789900"><i
-                                            class="bi bi-telephone-fill me-3"></i><span>+1 (234) 5678 9900</span></a><a
-                                        class="d-flex mb-3" href="https://freebootstrap.net"><i
-                                            class="bi bi-globe me-3"></i><span>FreeBootstrap.net</span></a>
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
+                                <h3 class="fs-6 text-uppercase text-muted mb-2">Services</h3>
+                                <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
+                                    <li class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-check-circle text-primary"></i>
+                                        <span>Trust fundraising strategy</span>
+                                    </li>
+                                    <li class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-check-circle text-primary"></i>
+                                        <span>Prospect research &amp; pipeline design</span>
+                                    </li>
+                                    <li class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-check-circle text-primary"></i>
+                                        <span>Bid writing, mentoring &amp; reviews</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
+                                <h3 class="fs-6 text-uppercase text-muted mb-2">Highlights</h3>
+                                <div class="d-flex flex-column gap-2 text-muted small">
+                                    <div>
+                                        <span class="d-block fw-semibold text-dark">32 charities</span>
+                                        <small>Supported with strategy and bids in 2025.</small>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-semibold text-dark">£450k award</span>
+                                        <small>Largest multi-year funding secured this year.</small>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-semibold text-dark">95% retention</span>
+                                        <small>Clients returning for ongoing fundraising support.</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row credits pt-3">
-                        <div class="col-12 text-center">
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> John Field Fundraising Ltd: Company Number (England and Wales):
-                            13040151
-                        </div>
+
+                    <div class="text-center text-muted small mt-5 pt-3 border-top">
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> John Field Fundraising Ltd · Company Number 13040151
                     </div>
                 </div>
             </footer>
