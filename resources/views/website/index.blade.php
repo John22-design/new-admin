@@ -736,115 +736,47 @@
             <!-- End Blog -->
 
             <!-- ======= Testimonials =======-->
-            <section class="section testimonials__v2" id="testimonials">
+            <section class="section testimonials__v2 py-4" id="testimonials">
                 <div class="container">
-                    <div class="row mb-5">
+                    <div class="row mb-4">
                         <div class="col-lg-5 mx-auto text-center">
-                            <span class="subtitle text-uppercase mb-3" data-aos="fade-up"
+                            <span class="subtitle text-uppercase mb-2" data-aos="fade-up"
                                 data-aos-delay="0">Testimonials</span>
-                            <h2 class="mb-3" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
-                            <p data-aos="fade-up" data-aos-delay="200">Real Stories of Impact and Hope from Our
-                                Community</p>
+                            <h2 class="mb-2" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
+                            <p data-aos="fade-up" data-aos-delay="200" class="mb-0">Real Stories of Impact and Hope</p>
                         </div>
                     </div>
 
-                    <div class="row g-4" data-masonry='{ "percentPosition": true }'>
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;Thanks to this platform, I was able to support meaningful projects and see
-                                    the tangible difference my contribution made in people's lives.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-2-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">John Davis</strong><span>Community
-                                            Supporter</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;Being part of this fundraising platform made it easy to connect with causes I
-                                    care about. The transparency and updates kept me motivated to keep
-                                    supporting.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-1-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">Emily
-                                            Smith</strong><span>Philanthropist</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;The projects featured here are inspiring. I love how the platform helps fund
-                                    initiatives that create real change in local communities.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-5-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">Michael
-                                            Rodriguez</strong><span>Volunteer</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;Supporting campaigns on this platform is simple and rewarding. I feel
-                                    connected to the impact and see the results of my contributions.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-3-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">Sarah Lee</strong><span>Donor</span>
+                    <div class="swiper testimonial-slider pb-4">
+                        <div class="swiper-wrapper">
+                            @foreach ($testimonials as $testimonial)
+                                <div class="swiper-slide h-auto">
+                                    <div class="testimonial-card h-100 p-4 bg-light rounded-4 border position-relative overflow-hidden">
+                                        <div class="d-flex flex-column h-100 position-relative z-1">
+                                            <div class="mb-3">
+                                                <blockquote class="fs-6 text-dark lh-base mb-0">
+                                                    "{{ $testimonial->comment }}"
+                                                </blockquote>
+                                            </div>
+                                            
+                                            <div class="mt-auto d-flex align-items-center gap-3 pt-3 border-top border-secondary-subtle">
+                                                <div class="flex-shrink-0">
+                                                    <img class="rounded-circle object-fit-cover border border-2 border-white shadow-sm"
+                                                        src="{{ $testimonial->profile_image ? asset('storage/' . $testimonial->profile_image) : asset('images/profile.png') }}"
+                                                        alt="{{ $testimonial->customer_name }}" 
+                                                        style="width: 50px; height: 50px;">
+                                                </div>
+                                                <div>
+                                                    <h6 class="fw-bold mb-0 text-dark">{{ $testimonial->customer_name }}</h6>
+                                                    <p class="text-muted small mb-0 text-uppercase ls-1" style="font-size: 0.75rem;">{{ $testimonial->profession }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;The transparency and updates make me trust this platform. I’m proud to
-                                    support campaigns that are making a real difference.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-7-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">James Kim</strong><span>Charity
-                                            Enthusiast</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                            <div class="testimonial rounded-4 p-4">
-                                <blockquote class="mb-3">
-                                    &ldquo;This platform empowers me to be part of meaningful projects. I love seeing
-                                    the impact of my support and being part of a bigger mission.&rdquo;
-                                </blockquote>
-                                <div class="testimonial-author d-flex gap-3 align-items-center">
-                                    <div class="author-img"><img class="rounded-circle img-fluid"
-                                            src="{{ asset('images/person-sq-8-min.jpg') }}" alt="Supporter image">
-                                    </div>
-                                    <div class="lh-base"><strong class="d-block">Laura Brown</strong><span>Active
-                                            Donor</span></div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="swiper-pagination position-relative mt-4"></div>
                     </div>
                 </div>
             </section>
@@ -1187,6 +1119,29 @@
                 mirror: false // whether elements should animate out while scrolling past them
             });
         }
+
+        // Initialize Testimonial Swiper
+        var testimonialSwiper = new Swiper(".testimonial-slider", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            },
+        });
     </script>
     <!-- End JavaScripts-->
 </body>

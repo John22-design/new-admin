@@ -1289,3 +1289,35 @@ h6 {
   .animate-bounce {
     animation: bounce 5s infinite;
   }
+
+/* Testimonial Slider Styles */
+.testimonials__v2 {
+    padding: 30px 5px !important;
+}
+
+.testimonial-slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(var(--bs-primary-rgb), 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+    background-color: var(--bs-primary);
+    width: 25px;
+    border-radius: 5px;
+}
+
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid transparent !important;
+    background-color: #f8f9fa; /* Light background */
+    border-bottom-color: var(--bs-primary) !important;
+}
+
+.testimonial-card:hover {
+    transform: translateY(3px);
+    box-shadow: 0 0.7rem 1rem rgba(0,0,0,0.05) !important;
+    background-color: #fff; /* White on hover for pop */
+}
