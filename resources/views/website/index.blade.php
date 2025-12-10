@@ -77,10 +77,10 @@
                             <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page"
                                     href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li> --}}
                             <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
-                            <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a>
-                            </li>
+                            {{-- <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a>
+                            </li> --}}
                         </ul>
 
                     </div>
@@ -583,7 +583,7 @@
             </section>
             <!-- End Services-->
 
-            <!-- ======= Blog =======-->
+            {{-- ======= Blog =======
             <section class="section blog__v1" id="blog">
                 <div class="container">
                     <div class="row mb-5">
@@ -733,9 +733,9 @@
                     </div>
                 </div>
             </section>
-            <!-- End Blog -->
+            End Blog ======= --}}
 
-            <!-- ======= Testimonials =======-->
+            {{-- ======= Testimonials =======
             <section class="section testimonials__v2 py-4" id="testimonials">
                 <div class="container">
                     <div class="row mb-4">
@@ -743,7 +743,8 @@
                             <span class="subtitle text-uppercase mb-2" data-aos="fade-up"
                                 data-aos-delay="0">Testimonials</span>
                             <h2 class="mb-2" data-aos="fade-up" data-aos-delay="100">What Our Supporters Say</h2>
-                            <p data-aos="fade-up" data-aos-delay="200" class="mb-0">Real Stories of Impact and Hope</p>
+                            <p data-aos="fade-up" data-aos-delay="200" class="mb-0">Real Stories of Impact and Hope
+                            </p>
                         </div>
                     </div>
 
@@ -751,24 +752,28 @@
                         <div class="swiper-wrapper">
                             @foreach ($testimonials as $testimonial)
                                 <div class="swiper-slide h-auto">
-                                    <div class="testimonial-card h-100 p-4 bg-light rounded-4 border position-relative overflow-hidden">
+                                    <div
+                                        class="testimonial-card h-100 p-4 bg-light rounded-4 border position-relative overflow-hidden">
                                         <div class="d-flex flex-column h-100 position-relative z-1">
                                             <div class="mb-3">
                                                 <blockquote class="fs-6 text-dark lh-base mb-0">
                                                     "{{ $testimonial->comment }}"
                                                 </blockquote>
                                             </div>
-                                            
-                                            <div class="mt-auto d-flex align-items-center gap-3 pt-3 border-top border-secondary-subtle">
+
+                                            <div
+                                                class="mt-auto d-flex align-items-center gap-3 pt-3 border-top border-secondary-subtle">
                                                 <div class="flex-shrink-0">
                                                     <img class="rounded-circle object-fit-cover border border-2 border-white shadow-sm"
                                                         src="{{ $testimonial->profile_image ? asset('storage/' . $testimonial->profile_image) : asset('images/profile.png') }}"
-                                                        alt="{{ $testimonial->customer_name }}" 
+                                                        alt="{{ $testimonial->customer_name }}"
                                                         style="width: 50px; height: 50px;">
                                                 </div>
                                                 <div>
-                                                    <h6 class="fw-bold mb-0 text-dark">{{ $testimonial->customer_name }}</h6>
-                                                    <p class="text-muted small mb-0 text-uppercase ls-1" style="font-size: 0.75rem;">{{ $testimonial->profession }}</p>
+                                                    <h6 class="fw-bold mb-0 text-dark">
+                                                        {{ $testimonial->customer_name }}</h6>
+                                                    <p class="text-muted small mb-0 text-uppercase ls-1"
+                                                        style="font-size: 0.75rem;">{{ $testimonial->profession }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -780,124 +785,206 @@
                     </div>
                 </div>
             </section>
-            <!-- Testimonials-->
+            End Testimonials ======= --}}
 
 
             <!-- ======= FAQ =======-->
-            <section class="section faq__v2" id="faq">
-                <div class="container">
-                    <div class="row mb-4">
-                        <div class="col-md-6 col-lg-7 mx-auto text-center">
-                            <span class="subtitle text-uppercase mb-3" data-aos="fade-up"
-                                data-aos-delay="0">FAQ</span>
-                            <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Frequently Asked
-                                Questions</h2>
-                            <p data-aos="fade-up" data-aos-delay="100">Answers to common questions about fundraising
-                                strategy, income development, and building sustainable funding.</p>
+            <section class="section faq__v2 bg-light" id="faq">
+                <div class="container py-5">
+                    <!-- Header -->
+                    <div class="row mb-5">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 mb-3"
+                                data-aos="fade-up" data-aos-delay="0">
+                                <i class="bi bi-question-circle me-2"></i>FAQ
+                            </span>
+                            <h2 class="display-5 fw-bold mb-3" data-aos="fade-up" data-aos-delay="100">
+                                Frequently Asked Questions
+                            </h2>
+                            <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
+                                Answers to common questions about fundraising strategy, income development, and building
+                                sustainable funding.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
-                            <div class="faq-content">
-                                <div class="accordion custom-accordion" id="accordionPanelsStayOpenExample">
+                    <!-- FAQ Accordion -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="accordion accordion-flush shadow-sm bg-white rounded-3" id="faqAccordion"
+                                data-aos="fade-up" data-aos-delay="300">
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                                aria-controls="panelsStayOpen-collapseOne">
-                                                What kind of fundraising support do you provide?
-                                            </button>
-                                        </h2>
-                                        <div class="accordion-collapse collapse show" id="panelsStayOpen-collapseOne">
-                                            <div class="accordion-body">
-                                                I provide tailored support for charities, including developing income
-                                                strategies, writing fundraising strategies, creating a pipeline of
-                                                funders, and offering advice on building stronger relationships with
-                                                funders.
-                                            </div>
+                                <!-- FAQ Item 1 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button bg-white py-4 shadow-none" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="true"
+                                            aria-controls="faq-1">
+                                            <i class="bi bi-briefcase text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">What kind of fundraising support do you
+                                                provide?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse show" id="faq-1"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            I work with charities to strengthen their trust fundraising and income
+                                            development. This includes developing practical fundraising strategies,
+                                            helping you identify and build a realistic funder pipeline, writing or
+                                            reviewing funding bids and providing hands-on advice to grow your
+                                            funding confidence and skills.
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                                How do you customise fundraising strategies for different organisations?
-                                            </button>
-                                        </h2>
-                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseTwo">
-                                            <div class="accordion-body">
-                                                Every organisation is unique. I analyse your financial situation, goals,
-                                                and needs to create a tailored income development plan that is specific
-                                                to your charity and the areas of fundraising most relevant to you.
-                                            </div>
+                                <!-- FAQ Item 2 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-2"
+                                            aria-expanded="false" aria-controls="faq-2">
+                                            <i class="bi bi-pencil-square text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">Do you only work on strategies or can you help
+                                                with actual bid writing too?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-2"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            Both. Some clients need a full fundraising strategy, while others need
+                                            support writing specific cases for support or funding bids. I can help
+                                            with whatever stage you are at, from planning your approach to crafting
+                                            the applications themselves.
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                                aria-controls="panelsStayOpen-collapseThree">
-                                                Can you help diversify income streams for my charity?
-                                            </button>
-                                        </h2>
-                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseThree">
-                                            <div class="accordion-body">
-                                                Yes. I specialise in helping organisations diversify their income
-                                                streams to ensure financial stability and growth, giving you the
-                                                resources needed to thrive and continue your mission.
-                                            </div>
+                                <!-- FAQ Item 3 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-3"
+                                            aria-expanded="false" aria-controls="faq-3">
+                                            <i class="bi bi-gear text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">How do you tailor your support to different
+                                                organisations?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-3"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            Every organisation is unique, with different challenges, goals and
+                                            capacity. I start by listening and understanding your work, your current
+                                            funding mix and where you want to get to. From there, I design a
+                                            practical plan that suits your size, resources and ambitions without a
+                                            one size fits all approach.
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-                                                aria-controls="panelsStayOpen-collapseFour">
-                                                Do you provide ongoing support after the strategy is developed?
-                                            </button>
-                                        </h2>
-                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFour">
-                                            <div class="accordion-body">
-                                                Absolutely. I provide ongoing guidance and support to help you implement
-                                                your fundraising strategies effectively and maximise your income
-                                                potential over time.
-                                            </div>
+                                <!-- FAQ Item 4 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-4"
+                                            aria-expanded="false" aria-controls="faq-4">
+                                            <i class="bi bi-people text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">Can you help us find and approach new
+                                                funders?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-4"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            Yes. I can help you identify new funders who genuinely align with your
+                                            mission and create a focused prospect list. I also advise on how to
+                                            approach funders, what to include in your communications and how to
+                                            build stronger long-term relationships.
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-                                                aria-controls="panelsStayOpen-collapseFive">
-                                                What makes your approach to fundraising different?
-                                            </button>
-                                        </h2>
-                                        <div class="accordion-collapse collapse" id="panelsStayOpen-collapseFive">
-                                            <div class="accordion-body">
-                                                My approach is highly personalised and strategy-driven. I focus on
-                                                understanding your organisation, identifying the best opportunities for
-                                                funding, and building sustainable, long-term relationships with funders
-                                                to ensure lasting impact.
-                                            </div>
+                                <!-- FAQ Item 5 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-5"
+                                            aria-expanded="false" aria-controls="faq-5">
+                                            <i class="bi bi-building text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">What kind of organisations do you usually work
+                                                with?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-5"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            Most of my work is with small to medium-sized charities, community
+                                            organisations and social enterprises. I also support larger
+                                            organisations that want to strengthen their trust fundraising or refresh
+                                            their approach to strategy and funder engagement.
                                         </div>
                                     </div>
+                                </div>
 
+                                <!-- FAQ Item 6 -->
+                                <div class="accordion-item border-0 border-bottom">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-6"
+                                            aria-expanded="false" aria-controls="faq-6">
+                                            <i class="bi bi-arrow-repeat text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">Do you provide ongoing support after the strategy
+                                                is developed?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-6"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            Yes. Fundraising takes time and consistency. I offer mentoring and
+                                            follow up support to help you put the strategy into action, strengthen
+                                            your pipeline and stay on track with your fundraising goals.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 7 -->
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-white py-4 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#faq-7"
+                                            aria-expanded="false" aria-controls="faq-7">
+                                            <i class="bi bi-star text-primary me-3 fs-5"></i>
+                                            <span class="fw-semibold">What makes your approach different?</span>
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="faq-7"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body ps-5 text-muted">
+                                            I keep things simple, strategic and realistic. My focus is on helping
+                                            you build confidence, develop good fundraising practice and secure
+                                            long-term sustainable funding rather than short-term wins.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Additional Help CTA -->
+                            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                                <div class="card border-0 shadow-sm bg-primary bg-opacity-10">
+                                    <div class="card-body py-4">
+                                        <h5 class="fw-bold mb-2">Still have questions?</h5>
+                                        <p class="text-muted mb-3">Can't find the answer you're looking for? Please get
+                                            in touch with us.</p>
+                                        <a href="#contact" class="btn btn-primary px-4">
+                                            <i class="bi bi-envelope me-2"></i>Contact Us
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End FAQ-->
             </section>
             <!-- End FAQ-->
 
@@ -952,34 +1039,54 @@
                                 <p class="text-muted small mb-4">Outline your challenge or idea and I'll be in touch
                                     with a tailored response.</p>
                                 <form id="contactForm" class="d-flex flex-column gap-3">
+                                    @csrf
                                     <div class="row g-3">
                                         <div class="col-sm-6">
-                                            <label class="mb-2" for="name">Name</label>
+                                            <label class="mb-2" for="name">Name <span
+                                                    class="text-danger">*</span></label>
                                             <input class="form-control" id="name" type="text" name="name"
-                                                required="">
+                                                required maxlength="255">
                                         </div>
                                         <div class="col-sm-6">
-                                            <label class="mb-2" for="email">Email</label>
+                                            <label class="mb-2" for="email">Email <span
+                                                    class="text-danger">*</span></label>
                                             <input class="form-control" id="email" type="email" name="email"
-                                                required="">
+                                                required maxlength="255">
                                         </div>
                                     </div>
                                     <div>
-                                        <label class="mb-2" for="subject">Subject</label>
-                                        <input class="form-control" id="subject" type="text" name="subject">
+                                        <label class="mb-2" for="subject">Subject <span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control" id="subject" type="text" name="subject"
+                                            required maxlength="500">
                                     </div>
                                     <div>
-                                        <label class="mb-2" for="message">Message</label>
-                                        <textarea class="form-control" id="message" name="message" rows="3" required=""></textarea>
+                                        <label class="mb-2" for="message">Message <span
+                                                class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required maxlength="5000"
+                                            placeholder="Tell us about your fundraising goals and how we can help..."></textarea>
+                                        <small class="text-muted">Maximum 5000 characters</small>
                                     </div>
-                                    <button class="btn btn-primary fw-semibold align-self-end" type="submit"><i
-                                            class="bi bi-send me-2"></i>Send
-                                        Message</button>
+                                    <!-- Honeypot field for spam protection (hidden from users) -->
+                                    <input type="text" name="honeypot" style="display:none" tabindex="-1"
+                                        autocomplete="off">
+
+                                    <button class="btn btn-primary fw-semibold align-self-end" type="submit"
+                                        id="submitBtn">
+                                        <i class="bi bi-send me-2"></i>
+                                        <span id="submitText">Send Message</span>
+                                    </button>
                                 </form>
-                                <div class="mt-3 d-none alert alert-success" id="successMessage">Message sent
-                                    successfully!</div>
-                                <div class="mt-3 d-none alert alert-danger" id="errorMessage">Message sending failed.
-                                    Please try again later.</div>
+                                <div class="mt-3 d-none alert alert-success" id="successMessage">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    <span id="successText">Thank you for your message! We'll get back to you within 2
+                                        business days.</span>
+                                </div>
+                                <div class="mt-3 d-none alert alert-danger" id="errorMessage">
+                                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                    <span id="errorText">Sorry, there was an error sending your message. Please try
+                                        again or contact us via LinkedIn.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1012,13 +1119,6 @@
                             <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
                                 <h3 class="fs-6 text-uppercase text-muted mb-2">Get in touch</h3>
                                 <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
-                                    {{-- <li>
-                                        <a class="text-reset text-decoration-none d-flex align-items-center gap-2"
-                                            href="mailto:john@johnfieldfundraising.co.uk">
-                                            <i class="bi bi-envelope text-primary"></i>
-                                            <span>john@johnfieldfundraising.co.uk</span>
-                                        </a>
-                                    </li> --}}
                                     <li class="d-flex align-items-start gap-2">
                                         <i class="bi bi-clock text-primary mt-1"></i>
                                         <div>

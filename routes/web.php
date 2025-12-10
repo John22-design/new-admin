@@ -17,6 +17,7 @@ use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\ContactController;
 
 // Main Page Route
 Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics')->middleware('auth');
@@ -45,3 +46,8 @@ Route::post('/auth/login', [LoginBasic::class, 'login'])->name('auth-login-submi
 Route::post('/auth/logout', [LoginBasic::class, 'logout'])->name('auth-logout');
 // Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
 // Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
+
+// Contact form submission (public route with rate limiting)
+Route::post('/contact/send', [ContactController::class, 'send'])
+    ->middleware('throttle:5,1')
+    ->name('contact.send');
