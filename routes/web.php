@@ -51,3 +51,6 @@ Route::post('/auth/logout', [LoginBasic::class, 'logout'])->name('auth-logout');
 Route::post('/contact/send', [ContactController::class, 'send'])
     ->middleware('throttle:5,1')
     ->name('contact.send');
+
+// Public Blog page
+Route::view('/blog', 'website.blog')->name('blog');

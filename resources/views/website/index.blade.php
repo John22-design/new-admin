@@ -77,8 +77,8 @@
                             <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page"
                                     href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
-                            {{-- <li class="nav-item"><a class="nav-link scroll-link" href="#blog">Blog</a></li> --}}
                             <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                             {{-- <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a>
                             </li> --}}
                         </ul>
@@ -143,7 +143,7 @@
                                     <div class="cta d-flex gap-2 mb-4 mb-lg-5" data-aos="fade-right"
                                         data-aos-delay="300" data-aos-duration="1000"><a class="btn"
                                             href="#">Contact Now</a><a class="btn btn-white-outline"
-                                            href="#">Learn More
+                                            href="{{ route('blog') }}">Learn More
                                             <svg class="lucide lucide-arrow-up-right"
                                                 xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 viewbox="0 0 24 24" fill="none" stroke="currentColor"
@@ -583,8 +583,8 @@
             </section>
             <!-- End Services-->
 
-            {{-- ======= Blog =======
-            <section class="section blog__v1" id="blog">
+            {{-- ======= Blog ======= --}}
+            {{-- <section class="section blog__v1" id="blog">
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-md-8 mx-auto text-center">
@@ -732,8 +732,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            End Blog ======= --}}
+            </section> --}}
+            {{-- End Blog ======= --}}
 
             {{-- ======= Testimonials =======
             <section class="section testimonials__v2 py-4" id="testimonials">
