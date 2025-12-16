@@ -100,6 +100,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#about">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#services">Services</a>
                             </li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#faq">FAQ</a></li>
                             <li class="nav-item"><a class="nav-link active" aria-current="page"
                                     href="{{ route('blog') }}">Blog</a></li>
                         </ul>

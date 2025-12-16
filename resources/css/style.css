@@ -39,10 +39,12 @@ body {
   color: var(--bs-body-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent AOS horizontal overflow affecting navbar */
 }
 
 .site-wrap {
   position: relative;
+  overflow-x: hidden; /* Prevent AOS overflow issues */
 }
 
 ::-moz-selection {
@@ -282,7 +284,7 @@ h6 {
 }
 
 .fbs__net-navbar {
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed for better stability with AOS */
   top: 0;
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;

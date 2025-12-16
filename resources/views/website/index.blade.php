@@ -36,62 +36,77 @@
     <x-preloader theme="gradient" variant="progress" />
 
     <div class="site-wrap">
-        <!-- Header -->
+        <!-- ======= Header =======-->
         <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="navbar">
             <div class="container d-flex align-items-center justify-content-between">
-                <!-- Logo -->
-                <a class="navbar-brand w-auto" href="{{ route('home') }}#home">
-                    <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="logo"
-                        style="height:40px; width:auto; max-width:160px; border-radius:3px;">
-                </a>
 
-                <!-- Offcanvas -->
+
+                <!-- Start Logo-->
+                <a class="navbar-brand w-auto" href="#home">
+                    <img class="logo dark img-fluid ms-3" src="{{ asset('images/navbar_logo.png') }}"
+                        alt="image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+                </a>
+                <!-- End Logo-->
+
+                <!-- Start offcanvas-->
                 <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
                     aria-labelledby="fbs__net-navbarsLabel">
+
+
                     <div class="offcanvas-header">
                         <div class="offcanvas-header-logo">
-                            <a class="logo-link" id="fbs__net-navbarsLabel" href="{{ route('home') }}">
+                            <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
                                 <img class="logo dark img-fluid"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
-                                    src="{{ asset('images/navbar_logo.png') }}" alt="logo">
-                            </a>
+                                    src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder">
                         </div>
                         {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
                     </div>
 
                     <div class="offcanvas-body align-items-lg-center">
+
+
                         <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#services">Services</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                    href="{{ route('blog') }}">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link active" aria-current="page"
+                                    href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="#faq">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link scroll-link" href="#testimonials">Testimonials</a>
+                            </li> --}}
                         </ul>
+
                     </div>
                 </div>
+                <!-- End offcanvas-->
 
                 <div class="ms-auto w-auto">
-                    <div class="header-social d-flex align-items-center gap-1">
-                        <a class="btn btn-primary py-2" href="{{ route('home') }}#contact">Contact</a>
-                        <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto"
+
+
+                    <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2"
+                            href="#contact">Contact</a>
+
+                        <button class="fbs__net-navbar-toggler justify-content-center align-items-center me-3"
                             data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars"
                             aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
                             <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="21" x2="3" y1="6" y2="6"></line>
                                 <line x1="15" x2="3" y1="12" y2="12"></line>
                                 <line x1="17" x2="3" y1="18" y2="18"></line>
                             </svg>
                             <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 6 6 18"></path>
                                 <path d="m6 6 12 12"></path>
                             </svg>
                         </button>
+
                     </div>
+
                 </div>
             </div>
         </header>
@@ -164,209 +179,85 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- ======= Services =======-->
-            <section class="section services__v3 bg-light position-relative overflow-hidden" id="services">
-                <!-- Decorative Background Elements -->
-                <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0; opacity: 0.05;">
-                    <div class="position-absolute"
-                        style="top: 10%; left: 5%; width: 300px; height: 300px; background: radial-gradient(circle, var(--bs-primary) 0%, transparent 70%);">
-                    </div>
-                    <div class="position-absolute"
-                        style="bottom: 10%; right: 5%; width: 400px; height: 400px; background: radial-gradient(circle, var(--bs-primary) 0%, transparent 70%);">
-                    </div>
-                </div>
 
-                <div class="container position-relative px-4" style="z-index: 1;">
-                    <div class="row mb-5 pb-4">
-                        <div class="col-md-10 col-lg-8 mx-auto text-center">
-                            <h2 class="mb-2 fw-bold" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000"
-                                style="line-height: 1.3;">
-                                Services
-                            </h2>
-                            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                                <p>
-                                    Practical, strategic support to strengthen your trust fundraising and secure
-                                    long-term
-                                    income.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service Items -->
-                    <div class="row g-5 mb-4">
-                        <!-- Service 1 -->
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <!-- Number Badge -->
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            01
-                                        </div>
-                                        <!-- Icon -->
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-clipboard-data"
-                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
+            <!-- ======= Work  =======-->
+            <section class="about__v4 section bg-light" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 order-md-2">
+                            <div class="row justify-content-end">
+                                <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span
+                                        class="subtitle text-uppercase mb-3" data-aos="fade-left" data-aos-delay="0"
+                                        data-aos-duration="800">My
+                                        Approach</span>
+                                    <h2 class="mb-4" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+                                        How I Work / My
+                                        Approach</h2>
+                                    <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+                                        <p>Every organisation is different, so I start by understanding where you are
+                                            now, your funding mix, your challenges, and your goals for the future. From
+                                            there, I work with you to build a clear and realistic plan to grow your
+                                            income from trusts and foundations.</p>
                                     </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Fundraising Strategy
-                                        Development</h3>
-                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Developing clear, realistic fundraising strategies that support multi-year
-                                        funding and long-term sustainability.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service 2 -->
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            02
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-search" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Trust and Foundation
-                                        Research</h3>
-                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Identifying the right funders for your work and building a strong, focused
-                                        prospect pipeline.
-                                    </p>
+                                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">My
+                                        approach focuses on:
+                                    </h4>
+                                    <ul class="list-unstyled text-start"
+                                        >
+                                        <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                                            <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Reviewing your current funding and identifying
+                                                opportunities for growth</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                            <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Creating a simple, practical strategy that supports
+                                                multi-year funding and long-term sustainability</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                                            <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Helping you build a manageable pipeline of potential
+                                                funders</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000">
+                                            <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Supporting you to write clear, convincing cases for
+                                                support that funders connect with</span>
+                                        </li>
+                                        <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1000">
+                                            <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
+                                                    style="color: var(--bs-primary)"></i></span>
+                                            <span class="text">Strengthening your trust fundraising skills and good
+                                                practice for the future</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Service 3 -->
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            03
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-pen" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
+                        <div class="col-md-6">
+                            <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
+                                    src="{{ asset('images/about-us.jpg') }}" alt="image placeholder" data-aos="fade-right"
+                                    data-aos-delay="0" data-aos-duration="1000">
+                                <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="flip-left"
+                                    data-aos-delay="300" data-aos-duration="1000">
+                                    <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i>
                                     </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Case for Support
-                                        Writing</h3>
-                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Helping you explain your story and impact in a way that funders connect with and
-                                        want to invest in.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service 4 -->
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            04
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-file-earmark-text"
-                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
+                                    <div>
+                                        <h3 class="text-uppercase fw-bold">Why Expertise Demands More Than Emotion</h3>
+                                        <p class="fs-5 mb-0">Emotional learning may be quick, but what we consider as
+                                            “expertise” usually takes a long time to develop.</p>
                                     </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Grant and Bid Writing
-                                    </h3>
-                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Support with writing and refining high-quality funding bids, including
-                                        multi-year and strategic applications.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service 5 -->
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            05
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-people" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Funder Relationships
-                                        and Stewardship</h3>
-                                    <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Guidance on maintaining good funder relationships, reporting well, and building
-                                        ongoing support.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service 6 -->
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="800">
-                            <div class="d-flex gap-4 align-items-start position-relative pb-5"
-                                style="border-bottom: 2px solid rgba(var(--bs-primary-rgb), 0.1);">
-                                <div class="flex-shrink-0">
-                                    <div class="position-relative">
-                                        <div class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary"
-                                            style="font-size: 0.7rem; padding: 0.35rem 0.6rem; z-index: 2;">
-                                            06
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center rounded-3"
-                                            style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-lightbulb"
-                                                style="font-size: 2.5rem; color: var(--bs-primary);"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold" style="color: var(--bs-dark); margin-bottom: 1.29rem;">
-                                        Mentoring and Ongoing
-                                        Support</h3>
-                                    <p class="text-muted mb-4 lh-lg" style="font-size: 0.95rem;">
-                                        Practical, one-to-one help to strengthen your fundraising skills and confidence
-                                        over time.
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
+            
             <!-- ======= My Process =======-->
             <section class="section process__v1 bg-light" id="my-process">
                 <div class="container">
