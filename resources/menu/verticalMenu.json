@@ -26,6 +26,11 @@
           "url": "website/testimonials",
           "name": "Testimonials",
           "slug": "website-testimonials"
+        },
+        {
+          "url": "website/blog-posts",
+          "name": "Blog Posts",
+          "slug": "website-blog-posts"
         }
       ]
     },

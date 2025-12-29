@@ -17,6 +17,7 @@ use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ContactController;
 
 // Main Page Route
@@ -30,6 +31,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/testimonials/{id}/edit', [TestimonialsController::class, 'edit'])->name('testimonials.edit');
     Route::put('/testimonials/{id}', [TestimonialsController::class, 'update'])->name('testimonials.update');
     Route::delete('/testimonials/{id}', [TestimonialsController::class, 'destroy'])->name('testimonials.destroy');
+
+    // blog posts management
+    Route::get('/website/blog-posts', [BlogPostController::class, 'index'])->name('website-blog-posts');
+    Route::post('/website/blog-posts', [BlogPostController::class, 'store'])->name('blog-posts.store');
+    Route::get('/blog-posts/{id}/edit', [BlogPostController::class, 'edit'])->name('blog-posts.edit');
+    Route::put('/blog-posts/{id}', [BlogPostController::class, 'update'])->name('blog-posts.update');
+    Route::delete('/blog-posts/{id}', [BlogPostController::class, 'destroy'])->name('blog-posts.destroy');
 
     // pages
     Route::get('/pages/account-settings-account', [AccountSettingsAccount::class, 'index'])->name('pages-account-settings-account');
@@ -52,5 +60,6 @@ Route::post('/contact/send', [ContactController::class, 'send'])
     ->middleware('throttle:5,1')
     ->name('contact.send');
 
-// Public Blog page
-Route::view('/blog', 'website.blog')->name('blog');
+// Public Blog pages
+Route::get('/blog', [BlogPostController::class, 'publicIndex'])->name('blog');
+Route::get('/blog/{slug}', [BlogPostController::class, 'show'])->name('blog.single');

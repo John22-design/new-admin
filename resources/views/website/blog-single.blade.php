@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog · John Field Fundraising</title>
+    <title>{{ $post->meta_title ?? $post->title }} · John Field Fundraising</title>
+    <meta name="description" content="{{ $post->meta_description ?? $post->excerpt }}">
+    @if ($post->meta_keywords)
+        <meta name="keywords" content="{{ $post->meta_keywords }}">
+    @endif
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,38 +35,103 @@
         })();
     </script>
     <style>
-        /* Subtle highlight for blog cards */
-        .blog-card {
-            transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
-            border: 1px solid rgba(var(--bs-primary-rgb), 0.2);
-            background-color: rgba(var(--bs-primary-rgb), 0.06);
-            border-radius: .75rem;
-            overflow: hidden;
+        .blog-single-header {
+            background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.08) 0%, rgba(var(--bs-primary-rgb), 0.02) 100%);
+            border-bottom: 1px solid rgba(var(--bs-primary-rgb), 0.15);
         }
 
-        .blog-card:hover {
+        .blog-content {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--bs-body-color);
+        }
+
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--bs-emphasis-color);
+        }
+
+        .blog-content h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--bs-emphasis-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--bs-primary);
+            background-color: rgba(var(--bs-primary-rgb), 0.05);
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            font-style: italic;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .blog-content code {
+            background-color: rgba(var(--bs-primary-rgb), 0.08);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+
+        .featured-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        .share-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.25);
+            color: var(--bs-primary);
+            transition: all 0.2s ease;
+        }
+
+        .share-buttons a:hover {
+            background-color: var(--bs-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .related-card {
+            transition: transform .18s ease, box-shadow .18s ease;
+            border: 1px solid rgba(var(--bs-primary-rgb), 0.15);
+            border-radius: 0.75rem;
+        }
+
+        .related-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08);
-            border-color: rgba(var(--bs-primary-rgb), 0.25);
-        }
-
-        .blog-card .card-body .badge {
-            border: 1px solid rgba(var(--bs-primary-rgb), .25);
-        }
-
-        .blog-card .object-fit-cover {
-            transition: transform .25s ease;
-        }
-
-        .blog-card:hover .object-fit-cover {
-            transform: scale(1.03);
-        }
-
-        /* Featured card accent */
-        .featured-card {
-            border-left: 4px solid var(--bs-primary);
-            background-color: rgba(var(--bs-primary-rgb), 0.08);
-            border-radius: .75rem;
         }
     </style>
 </head>
@@ -91,7 +160,6 @@
                                     src="{{ asset('images/navbar_logo.png') }}" alt="logo">
                             </a>
                         </div>
-                        {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
                     </div>
 
                     <div class="offcanvas-body align-items-lg-center">
@@ -133,92 +201,156 @@
         </header>
 
         <main>
-            <!-- Blog -->
-            <section class="py-5" id="blog">
+            <!-- Breadcrumb -->
+            <section class="blog-single-header py-4 bg-light border-bottom" style="margin-top: 70px;">
                 <div class="container">
-                    <!-- Header -->
-                    <div class="row g-3 my-4">
-                        <div class="col-12">
-                            <h1 class="h2 fw-bold mb-2">From the Fundraising Desk</h1>
-                            <p class="text-muted mb-0">Practical tips, real-world lessons, and strategies to help your
-                                charity grow sustainable income.</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0 bg-transparent">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('home') }}"
+                                    class="text-decoration-none d-flex align-items-center gap-1">
+                                    <i class="bi bi-house-door"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('blog') }}"
+                                    class="text-decoration-none d-flex align-items-center gap-1">
+                                    <i class="bi bi-journal-text"></i>
+                                    <span>Blog</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active d-flex align-items-center" aria-current="page">
+                                <span class="text-truncate">{{ $post->title }}</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- Blog Post -->
+            <article class="pb-5 pt-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                            <!-- Post Header -->
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center gap-3 text-muted mb-3">
+                                    <span><i class="bi bi-calendar2-event"></i> {{ $post->formatted_date }}</span>
+                                    <span><i class="bi bi-clock"></i> {{ $post->read_time }} min read</span>
+                                    @if ($post->category)
+                                        <span
+                                            class="badge bg-primary bg-opacity-10 text-primary">{{ $post->category }}</span>
+                                    @endif
+                                </div>
+                                <h1 class="display-5 fw-bold mb-3">{{ $post->title }}</h1>
+                                @if ($post->excerpt)
+                                    <p class="lead text-muted">{{ $post->excerpt }}</p>
+                                @endif
+                            </div>
+
+                            <!-- Featured Image -->
+                            @if ($post->featured_image)
+                                <div class="featured-image mb-5">
+                                    <img src="{{ asset('storage/' . $post->featured_image) }}" class="w-100"
+                                        alt="{{ $post->title }}">
+                                </div>
+                            @endif
+
+                            <!-- Share Buttons -->
+                            <div class="d-flex align-items-center gap-3 mb-4 pb-4 border-bottom">
+                                <span class="text-muted small">Share this article:</span>
+                                <div class="share-buttons d-flex gap-2">
+                                    <a href="#" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a href="#" title="Share on Twitter" aria-label="Share on Twitter">
+                                        <i class="bi bi-twitter-x"></i>
+                                    </a>
+                                    <a href="#" title="Share on Facebook" aria-label="Share on Facebook">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="#" title="Copy link" aria-label="Copy link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                {!! $post->content !!}
+                            </div>
+
+                            <!-- Author Bio -->
+                            <div class="mt-5 pt-5 border-top">
+                                <div class="d-flex gap-3 align-items-start">
+                                    <div class="flex-shrink-0">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 80px; height: 80px;">
+                                            <i class="bi bi-person-circle text-primary" style="font-size: 3rem;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="h5 mb-2">John Field</h3>
+                                        <p class="text-muted mb-3">John Field is a fundraising consultant specializing
+                                            in trust and foundation income. With over a decade of experience, he helps
+                                            charities across the UK build sustainable fundraising strategies and develop
+                                            strong funder relationships.</p>
+                                        <a href="https://www.linkedin.com/in/johnfieldfundraising/" target="_blank"
+                                            rel="noopener" class="text-decoration-none">
+                                            <i class="bi bi-linkedin"></i> Connect on LinkedIn
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </article>
 
-                    <!-- Featured Article -->
-                    @if ($featuredPost)
-                        <div class="row g-4 mb-4">
-                            <div class="col-12">
-                                <div class="card border-0 shadow-sm overflow-hidden featured-card">
-                                    <div class="row g-0">
+            <!-- Related Articles -->
+            <section class="py-5 bg-light border-top">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                            @if ($relatedPosts->count() > 0)
+                                <h2 class="h3 mb-4">Related Articles</h2>
+                                <div class="row g-4">
+                                    @foreach ($relatedPosts as $relatedPost)
                                         <div class="col-md-6">
-                                            <div style="height: 240px;">
-                                                <img src="{{ $featuredPost->featured_image ? asset('storage/' . $featuredPost->featured_image) : asset('images/img-10-min.jpg') }}"
-                                                    class="w-100 h-100 object-fit-cover"
-                                                    alt="{{ $featuredPost->title }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="card-body">
-                                                <div class="d-flex align-items-center gap-3 small text-muted mb-2">
-                                                    <span><i class="bi bi-calendar2-event"></i>
-                                                        {{ $featuredPost->short_date }}</span>
-                                                    <span><i class="bi bi-clock"></i> {{ $featuredPost->read_time }}
-                                                        min read</span>
-                                                    @if ($featuredPost->category)
-                                                        <span
-                                                            class="badge bg-primary bg-opacity-10 text-primary">{{ $featuredPost->category }}</span>
-                                                    @endif
+                                            <div class="card h-100 border-0 shadow-sm related-card">
+                                                <div style="height: 160px;">
+                                                    <img src="{{ $relatedPost->featured_image ? asset('storage/' . $relatedPost->featured_image) : asset('images/img-1-min.jpg') }}"
+                                                        class="w-100 h-100 object-fit-cover"
+                                                        alt="{{ $relatedPost->title }}">
                                                 </div>
-                                                <h2 class="h4 card-title">{{ $featuredPost->title }}</h2>
-                                                <p class="card-text text-muted">{{ $featuredPost->excerpt }}</p>
-                                                <a href="{{ route('blog.single', $featuredPost->slug) }}"
-                                                    class="btn btn-outline-primary">Read article</a>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-2 small text-muted mb-2">
+                                                        <span><i class="bi bi-calendar2-event"></i>
+                                                            {{ $relatedPost->short_date }}</span>
+                                                        @if ($relatedPost->category)
+                                                            <span
+                                                                class="badge bg-primary bg-opacity-10 text-primary">{{ $relatedPost->category }}</span>
+                                                        @endif
+                                                    </div>
+                                                    <h3 class="h6 card-title">{{ $relatedPost->title }}</h3>
+                                                    <p class="card-text text-muted small mb-0">
+                                                        {{ Str::limit($relatedPost->excerpt, 100) }}</p>
+                                                    <a href="{{ route('blog.single', $relatedPost->slug) }}"
+                                                        class="stretched-link"></a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                 </div>
+                            @endif
+                            <div class="text-center mt-4">
+                                <a href="{{ route('blog') }}" class="btn btn-outline-primary">View all articles</a>
                             </div>
                         </div>
-                    @endif
-
-                    <!-- Articles Grid -->
-                    <div class="row g-4">
-                        @forelse($posts as $post)
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="card h-100 border-0 shadow-sm blog-card">
-                                    <div style="height: 180px;">
-                                        <img src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : asset('images/img-1-min.jpg') }}"
-                                            class="w-100 h-100 object-fit-cover" alt="{{ $post->title }}">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center gap-3 small text-muted mb-2">
-                                            <span><i class="bi bi-calendar2-event"></i> {{ $post->short_date }}</span>
-                                            <span><i class="bi bi-clock"></i> {{ $post->read_time }} min</span>
-                                            @if ($post->category)
-                                                <span
-                                                    class="badge bg-primary bg-opacity-10 text-primary">{{ $post->category }}</span>
-                                            @endif
-                                        </div>
-                                        <h3 class="h5 card-title">{{ $post->title }}</h3>
-                                        <p class="card-text text-muted">{{ Str::limit($post->excerpt, 120) }}</p>
-                                        <a href="{{ route('blog.single', $post->slug) }}" class="stretched-link">Read
-                                            more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="col-12">
-                                <div class="alert alert-info text-center">
-                                    <i class="bi bi-info-circle me-2"></i>No blog posts available at the moment. Check
-                                    back soon!
-                                </div>
-                            </div>
-                        @endforelse
                     </div>
                 </div>
             </section>
-            <!-- End Blog -->
 
             <!-- Footer -->
             <footer class="footer bg-light pt-5 pb-4 border-top">
