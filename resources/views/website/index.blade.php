@@ -24,6 +24,15 @@
     <!-- Preloader CSS -->
     <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
 
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <style>
+        .swal2-container {
+            z-index: 100000 !important;
+        }
+    </style>
+
     <script>
         (function() {
             const storedTheme = localStorage.getItem('theme') || 'light';
@@ -805,7 +814,7 @@
                                 <h3 class="h4 mb-3">Send a message</h3>
                                 <p class="text-muted small mb-4">Outline your challenge or idea and I'll be in touch
                                     with a tailored response.</p>
-                                <form id="contactForm" class="d-flex flex-column gap-3">
+                                <form id="contactForm" class="d-flex flex-column gap-3" action="{{ route('contact.send') }}" method="POST">
                                     @csrf
                                     <div class="row g-3">
                                         <div class="col-sm-6">
@@ -961,6 +970,9 @@
     <script src="{{ asset('js/preloader.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
     <script>
         if (window.AOS) {
             AOS.init({
@@ -971,6 +983,73 @@
                 mirror: false
             });
         }
+
+        // Contact form AJAX submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const originalText = submitText.textContent;
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Message sent successfully!',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true
+                    });
+                    this.reset(); // Clear form
+                } else {
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Failed to send message',
+                        text: data.message,
+                        showConfirmButton: false,
+                        timer: 4000,
+                        timerProgressBar: true
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'An error occurred',
+                    text: 'Please try again.',
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true
+                });
+            })
+            .finally(() => {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitText.textContent = originalText;
+            });
+        });
     </script>
 </body>
 

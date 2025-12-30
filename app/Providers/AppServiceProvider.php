@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Mail;
+use Symfony\Component\Mailer\Bridge\Sendgrid\Transport\SendgridApiTransport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Mail::extend('sendgrid', function () {
+            return new SendgridApiTransport(config('services.sendgrid.key'));
+        });
     }
 }
