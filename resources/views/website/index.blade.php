@@ -138,7 +138,7 @@
                                         I help charities and non-profits secure long-term funding through clear
                                         strategy, strong cases for support, and practical trust fundraising advice. My
                                         work is about helping you plan ahead, build lasting funder relationships, and
-                                        secure the resources you need to make a real difference.</p>
+                                        secure the resources you need to make a real difference</p>
                                     <div class="cta d-flex gap-3 flex-wrap mb-4 mb-lg-5" data-aos="fade-right"
                                         data-aos-delay="300" data-aos-duration="1000"><a class="btn"
                                             href="#">Contact Now</a><a class="btn btn-white-outline"
