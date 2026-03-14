@@ -154,7 +154,7 @@
                                         <div class="col-md-6">
                                             <div style="height: 240px;">
                                                 <img src="{{ $featuredPost->featured_image ? asset('storage/' . $featuredPost->featured_image) : asset('images/img-10-min.jpg') }}"
-                                                    class="w-100 h-100 object-fit-cover"
+                                                    class="w-100 object-fit-cover"
                                                     alt="{{ $featuredPost->title }}">
                                             </div>
                                         </div>
@@ -183,11 +183,11 @@
                     @endif
 
                     <!-- Articles Grid -->
-                    <div class="row g-4">
+                    <div class="row g-4 mt-2">
                         @forelse($posts as $post)
                             <div class="col-sm-6 col-lg-4">
                                 <div class="card h-100 border-0 shadow-sm blog-card">
-                                    <div style="height: 180px;">
+                                    <div style="height: 200px;">
                                         <img src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : asset('images/img-1-min.jpg') }}"
                                             class="w-100 h-100 object-fit-cover" alt="{{ $post->title }}">
                                     </div>
