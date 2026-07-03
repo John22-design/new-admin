@@ -31,6 +31,9 @@
         .swal2-container {
             z-index: 100000 !important;
         }
+        #back-to-top.show {
+            bottom: 90px !important;
+        }
     </style>
 
     <script>
