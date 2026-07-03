@@ -39,6 +39,10 @@
             document.documentElement.setAttribute('data-bs-theme', storedTheme);
         })();
     </script>
+    <!-- Google reCAPTCHA v3 -->
+    @if(config('services.recaptcha.site_key'))
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
+    @endif
 </head>
 
 <body>
@@ -843,9 +847,8 @@
                                             placeholder="Tell us about your fundraising goals and how we can help..."></textarea>
                                         <small class="text-muted">Maximum 5000 characters</small>
                                     </div>
-                                    <!-- Honeypot field for spam protection (hidden from users) -->
-                                    <input type="text" name="honeypot" style="display:none" tabindex="-1"
-                                        autocomplete="off">
+                                    <!-- Spatie Honeypot field for spam protection -->
+                                    @honeypot
 
                                     <button class="btn btn-primary fw-semibold align-self-end" type="submit" id="submitBtn">
                                         <i class="bi bi-send me-2"></i>
@@ -988,6 +991,7 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
+            const form = this;
             const submitBtn = document.getElementById('submitBtn');
             const submitText = document.getElementById('submitText');
             const originalText = submitText.textContent;
@@ -996,59 +1000,77 @@
             submitBtn.disabled = true;
             submitText.textContent = 'Sending...';
 
-            const formData = new FormData(this);
-
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+            function submitForm(token = '') {
+                const formData = new FormData(form);
+                if (token) {
+                    formData.append('g-recaptcha-response', token);
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Message sent successfully!',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true
-                    });
-                    this.reset(); // Clear form
-                } else {
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Message sent successfully!',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true
+                        });
+                        form.reset(); // Clear form
+                    } else {
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Failed to send message',
+                            text: data.message,
+                            showConfirmButton: false,
+                            timer: 4000,
+                            timerProgressBar: true
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                     Swal.fire({
                         toast: true,
                         position: 'top-end',
                         icon: 'error',
-                        title: 'Failed to send message',
-                        text: data.message,
+                        title: 'An error occurred',
+                        text: 'Please try again.',
                         showConfirmButton: false,
                         timer: 4000,
                         timerProgressBar: true
                     });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                Swal.fire({
-                    toast: true,
-                    position: 'top-end',
-                    icon: 'error',
-                    title: 'An error occurred',
-                    text: 'Please try again.',
-                    showConfirmButton: false,
-                    timer: 4000,
-                    timerProgressBar: true
+                })
+                .finally(() => {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitText.textContent = originalText;
                 });
-            })
-            .finally(() => {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitText.textContent = originalText;
-            });
+            }
+
+            if (typeof grecaptcha !== 'undefined' && '{{ config('services.recaptcha.site_key') }}') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {action: 'contact_form'}).then(function(token) {
+                        submitForm(token);
+                    }).catch(function(err) {
+                        console.error('reCAPTCHA execution error:', err);
+                        submitForm('');
+                    });
+                });
+            } else {
+                submitForm('');
+            }
         });
     </script>
 </body>

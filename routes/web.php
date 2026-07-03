@@ -19,6 +19,7 @@ use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ContactController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 // Main Page Route
 Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics')->middleware('auth');
@@ -55,9 +56,9 @@ Route::post('/auth/logout', [LoginBasic::class, 'logout'])->name('auth-logout');
 // Route::get('/auth/register-basic', [RegisterBasic::class, 'index'])->name('auth-register-basic');
 // Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
-// Contact form submission (public route with rate limiting)
+// Contact form submission (public route with rate limiting and spam protection)
 Route::post('/contact/send', [ContactController::class, 'send'])
-    ->middleware('throttle:5,1')
+    ->middleware(['throttle:5,1', ProtectAgainstSpam::class])
     ->name('contact.send');
 
 // Public Blog pages

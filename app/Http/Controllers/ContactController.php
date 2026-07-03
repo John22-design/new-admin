@@ -6,6 +6,7 @@ use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use App\Rules\ReCaptchaV3;
 
 class ContactController extends Controller
 {
@@ -20,7 +21,7 @@ class ContactController extends Controller
             'email' => 'required|email|max:255',
             'subject' => 'required|string|max:500',
             'message' => 'required|string|max:5000',
-            'honeypot' => 'sometimes|max:0', // Anti-spam honeypot field
+            'g-recaptcha-response' => ['required', new ReCaptchaV3()],
         ]);
 
         try {

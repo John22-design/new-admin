@@ -11,6 +11,7 @@
     "php": "^8.2",
     "laravel/framework": "^12.60",
     "laravel/tinker": "^2.9",
+    "spatie/laravel-honeypot": "^4.7",
     "symfony/http-client": "^7.4",
     "symfony/sendgrid-mailer": "^7.1",
     "yajra/laravel-datatables-oracle": "^12.0"
