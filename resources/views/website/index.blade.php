@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Professional fundraising strategy, trust research, and bid writing services for charities and non-profits to secure long-term funding.">
     <title>John Field Fundraising</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
@@ -75,6 +76,7 @@
                                 <img class="logo dark img-fluid"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
                                     src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder">
+                            </a>
                         </div>
                         {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
                     </div>
@@ -148,8 +150,8 @@
                                         secure the resources you need to make a real difference.</p>
                                     <div class="cta d-flex gap-3 flex-wrap mb-4 mb-lg-5" data-aos="fade-right"
                                         data-aos-delay="300" data-aos-duration="1000"><a class="btn"
-                                            href="#">Contact Now</a><a class="btn btn-white-outline"
-                                            href="{{ route('blog') }}">Learn More
+                                            href="#contact">Contact Now</a><a class="btn btn-white-outline"
+                                            href="{{ route('blog') }}" aria-label="Learn more about John Field Fundraising blog">Learn More
                                             <svg class="lucide lucide-arrow-up-right"
                                                 xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -176,10 +178,10 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="hero-img mb-5"><img class="img-card img-fluid border-white"
-                                    src="{{ asset('images/hero_2.jpg') }}" style="border: 2px white solid"
+                                    src="{{ asset('images/hero_2.webp') }}" style="border: 2px white solid"
                                     alt="Image card" data-aos="fade-left" data-aos-delay="400"
                                     data-aos-duration="1000"><img class="img-main img-fluid rounded-4"
-                                    src="{{ asset('images/hero_1.jpg') }}" alt="Hero Image" data-aos="zoom-in"
+                                    src="{{ asset('images/hero_1.webp') }}" alt="Hero Image" data-aos="zoom-in"
                                     data-aos-delay="200" data-aos-duration="1200">
                             </div>
                             <div class="pt-2 mt-lg-5 d-flex flex-wrap align-items-center justify-content-center gap-4 text-muted small"
@@ -215,9 +217,9 @@
                                             there, I work with you to build a clear and realistic plan to grow your
                                             income from trusts and foundations.</p>
                                     </div>
-                                    <h4 class="small fw-bold mt-4 mb-3" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">My
+                                    <h3 class="small fw-bold mt-4 mb-3" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">My
                                         approach focuses on:
-                                    </h4>
+                                    </h3>
                                     <ul class="list-unstyled text-start"
                                         >
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
@@ -256,7 +258,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
-                                    src="{{ asset('images/about-us.jpg') }}" alt="image placeholder" data-aos="fade-right"
+                                    src="{{ asset('images/about-us.webp') }}" alt="image placeholder" data-aos="fade-right"
                                     data-aos-delay="0" data-aos-duration="1000">
                                 <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="flip-left"
                                     data-aos-delay="300" data-aos-duration="1000">
@@ -962,7 +964,7 @@
     </div>
 
     <!-- Back to Top -->
-    <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
+    <button id="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
 
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>

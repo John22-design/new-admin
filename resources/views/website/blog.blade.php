@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog · John Field Fundraising</title>
+    <meta name="description" content="Read practical fundraising tips, real-world lessons, and strategies to help your charity grow sustainable trust income.">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,7 +154,7 @@
                                     <div class="row g-0">
                                         <div class="col-md-6">
                                             <div style="height: 240px;">
-                                                <img src="{{ $featuredPost->featured_image ? asset('storage/' . $featuredPost->featured_image) : asset('images/img-10-min.jpg') }}"
+                                                <img src="{{ $featuredPost->featured_image ? asset('storage/' . $featuredPost->featured_image) : asset('images/img-10-min.webp') }}"
                                                     class="w-100 object-fit-cover"
                                                     alt="{{ $featuredPost->title }}">
                                             </div>
@@ -188,7 +189,7 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="card h-100 border-0 shadow-sm blog-card">
                                     <div style="height: 200px;">
-                                        <img src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : asset('images/img-1-min.jpg') }}"
+                                        <img src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : asset('images/img-1-min.webp') }}"
                                             class="w-100 h-100 object-fit-cover" alt="{{ $post->title }}">
                                     </div>
                                     <div class="card-body">
@@ -309,7 +310,7 @@
     </div>
 
     <!-- Back to Top -->
-    <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
+    <button id="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
 
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>

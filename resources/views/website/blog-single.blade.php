@@ -320,7 +320,7 @@
                                         <div class="col-md-6">
                                             <div class="card h-100 border-0 shadow-sm related-card">
                                                 <div style="height: 160px;">
-                                                    <img src="{{ $relatedPost->featured_image ? asset('storage/' . $relatedPost->featured_image) : asset('images/img-1-min.jpg') }}"
+                                                    <img src="{{ $relatedPost->featured_image ? asset('storage/' . $relatedPost->featured_image) : asset('images/img-1-min.webp') }}"
                                                         class="w-100 h-100 object-fit-cover"
                                                         alt="{{ $relatedPost->title }}">
                                                 </div>
@@ -441,7 +441,7 @@
     </div>
 
     <!-- Back to Top -->
-    <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
+    <button id="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
 
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
