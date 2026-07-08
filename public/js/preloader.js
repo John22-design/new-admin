@@ -30,15 +30,14 @@
   // ============================================
 
   const CONFIG = {
-    hideDelay: 500, // Delay before hiding (ms)
-    removeDelay: 400, // Delay before removing from DOM (ms)
-    minDisplayTime: 300, // Minimum display time (ms)
+    hideDelay: 150, // Delay before hiding (ms)
+    removeDelay: 150, // Delay before removing from DOM (ms)
+    minDisplayTime: 100, // Minimum display time (ms)
     progressSteps: [
       { time: 0, progress: 0 },
-      { time: 200, progress: 30 },
-      { time: 500, progress: 60 },
-      { time: 1000, progress: 85 },
-      { time: 2000, progress: 95 }
+      { time: 100, progress: 40 },
+      { time: 250, progress: 75 },
+      { time: 400, progress: 95 }
     ]
   };
 
@@ -321,12 +320,12 @@
     }
   }
 
-  // Listen for window load event (fires after all resources are loaded)
-  window.addEventListener('load', function () {
+  // Listen for DOMContentLoaded event (fires as soon as HTML is parsed and ready)
+  document.addEventListener('DOMContentLoaded', function () {
     allResourcesLoaded = true;
+    imagesLoaded = true; // Bypass image check for faster loading
 
-    // Check images after window load
-    checkImagesLoaded();
+    checkAndHide();
   });
 
   // Fallback: If preloader is still showing after 10 seconds, force hide

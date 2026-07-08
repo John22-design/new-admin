@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Preload LCP Images -->
     <link rel="preload" href="{{ asset('images/hero_1.webp') }}" as="image" type="image/webp">
@@ -25,12 +26,6 @@
     <!-- Non-critical Styles (Deferred for Performance) -->
     <link rel="preload" href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet"></noscript>
-
-    <link rel="preload" href="{{ asset('vendors/glightbox/glightbox.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet"></noscript>
-
-    <link rel="preload" href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet"></noscript>
 
     <link rel="preload" href="{{ asset('vendors/aos/aos.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet"></noscript>
@@ -53,10 +48,6 @@
             document.documentElement.setAttribute('data-bs-theme', storedTheme);
         })();
     </script>
-    <!-- Google reCAPTCHA v3 -->
-    @if(config('services.recaptcha.site_key'))
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
-    @endif
 </head>
 
 <body>
@@ -984,13 +975,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/gsap/gsap.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendors/aos/aos.js') }}" defer></script>
-    <script src="{{ asset('vendors/purecounter/purecounter.js') }}" defer></script>
     <script src="{{ asset('js/preloader.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
@@ -1011,6 +996,31 @@
 
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
+                let recaptchaLoaded = false;
+                const loadRecaptcha = () => {
+                    if (recaptchaLoaded) return;
+                    recaptchaLoaded = true;
+
+                    // Remove event listeners
+                    contactForm.removeEventListener('focusin', loadRecaptcha);
+                    contactForm.removeEventListener('click', loadRecaptcha);
+                    contactForm.removeEventListener('mouseenter', loadRecaptcha);
+
+                    const siteKey = '{{ config('services.recaptcha.site_key') }}';
+                    if (siteKey) {
+                        const script = document.createElement('script');
+                        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+                        script.async = true;
+                        script.defer = true;
+                        document.body.appendChild(script);
+                    }
+                };
+
+                // Load reCAPTCHA when user interacts with the form
+                contactForm.addEventListener('focusin', loadRecaptcha, { once: true });
+                contactForm.addEventListener('click', loadRecaptcha, { once: true });
+                contactForm.addEventListener('mouseenter', loadRecaptcha, { once: true });
+
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
 
@@ -1082,18 +1092,39 @@
                         });
                     }
 
-                    if (typeof grecaptcha !== 'undefined' && '{{ config('services.recaptcha.site_key') }}') {
-                        grecaptcha.ready(function() {
-                            grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {action: 'contact_form'}).then(function(token) {
-                                submitForm(token);
-                            }).catch(function(err) {
-                                console.error('reCAPTCHA execution error:', err);
-                                submitForm('');
+                    function executeRecaptchaAndSubmit() {
+                        const siteKey = '{{ config('services.recaptcha.site_key') }}';
+                        if (typeof grecaptcha !== 'undefined' && siteKey) {
+                            grecaptcha.ready(function() {
+                                grecaptcha.execute(siteKey, {action: 'contact_form'}).then(function(token) {
+                                    submitForm(token);
+                                }).catch(function(err) {
+                                    console.error('reCAPTCHA execution error:', err);
+                                    submitForm('');
+                                });
                             });
-                        });
-                    } else {
-                        submitForm('');
+                        } else {
+                            if (siteKey && !recaptchaLoaded) {
+                                loadRecaptcha();
+                                let checkInterval = setInterval(() => {
+                                    if (typeof grecaptcha !== 'undefined') {
+                                        clearInterval(checkInterval);
+                                        executeRecaptchaAndSubmit();
+                                    }
+                                }, 100);
+                                setTimeout(() => {
+                                    clearInterval(checkInterval);
+                                    if (typeof grecaptcha === 'undefined') {
+                                        submitForm('');
+                                    }
+                                }, 2000);
+                            } else {
+                                submitForm('');
+                            }
+                        }
                     }
+
+                    executeRecaptchaAndSubmit();
                 });
             }
         });

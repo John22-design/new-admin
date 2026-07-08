@@ -8,10 +8,11 @@
     <meta name="description" content="Read practical fundraising tips, real-world lessons, and strategies to help your charity grow sustainable trust income.">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link class="font-pre" rel="preconnect" href="https://fonts.googleapis.com">
+    <link class="font-pre" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Preload LCP Images (If any featured post) -->
     @if ($featuredPost)
@@ -26,15 +27,6 @@
     <!-- Non-critical Styles (Deferred for Performance) -->
     <link rel="preload" href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet"></noscript>
-
-    <link rel="preload" href="{{ asset('vendors/glightbox/glightbox.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet"></noscript>
-
-    <link rel="preload" href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet"></noscript>
-
-    <link rel="preload" href="{{ asset('vendors/aos/aos.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet"></noscript>
 
     <script>
         (function() {
@@ -330,29 +322,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/gsap/gsap.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}" defer></script>
-    <script src="{{ asset('vendors/aos/aos.js') }}" defer></script>
-    <script src="{{ asset('vendors/purecounter/purecounter.js') }}" defer></script>
     <script src="{{ asset('js/preloader.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.AOS) {
-                AOS.init({
-                    duration: 900,
-                    offset: 120,
-                    easing: 'ease-out-cubic',
-                    once: true,
-                    mirror: false
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateActiveLink);
 
   const portfolioGrid = document.querySelector('#portfolio-grid');
-  if (portfolioGrid) {
+  if (portfolioGrid && typeof Isotope !== 'undefined') {
     var iso = new Isotope("#portfolio-grid", {
       itemSelector: ".portfolio-item",
       layoutMode: "masonry",
@@ -58,10 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (iso) {
       iso.on("layoutComplete", updateActiveLink);
 
-      imagesLoaded("#portfolio-grid", function () {
-        iso.layout();
-        updateActiveLink();
-      });
+      if (typeof imagesLoaded !== 'undefined') {
+        imagesLoaded("#portfolio-grid", function () {
+          iso.layout();
+          updateActiveLink();
+        });
+      }
     }
 
     var filterButtons = document.querySelectorAll(".filter-button");
@@ -108,7 +110,9 @@ const navbarInit = () => {
 
 // ======= Marquee =======
 const logoMarqueeInit = () => {
+  if (typeof gsap === 'undefined') return;
   const wrapper = document.querySelector(".logo-wrapper");
+  if (!wrapper) return;
   const boxes = gsap.utils.toArray(".logo-item");
   
   if (boxes.length > 0) {
@@ -236,38 +240,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ======= Swiper =======
 const swiperInit = () => {
-  var swiper = new Swiper(".testimonialSwiper", {
-    slidesPerView: 1,
-    speed: 700,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1.5,
-        spaceBetween: 20,
+  if (typeof Swiper === 'undefined') return;
+  if (document.querySelector(".testimonialSwiper")) {
+    var swiper = new Swiper(".testimonialSwiper", {
+      slidesPerView: 1,
+      speed: 700,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-      768: {
-        slidesPerView: 2.5,
-        spaceBetween: 30,
+      breakpoints: {
+        640: {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 2.5,
+          spaceBetween: 30,
+        },
       },
-      1024: {
-        slidesPerView: 2.5,
-        spaceBetween: 30,
+      navigation: {
+        nextEl: ".custom-button-next",
+        prevEl: ".custom-button-prev",
       },
-    },
-    navigation: {
-      nextEl: ".custom-button-next",
-      prevEl: ".custom-button-prev",
-    },
-  });
+    });
+  }
 
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
-  if (progressCircle && progressContent ) {
+  if (progressCircle && progressContent && document.querySelector(".sliderSwiper")) {
     var swiper2 = new Swiper(".sliderSwiper", {
       slidesPerView: 1,
       speed: 700,
@@ -302,11 +309,14 @@ document.addEventListener("DOMContentLoaded", swiperInit);
 
 // ======= Glightbox =======
 const glightBoxInit = () => {
-  const lightbox = GLightbox({
-    touchNavigation: true,
-    loop: true,
-    autoplayVideos: true,
-  });
+  if (typeof GLightbox === 'undefined') return;
+  if (document.querySelector('.glightbox')) {
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+    });
+  }
 };
 document.addEventListener("DOMContentLoaded", glightBoxInit);
 
@@ -386,6 +396,7 @@ document.addEventListener("DOMContentLoaded", inlineSvgInit);
 
 // ======= AOS =======
 const aosInit = () => {
+  if (typeof AOS === 'undefined') return;
   AOS.init({
     duration: 800,
     easing: 'slide',
@@ -396,9 +407,12 @@ document.addEventListener("DOMContentLoaded", aosInit);
 
 // ======= PureCounter =======
 const pureCounterInit = () => {
-  new PureCounter({
-    selector: ".purecounter",
-  });
+  if (typeof PureCounter === 'undefined') return;
+  if (document.querySelector(".purecounter")) {
+    new PureCounter({
+      selector: ".purecounter",
+    });
+  }
 }
 document.addEventListener("DOMContentLoaded", pureCounterInit);
 
