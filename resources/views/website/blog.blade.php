@@ -89,6 +89,7 @@
                 <!-- Logo -->
                 <a class="navbar-brand w-auto" href="{{ route('home') }}#home">
                     <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="logo"
+                        width="80" height="40"
                         style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
 
@@ -99,6 +100,7 @@
                         <div class="offcanvas-header-logo">
                             <a class="logo-link" id="fbs__net-navbarsLabel" href="{{ route('home') }}">
                                 <img class="logo dark img-fluid"
+                                    width="80" height="40"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
                                     src="{{ asset('images/navbar_logo.png') }}" alt="logo">
                             </a>
@@ -167,6 +169,7 @@
                                             <div style="height: 240px;">
                                                 <img src="{{ $featuredPost->featured_image ? asset('storage/' . $featuredPost->featured_image) : asset('images/img-10-min.webp') }}"
                                                     class="w-100 object-fit-cover"
+                                                    width="800" height="533"
                                                     alt="{{ $featuredPost->title }}">
                                             </div>
                                         </div>
@@ -201,7 +204,9 @@
                                 <div class="card h-100 border-0 shadow-sm blog-card">
                                     <div style="height: 200px;">
                                         <img src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : asset('images/img-1-min.webp') }}"
-                                            class="w-100 h-100 object-fit-cover" alt="{{ $post->title }}">
+                                            class="w-100 h-100 object-fit-cover"
+                                            width="600" height="400"
+                                            alt="{{ $post->title }}">
                                     </div>
                                     <div class="card-body">
                                         <div class="d-flex align-items-center gap-3 small text-muted mb-2">

@@ -71,7 +71,7 @@
                 <!-- Start Logo-->
                 <a class="navbar-brand w-auto" href="#home">
                     <img class="logo dark img-fluid ms-3" src="{{ asset('images/navbar_logo.png') }}"
-                        alt="image placeholder" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+                        alt="image placeholder" width="80" height="40" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
                 <!-- End Logo-->
 
@@ -84,6 +84,7 @@
                         <div class="offcanvas-header-logo">
                             <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
                                 <img class="logo dark img-fluid"
+                                    width="80" height="40"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
                                     src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder">
                             </a>
@@ -189,9 +190,12 @@
                         <div class="col-lg-6">
                             <div class="hero-img mb-5"><img class="img-card img-fluid border-white"
                                     src="{{ asset('images/hero_2.webp') }}" style="border: 2px white solid"
+                                    width="800" height="600"
                                     alt="Image card" data-aos="fade-left" data-aos-delay="400"
                                     data-aos-duration="1000"><img class="img-main img-fluid rounded-4"
-                                    src="{{ asset('images/hero_1.webp') }}" alt="Hero Image" data-aos="zoom-in"
+                                    src="{{ asset('images/hero_1.webp') }}" alt="Hero Image"
+                                    width="1200" height="800"
+                                    data-aos="zoom-in"
                                     data-aos-delay="200" data-aos-duration="1200">
                             </div>
                             <div class="pt-2 mt-lg-5 d-flex flex-wrap align-items-center justify-content-center gap-4 text-muted small"
@@ -268,7 +272,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
-                                    src="{{ asset('images/about-us.webp') }}" alt="image placeholder" data-aos="fade-right"
+                                    src="{{ asset('images/about-us.webp') }}" alt="image placeholder"
+                                    width="1200" height="873"
+                                    data-aos="fade-right"
                                     data-aos-delay="0" data-aos-duration="1000">
                                 <div class="mission-statement p-4 rounded-4 d-flex gap-4" data-aos="flip-left"
                                     data-aos-delay="300" data-aos-duration="1000">

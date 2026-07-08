@@ -157,6 +157,7 @@
                 <!-- Logo -->
                 <a class="navbar-brand w-auto" href="{{ route('home') }}#home">
                     <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="logo"
+                        width="80" height="40"
                         style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
 
@@ -167,6 +168,7 @@
                         <div class="offcanvas-header-logo">
                             <a class="logo-link" id="fbs__net-navbarsLabel" href="{{ route('home') }}">
                                 <img class="logo dark img-fluid"
+                                    width="80" height="40"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
                                     src="{{ asset('images/navbar_logo.png') }}" alt="logo">
                             </a>
@@ -333,6 +335,7 @@
                                                 <div style="height: 160px;">
                                                     <img src="{{ $relatedPost->featured_image ? asset('storage/' . $relatedPost->featured_image) : asset('images/img-1-min.webp') }}"
                                                         class="w-100 h-100 object-fit-cover"
+                                                        width="600" height="400"
                                                         alt="{{ $relatedPost->title }}">
                                                 </div>
                                                 <div class="card-body">
