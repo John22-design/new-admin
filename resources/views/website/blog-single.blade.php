@@ -13,20 +13,31 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- Vendor Styles -->
+    <!-- Preload LCP Image -->
+    @if ($post->featured_image)
+        <link rel="preload" href="{{ asset('storage/' . $post->featured_image) }}" as="image">
+    @endif
+
+    <!-- Critical CSS Styles -->
     <link href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet">
-
-    <!-- Theme Style -->
     @vite(['resources/css/style.css'])
-
-    <!-- Preloader CSS -->
     <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
+
+    <!-- Non-critical Styles (Deferred for Performance) -->
+    <link rel="preload" href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/glightbox/glightbox.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/aos/aos.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet"></noscript>
 
     <script>
         (function() {
@@ -444,27 +455,29 @@
     <button id="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
 
     <!-- Scripts -->
-    <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendors/gsap/gsap.min.js') }}"></script>
-    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}"></script>
-    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('vendors/aos/aos.js') }}"></script>
-    <script src="{{ asset('vendors/purecounter/purecounter.js') }}"></script>
-    <script src="{{ asset('js/preloader.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/gsap/gsap.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/aos/aos.js') }}" defer></script>
+    <script src="{{ asset('vendors/purecounter/purecounter.js') }}" defer></script>
+    <script src="{{ asset('js/preloader.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <script>
-        if (window.AOS) {
-            AOS.init({
-                duration: 900,
-                offset: 120,
-                easing: 'ease-out-cubic',
-                once: true,
-                mirror: false
-            });
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.AOS) {
+                AOS.init({
+                    duration: 900,
+                    offset: 120,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    mirror: false
+                });
+            }
+        });
     </script>
 </body>
 

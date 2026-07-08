@@ -10,23 +10,33 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- Vendor Styles -->
+    <!-- Preload LCP Images -->
+    <link rel="preload" href="{{ asset('images/hero_1.webp') }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ asset('images/hero_2.webp') }}" as="image" type="image/webp">
+
+    <!-- Critical CSS Styles -->
     <link href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet">
-
-    <!-- Theme Style -->
     @vite(['resources/css/style.css'])
-
-    <!-- Preloader CSS -->
     <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
 
-    <!-- SweetAlert2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Non-critical Styles (Deferred for Performance) -->
+    <link rel="preload" href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/glightbox/glightbox.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/glightbox/glightbox.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="{{ asset('vendors/aos/aos.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('vendors/aos/aos.css') }}" rel="stylesheet"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"></noscript>
 
     <style>
         .swal2-container {
@@ -967,114 +977,118 @@
     <button id="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
 
     <!-- Scripts -->
-    <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendors/gsap/gsap.min.js') }}"></script>
-    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}"></script>
-    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('vendors/aos/aos.js') }}"></script>
-    <script src="{{ asset('vendors/purecounter/purecounter.js') }}"></script>
-    <script src="{{ asset('js/preloader.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/gsap/gsap.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/imagesloaded/imagesloaded.pkgd.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/isotope/isotope.pkgd.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/glightbox/glightbox.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/swiper/swiper-bundle.min.js') }}" defer></script>
+    <script src="{{ asset('vendors/aos/aos.js') }}" defer></script>
+    <script src="{{ asset('vendors/purecounter/purecounter.js') }}" defer></script>
+    <script src="{{ asset('js/preloader.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- SweetAlert2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js" defer></script>
 
     <script>
-        if (window.AOS) {
-            AOS.init({
-                duration: 900,
-                offset: 120,
-                easing: 'ease-out-cubic',
-                once: true,
-                mirror: false
-            });
-        }
-
-        // Contact form AJAX submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const form = this;
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const originalText = submitText.textContent;
-
-            // Disable button and show loading
-            submitBtn.disabled = true;
-            submitText.textContent = 'Sending...';
-
-            function submitForm(token = '') {
-                const formData = new FormData(form);
-                if (token) {
-                    formData.append('g-recaptcha-response', token);
-                }
-
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        Swal.fire({
-                            toast: true,
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Message sent successfully!',
-                            showConfirmButton: false,
-                            timer: 2000,
-                            timerProgressBar: true
-                        });
-                        form.reset(); // Clear form
-                    } else {
-                        Swal.fire({
-                            toast: true,
-                            position: 'top-end',
-                            icon: 'error',
-                            title: 'Failed to send message',
-                            text: data.message,
-                            showConfirmButton: false,
-                            timer: 4000,
-                            timerProgressBar: true
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'error',
-                        title: 'An error occurred',
-                        text: 'Please try again.',
-                        showConfirmButton: false,
-                        timer: 4000,
-                        timerProgressBar: true
-                    });
-                })
-                .finally(() => {
-                    // Re-enable button
-                    submitBtn.disabled = false;
-                    submitText.textContent = originalText;
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.AOS) {
+                AOS.init({
+                    duration: 900,
+                    offset: 120,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    mirror: false
                 });
             }
 
-            if (typeof grecaptcha !== 'undefined' && '{{ config('services.recaptcha.site_key') }}') {
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {action: 'contact_form'}).then(function(token) {
-                        submitForm(token);
-                    }).catch(function(err) {
-                        console.error('reCAPTCHA execution error:', err);
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const form = this;
+                    const submitBtn = document.getElementById('submitBtn');
+                    const submitText = document.getElementById('submitText');
+                    const originalText = submitText.textContent;
+
+                    // Disable button and show loading
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Sending...';
+
+                    function submitForm(token = '') {
+                        const formData = new FormData(form);
+                        if (token) {
+                            formData.append('g-recaptcha-response', token);
+                        }
+
+                        fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Message sent successfully!',
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                    timerProgressBar: true
+                                });
+                                form.reset(); // Clear form
+                            } else {
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: 'Failed to send message',
+                                    text: data.message,
+                                    showConfirmButton: false,
+                                    timer: 4000,
+                                    timerProgressBar: true
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'An error occurred',
+                                text: 'Please try again.',
+                                showConfirmButton: false,
+                                timer: 4000,
+                                timerProgressBar: true
+                            });
+                        })
+                        .finally(() => {
+                            // Re-enable button
+                            submitBtn.disabled = false;
+                            submitText.textContent = originalText;
+                        });
+                    }
+
+                    if (typeof grecaptcha !== 'undefined' && '{{ config('services.recaptcha.site_key') }}') {
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {action: 'contact_form'}).then(function(token) {
+                                submitForm(token);
+                            }).catch(function(err) {
+                                console.error('reCAPTCHA execution error:', err);
+                                submitForm('');
+                            });
+                        });
+                    } else {
                         submitForm('');
-                    });
+                    }
                 });
-            } else {
-                submitForm('');
             }
         });
     </script>
