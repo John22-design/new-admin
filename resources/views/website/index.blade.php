@@ -1,3 +1,6 @@
+@php
+    $isMobile = preg_match('/Mobile|Android|iP(hone|od|ad)|IEMobile|BlackBerry|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/', request()->userAgent());
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +24,9 @@
     <!-- Critical CSS Styles -->
     <link href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     @vite(['resources/css/style.css'])
+    @if(!$isMobile)
     <link href="{{ asset('css/preloader.css') }}" rel="stylesheet">
+    @endif
 
     <!-- Non-critical Styles (Deferred for Performance) -->
     <link rel="preload" href="{{ asset('vendors/bootstrap-icons/font/bootstrap-icons.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -51,7 +56,7 @@
 </head>
 
 <body>
-    <x-preloader theme="gradient" variant="progress" />
+    <x-preloader :disabled="$isMobile" theme="gradient" variant="progress" />
 
     <div class="site-wrap">
         <!-- ======= Header =======-->
@@ -976,7 +981,9 @@
     <!-- Scripts -->
     <script src="{{ asset('vendors/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendors/aos/aos.js') }}" defer></script>
+    @if(!$isMobile)
     <script src="{{ asset('js/preloader.js') }}" defer></script>
+    @endif
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- SweetAlert2 JS -->
