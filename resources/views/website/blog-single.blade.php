@@ -4,11 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $post->meta_title ?? $post->title }} · John Field Fundraising</title>
-    <meta name="description" content="{{ $post->meta_description ?? $post->excerpt }}">
-    @if ($post->meta_keywords)
-        <meta name="keywords" content="{{ $post->meta_keywords }}">
-    @endif
+    <title>{{ $post->title }} · John Field Fundraising</title>
+    <meta name="description" content="{{ $post->excerpt }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
     <link class="font-pre" rel="preconnect" href="https://fonts.googleapis.com">
@@ -248,7 +245,6 @@
                             <div class="mb-4">
                                 <div class="d-flex align-items-center gap-3 text-muted mb-3">
                                     <span><i class="bi bi-calendar2-event"></i> {{ $post->formatted_date }}</span>
-                                    <span><i class="bi bi-clock"></i> {{ $post->read_time }} min read</span>
                                     @if ($post->category)
                                         <span
                                             class="badge bg-primary bg-opacity-10 text-primary">{{ $post->category }}</span>

@@ -13,6 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
   ->withMiddleware(function (Middleware $middleware) {
     // Configure authentication middleware to redirect to login page
     $middleware->redirectGuestsTo('/auth/login');
+    $middleware->web(append: [
+      \App\Http\Middleware\TrackVisitor::class,
+    ]);
   })
   ->withExceptions(function (Exceptions $exceptions) {
     //

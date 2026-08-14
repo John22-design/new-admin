@@ -78,18 +78,12 @@ class BlogPostController extends Controller
             // Validate the request
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
-                'slug' => 'nullable|string|max:255|unique:blog_posts,slug',
                 'excerpt' => 'nullable|string|max:500',
                 'content' => 'nullable|string',
                 'category' => 'nullable|string|max:100',
-                'read_time' => 'nullable|integer|min:1',
                 'is_featured' => 'boolean',
                 'status' => 'required|in:draft,published,archived',
-                'published_at' => 'nullable|date',
                 'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
-                'meta_title' => 'nullable|string|max:255',
-                'meta_description' => 'nullable|string|max:500',
-                'meta_keywords' => 'nullable|string|max:255',
             ]);
 
             // Handle featured image upload
@@ -102,15 +96,11 @@ class BlogPostController extends Controller
             // Set author_id to current user
             $validated['author_id'] = auth()->id();
 
-            // Auto-generate slug if not provided
-            if (empty($validated['slug'])) {
-                $validated['slug'] = Str::slug($validated['title']);
-            }
+            // Explicitly cast is_featured boolean
+            $validated['is_featured'] = $request->boolean('is_featured');
 
-            // Set published_at if status is published and date not provided
-            if ($validated['status'] === 'published' && empty($validated['published_at'])) {
-                $validated['published_at'] = now();
-            }
+            // Auto-generate slug from title
+            $validated['slug'] = Str::slug($validated['title']);
 
             // Create blog post
             $blogPost = BlogPost::create($validated);
@@ -166,18 +156,12 @@ class BlogPostController extends Controller
             // Validate the request
             $validated = $request->validate([
                 'title' => 'required|string|max:255',
-                'slug' => 'nullable|string|max:255|unique:blog_posts,slug,' . $id,
                 'excerpt' => 'nullable|string|max:500',
                 'content' => 'nullable|string',
                 'category' => 'nullable|string|max:100',
-                'read_time' => 'nullable|integer|min:1',
                 'is_featured' => 'boolean',
                 'status' => 'required|in:draft,published,archived',
-                'published_at' => 'nullable|date',
                 'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
-                'meta_title' => 'nullable|string|max:255',
-                'meta_description' => 'nullable|string|max:500',
-                'meta_keywords' => 'nullable|string|max:255',
             ]);
 
             // Handle featured image upload
@@ -192,15 +176,13 @@ class BlogPostController extends Controller
                 $validated['featured_image'] = $image->storeAs('blog-posts', $imageName, 'public');
             }
 
-            // Update slug if title changed and slug not manually set
-            if ($request->title !== $blogPost->title && empty($request->slug)) {
+            // Update slug if title changed
+            if ($request->title !== $blogPost->title) {
                 $validated['slug'] = Str::slug($validated['title']);
             }
 
-            // Set published_at if changing to published status
-            if ($validated['status'] === 'published' && $blogPost->status !== 'published' && empty($validated['published_at'])) {
-                $validated['published_at'] = now();
-            }
+            // Explicitly cast is_featured boolean
+            $validated['is_featured'] = $request->boolean('is_featured');
 
             // Update blog post
             $blogPost->update($validated);

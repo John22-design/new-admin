@@ -16,7 +16,29 @@
         }
 
         .ck-editor__editable {
-            min-height: 400px;
+            min-height: 180px;
+            max-height: 300px;
+        }
+
+        #blogPostModal .modal-body {
+            max-height: 68vh;
+            overflow-y: auto;
+        }
+
+        /* Custom subtle scrollbar for modal body */
+        #blogPostModal .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        #blogPostModal .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        #blogPostModal .modal-body::-webkit-scrollbar-thumb {
+            background: #c7c7c7;
+            border-radius: 4px;
+        }
+        #blogPostModal .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
         }
     </style>
 @endsection
@@ -48,7 +70,7 @@
                         <th>Category</th>
                         <th>Status</th>
                         <th>Featured</th>
-                        <th>Published At</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -60,85 +82,62 @@
 
     <!-- Modal for Create/Edit -->
     <div class="modal fade" id="blogPostModal" tabindex="-1" aria-labelledby="blogPostModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="blogPostModalLabel">Add Blog Post</h5>
+        <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+            <form id="blogPostForm" class="modal-content" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" id="blog_post_id" name="blog_post_id">
+                <input type="hidden" id="form_method" name="_method" value="">
+
+                <div class="modal-header border-bottom py-2 px-3">
+                    <h5 class="modal-title fw-bold" id="blogPostModalLabel">Add Blog Post</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="blogPostForm" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" id="blog_post_id" name="blog_post_id">
-                    <input type="hidden" id="form_method" name="_method" value="">
 
-                    <div class="modal-body">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs mb-3" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="content-tab" data-bs-toggle="tab"
-                                    data-bs-target="#content" type="button" role="tab">
-                                    <i class="bx bx-file"></i> Content
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings"
-                                    type="button" role="tab">
-                                    <i class="bx bx-cog"></i> Settings
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="seo-tab" data-bs-toggle="tab" data-bs-target="#seo"
-                                    type="button" role="tab">
-                                    <i class="bx bx-search-alt"></i> SEO
-                                </button>
-                            </li>
-                        </ul>
-
-                        <!-- Tab content -->
-                        <div class="tab-content">
-                            <!-- Content Tab -->
-                            <div class="tab-pane fade show active" id="content" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="title" class="form-label">Title <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="title" name="title">
-                                        <div class="invalid-feedback" id="title_error"></div>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="slug" class="form-label">Slug</label>
-                                        <input type="text" class="form-control" id="slug" name="slug"
-                                            placeholder="Auto-generated from title if left blank">
-                                        <div class="invalid-feedback" id="slug_error"></div>
-                                        <small class="text-muted">URL-friendly identifier (e.g., my-blog-post)</small>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="excerpt" class="form-label">Excerpt</label>
-                                        <textarea class="form-control" id="excerpt" name="excerpt" rows="3"
-                                            placeholder="Short summary for blog listing pages"></textarea>
-                                        <div class="invalid-feedback" id="excerpt_error"></div>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="blog_content" class="form-label">Content</label>
-                                        <textarea class="form-control" id="blog_content" name="content" rows="15"></textarea>
-                                        <div class="invalid-feedback" id="content_error"></div>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="featured_image" class="form-label">Featured Image</label>
-                                        <input type="file" class="form-control" id="featured_image"
-                                            name="featured_image" accept="image/*">
-                                        <div class="invalid-feedback" id="featured_image_error"></div>
-                                        <small class="text-muted">Allowed: jpeg, png, jpg, gif, webp. Max: 5MB</small>
-                                        <div id="current_image" class="mt-2"></div>
-                                    </div>
-                                </div>
+                <div class="modal-body p-3 p-lg-4">
+                    <div class="row g-3">
+                        <!-- Left Column: Main Writing Content -->
+                        <div class="col-lg-8">
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-semibold">Title <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="Enter blog post title...">
+                                <div class="invalid-feedback" id="title_error"></div>
                             </div>
 
-                            <!-- Settings Tab -->
-                            <div class="tab-pane fade" id="settings" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="category" class="form-label">Category</label>
+                            <div class="mb-3">
+                                <label for="blog_content" class="form-label fw-semibold">Content</label>
+                                <textarea class="form-control" id="blog_content" name="content"></textarea>
+                                <div class="invalid-feedback" id="content_error"></div>
+                            </div>
+
+                            <div class="mb-0">
+                                <label for="excerpt" class="form-label fw-semibold">Excerpt / Summary</label>
+                                <textarea class="form-control" id="excerpt" name="excerpt" rows="5"
+                                    placeholder="Short summary displayed on blog listing cards..."></textarea>
+                                <div class="invalid-feedback" id="excerpt_error"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Settings & Media Sidebar -->
+                        <div class="col-lg-4">
+                            <!-- Publishing Settings Card -->
+                            <div class="card border shadow-none mb-3">
+                                <div class="card-header bg-light py-2 px-3">
+                                    <h6 class="mb-0 fw-semibold text-primary"><i class="bx bx-cog me-1"></i> Post Settings</h6>
+                                </div>
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <label for="status" class="form-label mb-1 fw-semibold">Status <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="status" name="status">
+                                            <option value="published" selected>Published</option>
+                                            <option value="draft">Draft</option>
+                                            <option value="archived">Archived</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="status_error"></div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="category" class="form-label mb-1 fw-semibold">Category</label>
                                         <select class="form-select" id="category" name="category">
                                             <option value="">Select Category</option>
                                             <option value="Strategy">Strategy</option>
@@ -149,73 +148,51 @@
                                         </select>
                                         <div class="invalid-feedback" id="category_error"></div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="read_time" class="form-label">Read Time (minutes)</label>
-                                        <input type="number" class="form-control" id="read_time" name="read_time"
-                                            min="1" value="5">
-                                        <div class="invalid-feedback" id="read_time_error"></div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="status" class="form-label">Status <span
-                                                class="text-danger">*</span></label>
-                                        <select class="form-select" id="status" name="status">
-                                            <option value="draft">Draft</option>
-                                            <option value="published">Published</option>
-                                            <option value="archived">Archived</option>
-                                        </select>
-                                        <div class="invalid-feedback" id="status_error"></div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="published_at" class="form-label">Publish Date</label>
-                                        <input type="datetime-local" class="form-control" id="published_at"
-                                            name="published_at">
-                                        <div class="invalid-feedback" id="published_at_error"></div>
-                                        <small class="text-muted">Leave blank for immediate publish</small>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="is_featured"
-                                                name="is_featured" value="1">
-                                            <label class="form-check-label" for="is_featured">
-                                                Featured Post (shows at top of blog page)
-                                            </label>
-                                        </div>
+
+                                    <div class="form-check form-switch pt-1">
+                                        <input class="form-check-input" type="checkbox" id="is_featured" name="is_featured" value="1">
+                                        <label class="form-check-label fw-semibold" for="is_featured">
+                                            Featured Post
+                                        </label>
+                                        <small class="text-muted d-block" style="font-size: 0.75rem;">Display at top of blog</small>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- SEO Tab -->
-                            <div class="tab-pane fade" id="seo" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="meta_title" class="form-label">Meta Title</label>
-                                        <input type="text" class="form-control" id="meta_title" name="meta_title"
-                                            placeholder="SEO title (defaults to post title)">
-                                        <div class="invalid-feedback" id="meta_title_error"></div>
+                            <!-- Featured Image Card -->
+                            <div class="card border shadow-none">
+                                <div class="card-header bg-light py-2 px-3">
+                                    <h6 class="mb-0 fw-semibold text-primary"><i class="bx bx-image me-1"></i> Featured Image</h6>
+                                </div>
+                                <div class="card-body p-3">
+                                    <div id="image_preview_wrapper" class="mb-2 d-none text-center">
+                                        <img id="image_preview" src="" alt="Selected Preview" class="img-fluid rounded border shadow-sm" style="max-height: 120px; width: 100%; object-fit: cover;">
                                     </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="meta_description" class="form-label">Meta Description</label>
-                                        <textarea class="form-control" id="meta_description" name="meta_description" rows="3"
-                                            placeholder="SEO description for search engines"></textarea>
-                                        <div class="invalid-feedback" id="meta_description_error"></div>
-                                    </div>
-                                    <div class="col-md-12 mb-3">
-                                        <label for="meta_keywords" class="form-label">Meta Keywords</label>
-                                        <input type="text" class="form-control" id="meta_keywords"
-                                            name="meta_keywords" placeholder="keyword1, keyword2, keyword3">
-                                        <div class="invalid-feedback" id="meta_keywords_error"></div>
-                                    </div>
+                                    <div id="current_image" class="mb-2 text-center"></div>
+
+                                    <input type="file" class="form-control form-control-sm" id="featured_image" name="featured_image" accept="image/*">
+                                    <div class="invalid-feedback" id="featured_image_error"></div>
+                                    <small class="text-muted d-block mt-1" style="font-size: 0.75rem;">JPEG, PNG, WEBP (Max: 5MB)</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary me-2" id="saveBlogPostBtn">Save</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <div class="modal-footer bg-white border-top py-3 px-4 d-flex justify-content-between align-items-center">
+                    <span class="text-muted small">
+                        <i class="bx bx-check-shield text-success me-1"></i> Changes save instantly to database
+                    </span>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-outline-secondary px-3" data-bs-dismiss="modal">
+                            <i class="bx bx-x me-1"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary px-4 shadow-sm" id="saveBlogPostBtn">
+                            <i class="bx bx-check me-1"></i> Save Post
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
@@ -305,8 +282,8 @@
                     name: 'is_featured'
                 },
                 {
-                    data: 'published_at',
-                    name: 'published_at',
+                    data: 'created_at',
+                    name: 'created_at',
                     render: function(data) {
                         return data ? new Date(data).toLocaleDateString() : '-';
                     }
@@ -320,15 +297,26 @@
             ]
         });
 
+        // Live image preview
+        $('#featured_image').on('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image_preview').attr('src', e.target.result);
+                    $('#image_preview_wrapper').removeClass('d-none');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $('#image_preview_wrapper').addClass('d-none');
+            }
+        });
+
         // Add Blog Post button
         $('#addBlogPostBtn').click(function() {
             resetForm();
             $('#blogPostModalLabel').text('Add Blog Post');
             $('#form_method').val('');
-            // Ensure Content tab is active
-            setTimeout(function() {
-                $('#content-tab').tab('show');
-            }, 100);
         });
 
         // Form submission
@@ -336,17 +324,13 @@
             e.preventDefault();
 
             // Basic validation
-            if (!$('#title').val()) {
-                // Switch to content tab and focus on title
-                $('#content-tab').tab('show');
-                setTimeout(function() {
-                    $('#title').addClass('is-invalid');
-                    $('#title_error').text('Title is required');
-                    $('#title').focus();
-                }, 100);
+            if (!$('#title').val().trim()) {
+                $('#title').addClass('is-invalid');
+                $('#title_error').text('Title is required');
+                $('#title').focus();
                 toast.fire({
                     icon: 'error',
-                    title: 'Please enter a valid title'
+                    title: 'Please enter a title'
                 });
                 return false;
             }
@@ -357,6 +341,8 @@
             }
 
             let formData = new FormData(this);
+            formData.set('is_featured', $('#is_featured').is(':checked') ? '1' : '0');
+
             let blogPostId = $('#blog_post_id').val();
             let url = blogPostId ? "{{ url('blog-posts') }}/" + blogPostId : "{{ route('blog-posts.store') }}";
             let method = blogPostId ? 'POST' : 'POST';
@@ -366,8 +352,10 @@
             }
 
             // Clear previous errors
-            $('.form-control').removeClass('is-invalid');
+            $('.form-control, .form-select').removeClass('is-invalid');
             $('.invalid-feedback').text('');
+
+            $('#saveBlogPostBtn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1"></span> Saving...');
 
             $.ajax({
                 url: url,
@@ -376,6 +364,7 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
+                    $('#saveBlogPostBtn').prop('disabled', false).html('<i class="bx bx-check me-1"></i> Save Post');
                     if (response.success) {
                         $('#blogPostModal').modal('hide');
                         blogPostsTable.ajax.reload();
@@ -387,26 +376,18 @@
                     }
                 },
                 error: function(xhr) {
+                    $('#saveBlogPostBtn').prop('disabled', false).html('<i class="bx bx-check me-1"></i> Save Post');
                     if (xhr.status === 422) {
                         let errors = xhr.responseJSON.errors;
+
                         $.each(errors, function(key, value) {
                             $('#' + key).addClass('is-invalid');
                             $('#' + key + '_error').text(value[0]);
                         });
-                        // Show the first tab with error
-                        if (errors.title || errors.slug || errors.excerpt || errors.content || errors
-                            .featured_image) {
-                            $('#content-tab').tab('show');
-                        } else if (errors.category || errors.read_time || errors.status || errors
-                            .published_at || errors.is_featured) {
-                            $('#settings-tab').tab('show');
-                        } else if (errors.meta_title || errors.meta_description || errors
-                            .meta_keywords) {
-                            $('#seo-tab').tab('show');
-                        }
+
                         toast.fire({
                             icon: 'error',
-                            title: 'Please fix the errors'
+                            title: 'Please fix the highlighted errors'
                         });
                     } else {
                         toast.fire({
@@ -431,7 +412,6 @@
                         let data = response.data;
                         $('#blog_post_id').val(data.id);
                         $('#title').val(data.title);
-                        $('#slug').val(data.slug);
                         $('#excerpt').val(data.excerpt);
 
                         // Set CKEditor content
@@ -440,21 +420,12 @@
                         }
 
                         $('#category').val(data.category);
-                        $('#read_time').val(data.read_time);
                         $('#status').val(data.status);
-                        $('#is_featured').prop('checked', data.is_featured);
-                        $('#meta_title').val(data.meta_title);
-                        $('#meta_description').val(data.meta_description);
-                        $('#meta_keywords').val(data.meta_keywords);
-
-                        if (data.published_at) {
-                            let date = new Date(data.published_at);
-                            $('#published_at').val(date.toISOString().slice(0, 16));
-                        }
+                        $('#is_featured').prop('checked', Boolean(data.is_featured == 1 || data.is_featured === true));
 
                         if (data.featured_image) {
                             $('#current_image').html(
-                                `<img src="/storage/${data.featured_image}" alt="Current Image" class="img-thumbnail mt-2" style="max-width: 200px;">`
+                                `<img src="/storage/${data.featured_image}" alt="Current Image" class="img-thumbnail mt-2" style="max-height: 120px; width: 100%; object-fit: cover;">`
                             );
                         }
 
@@ -513,28 +484,16 @@
             $('#blogPostForm')[0].reset();
             $('#blog_post_id').val('');
             $('#current_image').html('');
-            $('.form-control').removeClass('is-invalid');
-            $('.form-select').removeClass('is-invalid');
+            $('#image_preview_wrapper').addClass('d-none');
+            $('#image_preview').attr('src', '');
+            $('#status').val('published');
+            $('#is_featured').prop('checked', false);
+            $('.form-control, .form-select').removeClass('is-invalid');
             $('.invalid-feedback').text('');
             if (editor) {
                 editor.setData('');
             }
-            // Always reset to first tab
-            setTimeout(function() {
-                $('#content-tab').tab('show');
-            }, 50);
         }
-
-        // Auto-generate slug from title
-        $('#title').on('blur', function() {
-            if (!$('#slug').val() && $(this).val()) {
-                let slug = $(this).val()
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/^-+|-+$/g, '');
-                $('#slug').val(slug);
-            }
-        });
 
         // Clear validation on input
         $('#title, #status').on('input change', function() {

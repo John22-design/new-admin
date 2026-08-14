@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Dashboard - Analytics')
+@section('title', 'Dashboard - Visitor Analytics')
 
 @section('vendor-style')
 @vite('resources/assets/vendor/libs/apex-charts/apex-charts.scss')
@@ -15,476 +15,281 @@
 @endsection
 
 @section('content')
-<div class="row">
-  <div class="col-xxl-8 mb-6 order-0">
-    <div class="card">
-      <div class="d-flex align-items-start row">
-        <div class="col-sm-7">
-          <div class="card-body">
-            <h5 class="card-title text-primary mb-3">Congratulations John! 🎉</h5>
-            <p class="mb-6">You have done 72% more sales today.<br>Check your new badge in your profile.</p>
-
-            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+<!-- Metric Cards Row -->
+<div class="row g-4 mb-6">
+  <!-- Total Visitors -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="avatar flex-shrink-0">
+            <span class="avatar-initial rounded-3 bg-label-primary">
+              <i class="bx bx-show fs-3 text-primary"></i>
+            </span>
           </div>
+          <span class="badge bg-label-primary rounded-pill px-2 py-1">Total Hits</span>
         </div>
-        <div class="col-sm-5 text-center text-sm-left">
-          <div class="card-body pb-0 px-0 px-md-6">
-            <img src="{{asset('assets/img/illustrations/man-with-laptop.png')}}" height="175" class="scaleX-n1-rtl" alt="View Badge User">
-          </div>
-        </div>
+        <p class="text-muted mb-1 small text-uppercase fw-medium">Total Visitors / Views</p>
+        <h3 class="card-title mb-1 fw-bold text-dark">{{ number_format($totalVisitors) }}</h3>
+        <small class="text-muted"><i class="bx bx-check-circle text-primary"></i> All-time tracked pageviews</small>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 order-1">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/chart-success.png')}}" alt="chart success" class="rounded">
-              </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <p class="mb-1">Profit</p>
-            <h4 class="card-title mb-3">$12,628</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +72.80%</small>
+
+  <!-- Today's Visitors -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="avatar flex-shrink-0">
+            <span class="avatar-initial rounded-3 bg-label-success">
+              <i class="bx bx-user-check fs-3 text-success"></i>
+            </span>
           </div>
+          @if($todayGrowth >= 0)
+            <span class="badge bg-label-success rounded-pill px-2 py-1">
+              <i class="bx bx-up-arrow-alt"></i> +{{ $todayGrowth }}%
+            </span>
+          @else
+            <span class="badge bg-label-danger rounded-pill px-2 py-1">
+              <i class="bx bx-down-arrow-alt"></i> {{ $todayGrowth }}%
+            </span>
+          @endif
         </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/wallet-info.png')}}" alt="wallet info" class="rounded">
-              </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <p class="mb-1">Sales</p>
-            <h4 class="card-title mb-3">$4,679</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +28.42%</small>
-          </div>
-        </div>
+        <p class="text-muted mb-1 small text-uppercase fw-medium">Today's Visitors</p>
+        <h3 class="card-title mb-1 fw-bold text-dark">{{ number_format($todayVisitors) }}</h3>
+        <small class="text-muted">vs {{ number_format($yesterdayVisitors) }} yesterday</small>
       </div>
     </div>
   </div>
-  <!-- Total Revenue -->
-  <div class="col-12 col-xxl-8 order-2 order-md-3 order-xxl-2 mb-6">
-    <div class="card">
-      <div class="row row-bordered g-0">
-        <div class="col-lg-8">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <div class="card-title mb-0">
-              <h5 class="m-0 me-2">Total Revenue</h5>
-            </div>
-            <div class="dropdown">
-              <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="totalRevenue">
-                <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                <a class="dropdown-item" href="javascript:void(0);">Share</a>
-              </div>
-            </div>
+
+  <!-- This Month's Visitors -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="avatar flex-shrink-0">
+            <span class="avatar-initial rounded-3 bg-label-info">
+              <i class="bx bx-calendar fs-3 text-info"></i>
+            </span>
           </div>
-          <div id="totalRevenueChart" class="px-3"></div>
+          <span class="badge bg-label-info rounded-pill px-2 py-1">{{ now()->format('F') }}</span>
         </div>
-        <div class="col-lg-4 d-flex align-items-center">
-          <div class="card-body px-xl-9">
-            <div class="text-center mb-6">
-              <div class="btn-group">
-                <button type="button" class="btn btn-outline-primary">
-                  <script>
-                  document.write(new Date().getFullYear() - 1)
-
-                  </script>
-                </button>
-                <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:void(0);">2021</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2020</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2019</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="growthChart"></div>
-            <div class="text-center fw-medium my-6">62% Company Growth</div>
-
-            <div class="d-flex gap-3 justify-content-between">
-              <div class="d-flex">
-                <div class="avatar me-2">
-                  <span class="avatar-initial rounded-2 bg-label-primary"><i class="bx bx-dollar bx-lg text-primary"></i></span>
-                </div>
-                <div class="d-flex flex-column">
-                  <small>
-                    <script>
-                    document.write(new Date().getFullYear() - 1)
-
-                    </script>
-                  </small>
-                  <h6 class="mb-0">$32.5k</h6>
-                </div>
-              </div>
-              <div class="d-flex">
-                <div class="avatar me-2">
-                  <span class="avatar-initial rounded-2 bg-label-info"><i class="bx bx-wallet bx-lg text-info"></i></span>
-                </div>
-                <div class="d-flex flex-column">
-                  <small>
-                    <script>
-                    document.write(new Date().getFullYear() - 2)
-
-                    </script>
-                  </small>
-                  <h6 class="mb-0">$41.2k</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="text-muted mb-1 small text-uppercase fw-medium">This Month</p>
+        <h3 class="card-title mb-1 fw-bold text-dark">{{ number_format($monthVisitors) }}</h3>
+        <small class="text-muted"><i class="bx bx-calendar-event text-info"></i> {{ number_format($weekVisitors) }} this week</small>
       </div>
     </div>
   </div>
-  <!--/ Total Revenue -->
-  <div class="col-12 col-md-8 col-lg-12 col-xxl-4 order-3 order-md-2">
-    <div class="row">
-      <div class="col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/paypal.png')}}" alt="paypal" class="rounded">
-              </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <p class="mb-1">Payments</p>
-            <h4 class="card-title mb-3">$2,456</h4>
-            <small class="text-danger fw-medium"><i class='bx bx-down-arrow-alt'></i> -14.82%</small>
+
+  <!-- Unique Visitors -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="avatar flex-shrink-0">
+            <span class="avatar-initial rounded-3 bg-label-warning">
+              <i class="bx bx-fingerprint fs-3 text-warning"></i>
+            </span>
           </div>
+          <span class="badge bg-label-warning rounded-pill px-2 py-1">Unique</span>
+        </div>
+        <p class="text-muted mb-1 small text-uppercase fw-medium">Unique Visitors</p>
+        <h3 class="card-title mb-1 fw-bold text-dark">{{ number_format($uniqueVisitors) }}</h3>
+        <small class="text-muted"><i class="bx bx-shield-quarter text-warning"></i> Unique IP addresses</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Analytics Row: Traffic Trend & Devices -->
+<div class="row g-4 mb-6">
+  <!-- Visitor Traffic Chart -->
+  <div class="col-12 col-lg-8">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-header d-flex align-items-center justify-content-between pb-0">
+        <div>
+          <h5 class="card-title mb-1 fw-semibold">Visitor Traffic Overview</h5>
+          <p class="text-muted small mb-0">Daily pageviews and unique visitors over the last 14 days</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-label-primary"><span class="badge-dot bg-primary me-1"></span> Pageviews</span>
+          <span class="badge bg-label-info"><span class="badge-dot bg-info me-1"></span> Unique Visitors</span>
         </div>
       </div>
-      <div class="col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="{{asset('assets/img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded">
-              </div>
-              <div class="dropdown">
-                <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded text-muted"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <p class="mb-1">Transactions</p>
-            <h4 class="card-title mb-3">$14,857</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +28.14%</small>
-          </div>
-        </div>
+      <div class="card-body px-2">
+        <div id="visitorTrafficChart" style="min-height: 320px;"></div>
       </div>
-      <div class="col-12 mb-6">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column gap-10">
-              <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                <div class="card-title mb-6">
-                  <h5 class="text-nowrap mb-1">Profile Report</h5>
-                  <span class="badge bg-label-warning">YEAR 2022</span>
-                </div>
-                <div class="mt-sm-auto">
-                  <span class="text-success text-nowrap fw-medium"><i class='bx bx-up-arrow-alt'></i> 68.2%</span>
-                  <h4 class="mb-0">$84,686k</h4>
-                </div>
+    </div>
+  </div>
+
+  <!-- Device Breakdown -->
+  <div class="col-12 col-lg-4">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-header pb-0">
+        <h5 class="card-title mb-1 fw-semibold">Device Breakdown</h5>
+        <p class="text-muted small mb-0">Visitors by device type</p>
+      </div>
+      <div class="card-body">
+        <div id="deviceDonutChart" class="my-2" style="min-height: 200px;"></div>
+        <div class="d-flex flex-column gap-3 pt-2">
+          <!-- Desktop -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-label-primary p-2 rounded"><i class="bx bx-desktop fs-5"></i></span>
+              <div>
+                <h6 class="mb-0 fw-medium">Desktop</h6>
+                <small class="text-muted">{{ number_format($deviceStats['desktop']) }} visits</small>
               </div>
-              <div id="profileReportChart"></div>
             </div>
+            <span class="fw-bold text-dark">{{ $deviceStats['desktop_pct'] }}%</span>
+          </div>
+          <!-- Mobile -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-label-success p-2 rounded"><i class="bx bx-mobile-alt fs-5"></i></span>
+              <div>
+                <h6 class="mb-0 fw-medium">Mobile</h6>
+                <small class="text-muted">{{ number_format($deviceStats['mobile']) }} visits</small>
+              </div>
+            </div>
+            <span class="fw-bold text-dark">{{ $deviceStats['mobile_pct'] }}%</span>
+          </div>
+          <!-- Tablet -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-label-info p-2 rounded"><i class="bx bx-tab fs-5"></i></span>
+              <div>
+                <h6 class="mb-0 fw-medium">Tablet</h6>
+                <small class="text-muted">{{ number_format($deviceStats['tablet']) }} visits</small>
+              </div>
+            </div>
+            <span class="fw-bold text-dark">{{ $deviceStats['tablet_pct'] }}%</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <!-- Order Statistics -->
-  <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-6">
-    <div class="card h-100">
-      <div class="card-header d-flex justify-content-between">
-        <div class="card-title mb-0">
-          <h5 class="mb-1 me-2">Order Statistics</h5>
-          <p class="card-subtitle">42.82k Total Sales</p>
-        </div>
-        <div class="dropdown">
-          <button class="btn text-muted p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="bx bx-dots-vertical-rounded bx-lg"></i>
-          </button>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
-            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center mb-6">
-          <div class="d-flex flex-column align-items-center gap-1">
-            <h3 class="mb-1">8,258</h3>
-            <small>Total Orders</small>
-          </div>
-          <div id="orderStatisticsChart"></div>
-        </div>
-        <ul class="p-0 m-0">
-          <li class="d-flex align-items-center mb-5">
-            <div class="avatar flex-shrink-0 me-3">
-              <span class="avatar-initial rounded bg-label-primary"><i class='bx bx-mobile-alt'></i></span>
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <h6 class="mb-0">Electronic</h6>
-                <small>Mobile, Earbuds, TV</small>
-              </div>
-              <div class="user-progress">
-                <h6 class="mb-0">82.5k</h6>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-5">
-            <div class="avatar flex-shrink-0 me-3">
-              <span class="avatar-initial rounded bg-label-success"><i class='bx bx-closet'></i></span>
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <h6 class="mb-0">Fashion</h6>
-                <small>T-shirt, Jeans, Shoes</small>
-              </div>
-              <div class="user-progress">
-                <h6 class="mb-0">23.8k</h6>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-5">
-            <div class="avatar flex-shrink-0 me-3">
-              <span class="avatar-initial rounded bg-label-info"><i class='bx bx-home-alt'></i></span>
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <h6 class="mb-0">Decor</h6>
-                <small>Fine Art, Dining</small>
-              </div>
-              <div class="user-progress">
-                <h6 class="mb-0">849k</h6>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center">
-            <div class="avatar flex-shrink-0 me-3">
-              <span class="avatar-initial rounded bg-label-secondary"><i class='bx bx-football'></i></span>
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <h6 class="mb-0">Sports</h6>
-                <small>Football, Cricket Kit</small>
-              </div>
-              <div class="user-progress">
-                <h6 class="mb-0">99</h6>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!--/ Order Statistics -->
 
-  <!-- Expense Overview -->
-  <div class="col-md-6 col-lg-4 order-1 mb-6">
-    <div class="card h-100">
-      <div class="card-header nav-align-top">
-        <ul class="nav nav-pills" role="tablist">
-          <li class="nav-item">
-            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-tabs-line-card-income" aria-controls="navs-tabs-line-card-income" aria-selected="true">Income</button>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="nav-link" role="tab">Expenses</button>
-          </li>
-          <li class="nav-item">
-            <button type="button" class="nav-link" role="tab">Profit</button>
-          </li>
-        </ul>
-      </div>
-      <div class="card-body">
-        <div class="tab-content p-0">
-          <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
-            <div class="d-flex mb-6">
-              <div class="avatar flex-shrink-0 me-3">
-                <img src="{{asset('assets/img/icons/unicons/wallet.png')}}" alt="User">
-              </div>
-              <div>
-                <p class="mb-0">Total Balance</p>
-                <div class="d-flex align-items-center">
-                  <h6 class="mb-0 me-1">$459.10</h6>
-                  <small class="text-success fw-medium">
-                    <i class='bx bx-chevron-up bx-lg'></i>
-                    42.9%
-                  </small>
-                </div>
-              </div>
-            </div>
-            <div id="incomeChart"></div>
-            <div class="d-flex align-items-center justify-content-center mt-6 gap-3">
-              <div class="flex-shrink-0">
-                <div id="expensesOfWeek"></div>
-              </div>
-              <div>
-                <h6 class="mb-0">Income this week</h6>
-                <small>$39k less than last week</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/ Expense Overview -->
-
-  <!-- Transactions -->
-  <div class="col-md-6 col-lg-4 order-2 mb-6">
-    <div class="card h-100">
+<!-- Bottom Section: Top Visited Pages & Recent Visitors Log -->
+<div class="row g-4">
+  <!-- Top Pages -->
+  <div class="col-12 col-lg-5">
+    <div class="card h-100 shadow-sm border-0">
       <div class="card-header d-flex align-items-center justify-content-between">
-        <h5 class="card-title m-0 me-2">Transactions</h5>
-        <div class="dropdown">
-          <button class="btn text-muted p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="bx bx-dots-vertical-rounded bx-lg"></i>
-          </button>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-          </div>
+        <div>
+          <h5 class="card-title mb-1 fw-semibold">Top Visited Pages</h5>
+          <p class="text-muted small mb-0">Most popular pages by traffic</p>
         </div>
+        <span class="badge bg-label-secondary">{{ count($topPages) }} Pages</span>
       </div>
-      <div class="card-body pt-4">
-        <ul class="p-0 m-0">
-          <li class="d-flex align-items-center mb-6">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/paypal.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Paypal</small>
-                <h6 class="fw-normal mb-0">Send money</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">+82.6</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-6">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/wallet.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Wallet</small>
-                <h6 class="fw-normal mb-0">Mac'D</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">+270.69</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-6">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/chart.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Transfer</small>
-                <h6 class="fw-normal mb-0">Refund</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">+637.91</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-6">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/cc-primary.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Credit Card</small>
-                <h6 class="fw-normal mb-0">Ordered Food</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">-838.71</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center mb-6">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/wallet.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Wallet</small>
-                <h6 class="fw-normal mb-0">Starbucks</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">+203.33</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-          <li class="d-flex align-items-center">
-            <div class="avatar flex-shrink-0 me-3">
-              <img src="{{asset('assets/img/icons/unicons/cc-warning.png')}}" alt="User" class="rounded">
-            </div>
-            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-              <div class="me-2">
-                <small class="d-block">Mastercard</small>
-                <h6 class="fw-normal mb-0">Ordered Food</h6>
-              </div>
-              <div class="user-progress d-flex align-items-center gap-2">
-                <h6 class="fw-normal mb-0">-92.45</h6> <span class="text-muted">USD</span>
-              </div>
-            </div>
-          </li>
-        </ul>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="ps-4">Page URL</th>
+              <th class="text-center">Views</th>
+              <th class="text-center pe-4">Unique</th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse($topPages as $page)
+              <tr>
+                <td class="ps-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bx bx-file text-primary"></i>
+                    <span class="fw-medium text-dark text-truncate" style="max-width: 180px;" title="{{ $page->path }}">{{ $page->path }}</span>
+                  </div>
+                </td>
+                <td class="text-center">
+                  <span class="badge bg-label-primary px-2 py-1">{{ number_format($page->total_views) }}</span>
+                </td>
+                <td class="text-center pe-4">
+                  <span class="text-muted small">{{ number_format($page->unique_views) }}</span>
+                </td>
+              </tr>
+            @empty
+              <tr>
+                <td colspan="3" class="text-center py-4 text-muted">No page visit records yet.</td>
+              </tr>
+            @endforelse
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <!--/ Transactions -->
+
+  <!-- Recent Visitors Log -->
+  <div class="col-12 col-lg-7">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <div>
+          <h5 class="card-title mb-1 fw-semibold">Recent Visitors Log</h5>
+          <p class="text-muted small mb-0">Live real-time visit stream</p>
+        </div>
+        <span class="badge bg-label-success"><span class="badge-dot bg-success me-1"></span> Live Log</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="ps-4">Device & OS</th>
+              <th>Browser</th>
+              <th>Visited Page</th>
+              <th class="pe-4 text-end">Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse($recentVisitors as $visitor)
+              <tr>
+                <td class="ps-4">
+                  <div class="d-flex align-items-center gap-2">
+                    @if($visitor->device === 'Mobile')
+                      <span class="badge bg-label-success p-1 rounded"><i class="bx bx-mobile-alt"></i></span>
+                    @elseif($visitor->device === 'Tablet')
+                      <span class="badge bg-label-info p-1 rounded"><i class="bx bx-tab"></i></span>
+                    @else
+                      <span class="badge bg-label-primary p-1 rounded"><i class="bx bx-desktop"></i></span>
+                    @endif
+                    <div>
+                      <span class="fw-medium text-dark d-block">{{ $visitor->device }}</span>
+                      <small class="text-muted">{{ $visitor->platform }}</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge bg-label-secondary px-2 py-1">{{ $visitor->browser }}</span>
+                </td>
+                <td>
+                  <span class="text-dark small text-truncate d-inline-block" style="max-width: 160px;" title="{{ $visitor->path }}">{{ $visitor->path }}</span>
+                </td>
+                <td class="pe-4 text-end">
+                  <span class="text-muted small" title="{{ $visitor->created_at->toDayDateTimeString() }}">{{ $visitor->created_at->diffForHumans() }}</span>
+                </td>
+              </tr>
+            @empty
+              <tr>
+                <td colspan="4" class="text-center py-4 text-muted">No recent visitors logged.</td>
+              </tr>
+            @endforelse
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Embedded Analytics Data for ApexCharts -->
+<script>
+  window.visitorAnalyticsData = {
+    dates: @json($chartDates),
+    pageviews: @json($chartPageviews),
+    uniques: @json($chartUniques),
+    devices: {
+      labels: ['Desktop', 'Mobile', 'Tablet'],
+      series: [{{ $deviceStats['desktop'] }}, {{ $deviceStats['mobile'] }}, {{ $deviceStats['tablet'] }}]
+    }
+  };
+</script>
 @endsection

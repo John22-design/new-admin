@@ -17,18 +17,12 @@ class BlogPost extends Model
         'content',
         'featured_image',
         'category',
-        'read_time',
         'is_featured',
         'status',
-        'published_at',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
         'author_id',
     ];
 
     protected $casts = [
-        'published_at' => 'datetime',
         'is_featured' => 'boolean',
     ];
 
@@ -75,11 +69,20 @@ class BlogPost extends Model
     }
 
     /**
+     * Estimated read time in minutes dynamically computed from content.
+     */
+    public function getReadTimeAttribute()
+    {
+        $words = str_word_count(strip_tags($this->content ?? ''));
+        return max(1, (int) ceil($words / 200));
+    }
+
+    /**
      * Get formatted published date.
      */
     public function getFormattedDateAttribute()
     {
-        return $this->published_at ? $this->published_at->format('F d, Y') : $this->created_at->format('F d, Y');
+        return $this->created_at ? $this->created_at->format('F d, Y') : '';
     }
 
     /**
@@ -87,7 +90,7 @@ class BlogPost extends Model
      */
     public function getShortDateAttribute()
     {
-        return $this->published_at ? $this->published_at->format('M d, Y') : $this->created_at->format('M d, Y');
+        return $this->created_at ? $this->created_at->format('M d, Y') : '';
     }
 
     /**
@@ -95,11 +98,7 @@ class BlogPost extends Model
      */
     public function scopePublished($query)
     {
-        return $query->where('status', 'published')
-            ->where(function ($q) {
-                $q->whereNull('published_at')
-                    ->orWhere('published_at', '<=', now());
-            });
+        return $query->where('status', 'published');
     }
 
     /**
@@ -111,11 +110,10 @@ class BlogPost extends Model
     }
 
     /**
-     * Scope for ordering by published date.
+     * Scope for ordering by date.
      */
     public function scopeLatest($query)
     {
-        return $query->orderBy('published_at', 'desc')
-            ->orderBy('created_at', 'desc');
+        return $query->orderBy('created_at', 'desc');
     }
 }

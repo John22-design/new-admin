@@ -24,18 +24,11 @@ return new class extends Migration
             $table->string('featured_image')->nullable();
 
             // Metadata
-            $table->string('category')->nullable(); // e.g., "Stewardship", "Strategy", "Bid Writing"
-            $table->integer('read_time')->default(5); // in minutes
+            $table->string('category')->nullable();
             $table->boolean('is_featured')->default(false);
 
             // Publishing
-            $table->enum('status', ['draft', 'published', 'archived'])->default('draft');
-            $table->timestamp('published_at')->nullable();
-
-            // SEO
-            $table->string('meta_title')->nullable();
-            $table->text('meta_description')->nullable();
-            $table->string('meta_keywords')->nullable();
+            $table->enum('status', ['draft', 'published', 'archived'])->default('published');
 
             // Authoring
             $table->foreignId('author_id')->nullable()->constrained('users')->onDelete('set null');
