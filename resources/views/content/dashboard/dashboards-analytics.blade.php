@@ -172,10 +172,47 @@
   </div>
 </div>
 
-<!-- Bottom Section: Top Visited Pages & Recent Visitors Log -->
-<div class="row g-4">
+<!-- Bottom Section: Top Countries & Top Pages -->
+<div class="row g-4 mb-6">
+  <!-- Top Countries -->
+  <div class="col-12 col-lg-6">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-header d-flex align-items-center justify-content-between pb-2">
+        <div>
+          <h5 class="card-title mb-1 fw-semibold">Top Countries</h5>
+          <p class="text-muted small mb-0">Geographic visitor traffic distribution</p>
+        </div>
+        <span class="badge bg-label-primary">{{ count($topCountries) }} Countries</span>
+      </div>
+      <div class="card-body pt-2">
+        @forelse($topCountries as $country)
+          <div class="d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+            <div class="d-flex align-items-center gap-3">
+              <span class="fs-4" title="{{ $country->country }}">{{ $country->flag }}</span>
+              <div>
+                <h6 class="mb-0 fw-semibold text-dark">{{ $country->country }}</h6>
+                <small class="text-muted">{{ number_format($country->total_visits) }} visits &bull; {{ number_format($country->unique_visitors) }} unique</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 ms-auto" style="min-width: 140px; max-width: 180px;">
+              <div class="progress w-100 rounded-pill" style="height: 6px; background-color: #e9ecef;">
+                <div class="progress-bar bg-primary rounded-pill" role="progressbar" style="width: {{ $country->percentage }}%" aria-valuenow="{{ $country->percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <span class="fw-bold text-dark small" style="min-width: 45px; text-align: right;">{{ $country->percentage }}%</span>
+            </div>
+          </div>
+        @empty
+          <div class="text-center py-4 text-muted">
+            <i class="bx bx-globe fs-1 text-muted d-block mb-2"></i>
+            No country traffic recorded yet.
+          </div>
+        @endforelse
+      </div>
+    </div>
+  </div>
+
   <!-- Top Pages -->
-  <div class="col-12 col-lg-5">
+  <div class="col-12 col-lg-6">
     <div class="card h-100 shadow-sm border-0">
       <div class="card-header d-flex align-items-center justify-content-between">
         <div>
@@ -199,7 +236,7 @@
                 <td class="ps-4">
                   <div class="d-flex align-items-center gap-2">
                     <i class="bx bx-file text-primary"></i>
-                    <span class="fw-medium text-dark text-truncate" style="max-width: 180px;" title="{{ $page->path }}">{{ $page->path }}</span>
+                    <span class="fw-medium text-dark text-truncate" style="max-width: 220px;" title="{{ $page->path }}">{{ $page->path }}</span>
                   </div>
                 </td>
                 <td class="text-center">
@@ -219,14 +256,16 @@
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Recent Visitors Log -->
-  <div class="col-12 col-lg-7">
+<!-- Real-time Visitors Stream -->
+<div class="row g-4">
+  <div class="col-12">
     <div class="card h-100 shadow-sm border-0">
       <div class="card-header d-flex align-items-center justify-content-between">
         <div>
           <h5 class="card-title mb-1 fw-semibold">Recent Visitors Log</h5>
-          <p class="text-muted small mb-0">Live real-time visit stream</p>
+          <p class="text-muted small mb-0">Live real-time visit stream with country & device details</p>
         </div>
         <span class="badge bg-label-success"><span class="badge-dot bg-success me-1"></span> Live Log</span>
       </div>
@@ -234,7 +273,8 @@
         <table class="table table-hover align-middle mb-0">
           <thead class="table-light">
             <tr>
-              <th class="ps-4">Device & OS</th>
+              <th class="ps-4">Country & Location</th>
+              <th>Device & OS</th>
               <th>Browser</th>
               <th>Visited Page</th>
               <th class="pe-4 text-end">Time</th>
@@ -243,7 +283,21 @@
           <tbody>
             @forelse($recentVisitors as $visitor)
               <tr>
+                <!-- Country -->
                 <td class="ps-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="fs-5">{{ \App\Models\Visitor::countryCodeToFlag($visitor->country_code) }}</span>
+                    <div>
+                      <span class="fw-semibold text-dark d-block">{{ $visitor->country ?: 'Unknown' }}</span>
+                      @if($visitor->city)
+                        <small class="text-muted">{{ $visitor->city }}</small>
+                      @endif
+                    </div>
+                  </div>
+                </td>
+
+                <!-- Device & OS -->
+                <td>
                   <div class="d-flex align-items-center gap-2">
                     @if($visitor->device === 'Mobile')
                       <span class="badge bg-label-success p-1 rounded"><i class="bx bx-mobile-alt"></i></span>
@@ -258,19 +312,25 @@
                     </div>
                   </div>
                 </td>
+
+                <!-- Browser -->
                 <td>
                   <span class="badge bg-label-secondary px-2 py-1">{{ $visitor->browser }}</span>
                 </td>
+
+                <!-- Page -->
                 <td>
-                  <span class="text-dark small text-truncate d-inline-block" style="max-width: 160px;" title="{{ $visitor->path }}">{{ $visitor->path }}</span>
+                  <span class="text-dark small text-truncate d-inline-block" style="max-width: 200px;" title="{{ $visitor->path }}">{{ $visitor->path }}</span>
                 </td>
+
+                <!-- Time -->
                 <td class="pe-4 text-end">
                   <span class="text-muted small" title="{{ $visitor->created_at->toDayDateTimeString() }}">{{ $visitor->created_at->diffForHumans() }}</span>
                 </td>
               </tr>
             @empty
               <tr>
-                <td colspan="4" class="text-center py-4 text-muted">No recent visitors logged.</td>
+                <td colspan="5" class="text-center py-4 text-muted">No recent visitors logged.</td>
               </tr>
             @endforelse
           </tbody>

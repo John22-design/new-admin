@@ -20,6 +20,9 @@ class Visitor extends Model
         'device',
         'browser',
         'platform',
+        'country',
+        'country_code',
+        'city',
         'session_id',
         'is_robot',
     ];
@@ -151,4 +154,173 @@ class Visitor extends Model
         $botRegex = '/(bot|crawler|spider|slurp|facebookexternalhit|bingbot|googlebot|duckduckbot|yandexbot|baiduspider)/i';
         return (bool) preg_match($botRegex, $userAgent);
     }
+
+    /**
+     * Detect country & city location from Request headers and IP address
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param string|null $rawIp
+     * @return array{country: string, country_code: string, city: ?string}
+     */
+    public static function detectLocation($request, ?string $rawIp): array
+    {
+        // 1. Check Cloudflare / CDN headers first (fastest and most accurate when deployed)
+        $cfCountry = $request->header('CF-IPCountry') ?: $request->server('HTTP_CF_IPCOUNTRY');
+        if (!empty($cfCountry) && strlen($cfCountry) === 2 && strtoupper($cfCountry) !== 'XX' && strtoupper($cfCountry) !== 'T1') {
+            $code = strtoupper($cfCountry);
+            return [
+                'country' => self::countryNameFromCode($code),
+                'country_code' => $code,
+                'city' => $request->header('CF-IPCity') ?: null,
+            ];
+        }
+
+        // 2. Check X-Country-Code header
+        $headerCountry = $request->header('X-Country-Code') ?: $request->header('X-Forwarded-Country');
+        if (!empty($headerCountry) && strlen($headerCountry) === 2) {
+            $code = strtoupper($headerCountry);
+            return [
+                'country' => self::countryNameFromCode($code),
+                'country_code' => $code,
+                'city' => null,
+            ];
+        }
+
+        // 3. Handle private / local IPs
+        if (empty($rawIp) || self::isPrivateIp($rawIp)) {
+            return [
+                'country' => 'Local Network',
+                'country_code' => 'LOC',
+                'city' => 'Localhost',
+            ];
+        }
+
+        // 4. Cache & lookup external GeoIP API
+        try {
+            return \Illuminate\Support\Facades\Cache::remember("geoip_{$rawIp}", 604800, function () use ($rawIp) {
+                $response = \Illuminate\Support\Facades\Http::timeout(2)
+                    ->get("http://ip-api.com/json/{$rawIp}?fields=status,message,country,countryCode,city");
+
+                if ($response->successful()) {
+                    $data = $response->json();
+                    if (($data['status'] ?? '') === 'success') {
+                        return [
+                            'country' => $data['country'] ?? 'Unknown',
+                            'country_code' => strtoupper($data['countryCode'] ?? 'UN'),
+                            'city' => $data['city'] ?? null,
+                        ];
+                    }
+                }
+
+                return [
+                    'country' => 'Unknown',
+                    'country_code' => 'UN',
+                    'city' => null,
+                ];
+            });
+        } catch (\Throwable $e) {
+            return [
+                'country' => 'Unknown',
+                'country_code' => 'UN',
+                'city' => null,
+            ];
+        }
+    }
+
+    /**
+     * Check if an IP address is private/reserved
+     */
+    public static function isPrivateIp(?string $ip): bool
+    {
+        if (empty($ip) || $ip === '127.0.0.1' || $ip === '::1') {
+            return true;
+        }
+
+        return !filter_var(
+            $ip,
+            FILTER_VALIDATE_IP,
+            FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE
+        );
+    }
+
+    /**
+     * Convert ISO 2-letter country code into flag emoji
+     */
+    public static function countryCodeToFlag(?string $code): string
+    {
+        if (empty($code) || strlen($code) !== 2 || $code === 'UN' || $code === 'LOC') {
+            return '🌐';
+        }
+
+        $code = strtoupper($code);
+        $firstChar = ord($code[0]) - 65 + 0x1F1E6;
+        $secondChar = ord($code[1]) - 65 + 0x1F1E6;
+
+        return mb_chr($firstChar, 'UTF-8') . mb_chr($secondChar, 'UTF-8');
+    }
+
+    /**
+     * Map common ISO codes to country names
+     */
+    public static function countryNameFromCode(string $code): string
+    {
+        $countries = [
+            'LK' => 'Sri Lanka',
+            'US' => 'United States',
+            'GB' => 'United Kingdom',
+            'IN' => 'India',
+            'AU' => 'Australia',
+            'CA' => 'Canada',
+            'DE' => 'Germany',
+            'FR' => 'France',
+            'IT' => 'Italy',
+            'ES' => 'Spain',
+            'NL' => 'Netherlands',
+            'SG' => 'Singapore',
+            'MY' => 'Malaysia',
+            'AE' => 'United Arab Emirates',
+            'SA' => 'Saudi Arabia',
+            'QA' => 'Qatar',
+            'JP' => 'Japan',
+            'CN' => 'China',
+            'KR' => 'South Korea',
+            'BR' => 'Brazil',
+            'ZA' => 'South Africa',
+            'NZ' => 'New Zealand',
+            'PK' => 'Pakistan',
+            'BD' => 'Bangladesh',
+            'MV' => 'Maldives',
+            'KW' => 'Kuwait',
+            'OM' => 'Oman',
+            'BH' => 'Bahrain',
+            'PH' => 'Philippines',
+            'TH' => 'Thailand',
+            'VN' => 'Vietnam',
+            'ID' => 'Indonesia',
+            'RU' => 'Russia',
+            'TR' => 'Turkey',
+            'EG' => 'Egypt',
+            'NG' => 'Nigeria',
+            'KE' => 'Kenya',
+            'SE' => 'Sweden',
+            'NO' => 'Norway',
+            'DK' => 'Denmark',
+            'FI' => 'Finland',
+            'CH' => 'Switzerland',
+            'AT' => 'Austria',
+            'BE' => 'Belgium',
+            'IE' => 'Ireland',
+            'PL' => 'Poland',
+            'PT' => 'Portugal',
+            'GR' => 'Greece',
+            'IL' => 'Israel',
+            'MX' => 'Mexico',
+            'AR' => 'Argentina',
+            'CO' => 'Colombia',
+            'CL' => 'Chile',
+        ];
+
+        return $countries[strtoupper($code)] ?? $code;
+    }
 }
+

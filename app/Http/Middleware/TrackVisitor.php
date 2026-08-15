@@ -92,6 +92,8 @@ class TrackVisitor
                 return;
             }
 
+            $location = Visitor::detectLocation($request, $rawIp);
+
             Visitor::create([
                 'ip_hash' => $ipHash,
                 'ip_address' => Visitor::anonymizeIp($rawIp),
@@ -103,6 +105,9 @@ class TrackVisitor
                 'device' => Visitor::detectDevice($userAgent),
                 'browser' => Visitor::detectBrowser($userAgent),
                 'platform' => Visitor::detectPlatform($userAgent),
+                'country' => $location['country'] ?? 'Unknown',
+                'country_code' => $location['country_code'] ?? 'UN',
+                'city' => $location['city'] ?? null,
                 'session_id' => $request->hasSession() ? $request->session()->getId() : null,
                 'is_robot' => Visitor::isRobot($userAgent),
             ]);

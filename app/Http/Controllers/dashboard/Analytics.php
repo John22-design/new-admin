@@ -89,6 +89,23 @@ class Analytics extends Controller
             ->limit(5)
             ->get();
 
+        // Top Countries
+        $topCountries = (clone $baseQuery)
+            ->whereNotNull('country')
+            ->where('country', '!=', '')
+            ->select('country', 'country_code', DB::raw('count(*) as total_visits'), DB::raw('count(distinct ip_hash) as unique_visitors'))
+            ->groupBy('country', 'country_code')
+            ->orderByDesc('total_visits')
+            ->limit(7)
+            ->get();
+
+        $totalCountryVisits = $topCountries->sum('total_visits') ?: 1;
+        $topCountries->transform(function ($item) use ($totalCountryVisits) {
+            $item->percentage = round(($item->total_visits / $totalCountryVisits) * 100, 1);
+            $item->flag = Visitor::countryCodeToFlag($item->country_code);
+            return $item;
+        });
+
         // Top Visited Pages
         $topPages = (clone $baseQuery)
             ->select('path', DB::raw('count(*) as total_views'), DB::raw('count(distinct ip_hash) as unique_views'))
@@ -116,6 +133,7 @@ class Analytics extends Controller
             'chartUniques',
             'deviceStats',
             'browserStats',
+            'topCountries',
             'topPages',
             'recentVisitors'
         ));

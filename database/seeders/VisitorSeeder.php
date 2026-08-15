@@ -57,6 +57,22 @@ class VisitorSeeder extends Seeder
             null,
         ];
 
+        $countries = [
+            'US' => ['name' => 'United States', 'weight' => 38, 'cities' => ['New York', 'Los Angeles', 'Chicago', 'San Francisco', 'Austin']],
+            'LK' => ['name' => 'Sri Lanka', 'weight' => 24, 'cities' => ['Colombo', 'Kandy', 'Galle', 'Negombo', 'Kurunegala']],
+            'GB' => ['name' => 'United Kingdom', 'weight' => 12, 'cities' => ['London', 'Manchester', 'Birmingham', 'Edinburgh']],
+            'IN' => ['name' => 'India', 'weight' => 10, 'cities' => ['Mumbai', 'Delhi', 'Bengaluru', 'Chennai']],
+            'AU' => ['name' => 'Australia', 'weight' => 6, 'cities' => ['Sydney', 'Melbourne', 'Brisbane', 'Perth']],
+            'CA' => ['name' => 'Canada', 'weight' => 5, 'cities' => ['Toronto', 'Vancouver', 'Montreal']],
+            'DE' => ['name' => 'Germany', 'weight' => 3, 'cities' => ['Berlin', 'Munich', 'Frankfurt']],
+            'SG' => ['name' => 'Singapore', 'weight' => 2, 'cities' => ['Singapore']],
+        ];
+
+        $countryWeights = [];
+        foreach ($countries as $code => $info) {
+            $countryWeights[$code] = $info['weight'];
+        }
+
         $records = [];
         $now = Carbon::now();
 
@@ -75,6 +91,10 @@ class VisitorSeeder extends Seeder
                 $platform = $this->weightedRandom($platforms);
                 $referer = $referers[array_rand($referers)];
 
+                $countryCode = $this->weightedRandom($countryWeights);
+                $countryInfo = $countries[$countryCode];
+                $city = $countryInfo['cities'][array_rand($countryInfo['cities'])];
+
                 $ipNum = rand(1, 150);
                 $rawIp = "192.168." . rand(1, 10) . "." . $ipNum;
                 $ipHash = hash('sha256', $rawIp . 'visitor-salt');
@@ -92,6 +112,9 @@ class VisitorSeeder extends Seeder
                     'device' => $device,
                     'browser' => $browser,
                     'platform' => $platform,
+                    'country' => $countryInfo['name'],
+                    'country_code' => $countryCode,
+                    'city' => $city,
                     'session_id' => 'sess_' . md5($ipHash . $date->toDateString()),
                     'is_robot' => false,
                     'created_at' => $visitTime,
