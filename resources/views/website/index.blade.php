@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Professional fundraising strategy, trust research, and bid writing services for charities and non-profits to secure long-term funding.">
+    <meta name="description" content="Trusts and foundations consultancy for charities, including strategy, prioritised pipelines, applications and capital fundraising support.">
     <title>John Field Fundraising</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
@@ -67,7 +67,7 @@
                 <!-- Start Logo-->
                 <a class="navbar-brand w-auto" href="#home">
                     <img class="logo dark img-fluid ms-3" src="{{ asset('images/navbar_logo.png') }}"
-                        alt="image placeholder" width="80" height="40" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
+                        alt="John Field Fundraising logo" width="150" height="40" style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
                 <!-- End Logo-->
 
@@ -80,9 +80,9 @@
                         <div class="offcanvas-header-logo">
                             <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
                                 <img class="logo dark img-fluid"
-                                    width="80" height="40"
+                                    width="150" height="40"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
-                                    src="{{ asset('images/navbar_logo.png') }}" alt="image placeholder">
+                                    src="{{ asset('images/navbar_logo.png') }}" alt="John Field Fundraising logo">
                             </a>
                         </div>
                         {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
@@ -144,21 +144,19 @@
                         <div class="col-lg-6 mb-1 mb-lg-0">
                             <div class="row">
                                 <div class="col-lg-11"><span class="hero-subtitle text-uppercase mb-3"
-                                        data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">Together, We
-                                        Create Change</span>
+                                        data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">Trusts and
+                                        foundations consultancy</span>
                                     <h1 class="hero-title mb-3" data-aos="fade-right" data-aos-delay="100"
-                                        data-aos-duration="1000">Building
-                                        Sustainable Funding for the Future</h1>
+                                        data-aos-duration="1000">Focused trusts and foundations support for charities</h1>
                                     <p class="hero-description mb-4 mb-lg-4" data-aos="fade-right"
                                         data-aos-delay="200" data-aos-duration="1000">
-                                        I help charities and non-profits secure long-term funding through clear
-                                        strategy, strong cases for support, and practical trust fundraising advice. My
-                                        work is about helping you plan ahead, build lasting funder relationships, and
-                                        secure the resources you need to make a real difference.</p>
+                                        I help charities strengthen their trusts fundraising through clear strategy,
+                                        prioritised pipelines, strong applications and capital fundraising support.
+                                        Each project has an agreed scope, clear outputs and a useful handover.</p>
                                     <div class="cta d-flex gap-3 flex-wrap mb-4 mb-lg-5" data-aos="fade-right"
                                         data-aos-delay="300" data-aos-duration="1000"><a class="btn"
-                                            href="#contact">Contact Now</a><a class="btn btn-white-outline"
-                                            href="{{ route('blog') }}" aria-label="Learn more about John Field Fundraising blog">Learn More
+                                            href="#contact">Discuss your project</a><a class="btn btn-white-outline"
+                                            href="#services" aria-label="View John Field Fundraising services">View my services
                                             <svg class="lucide lucide-arrow-up-right"
                                                 xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -171,13 +169,13 @@
                                         <span
                                             class="d-inline-flex align-items-center justify-content-center rounded-circle"
                                             style="height: 44px; width: 44px; background-color: rgba(var(--bs-primary-rgb), 0.12);">
-                                            <i class="bi bi-lightning-charge-fill text-primary fs-5"></i>
+                                            <i class="bi bi-award-fill text-primary fs-5"></i>
                                         </span>
                                         <div class="d-flex flex-column">
-                                            <span class="fw-semibold text-uppercase small text-primary">John Field
-                                                Fundraising Ltd</span>
-                                            <span class="text-muted small">Trusted partner for strategic trust
-                                                fundraising.</span>
+                                            <span class="fw-semibold text-primary">More than 25 years of fundraising
+                                                experience</span>
+                                            <span class="text-muted small">More than £10 million secured for charities
+                                                through grant funding.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -197,11 +195,11 @@
                             <div class="pt-2 mt-lg-5 d-flex flex-wrap align-items-center justify-content-center gap-4 text-muted small"
                                 aria-hidden="true">
                                 <span class="d-inline-flex align-items-center gap-2"><i
-                                        class="bi bi-award text-primary"></i> Practical / Strategic / Supportive</span>
+                                        class="bi bi-award text-primary"></i> Strategy, pipelines and applications</span>
                                 <span class="d-inline-flex align-items-center gap-2"><i
-                                        class="bi bi-graph-up text-primary"></i> Multi-year income focus</span>
+                                        class="bi bi-graph-up text-primary"></i> Capital fundraising support</span>
                                 <span class="d-inline-flex align-items-center gap-2"><i
-                                        class="bi bi-people text-primary"></i> Relationship-first approach</span>
+                                        class="bi bi-people text-primary"></i> Clear scope and handover</span>
                             </div>
                         </div>
                     </div>
@@ -216,51 +214,43 @@
                             <div class="row justify-content-end">
                                 <div class="col-md-11 mb-4 mb-md-0 text-center text-md-start"><span
                                         class="subtitle text-uppercase mb-3" data-aos="fade-left" data-aos-delay="0"
-                                        data-aos-duration="800">My
-                                        Approach</span>
+                                        data-aos-duration="800">How I work</span>
                                     <h2 class="mb-4" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-                                        How I Work / My
-                                        Approach</h2>
+                                        A clear project with a useful result</h2>
                                     <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                                        <p>Every organisation is different, so I start by understanding where you are
-                                            now, your funding mix, your challenges, and your goals for the future. From
-                                            there, I work with you to build a clear and realistic plan to grow your
-                                            income from trusts and foundations.</p>
+                                        <p>I start by understanding what you need, what information is already available
+                                            and what a successful piece of work should produce. We then agree the scope,
+                                            outputs and review points before work begins.</p>
                                     </div>
                                     <h3 class="small fw-bold mt-4 mb-3" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">My
-                                        approach focuses on:
+                                        work focuses on:
                                     </h3>
                                     <ul class="list-unstyled text-start"
                                         >
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
                                             <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
-                                            <span class="text">Reviewing your current funding and identifying
-                                                opportunities for growth</span>
+                                            <span class="text">A clear brief and realistic priorities</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                             <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
-                                            <span class="text">Creating a simple, practical strategy that supports
-                                                multi-year funding and long-term sustainability</span>
+                                            <span class="text">Research grounded in funder eligibility and fit</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
                                             <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
-                                            <span class="text">Helping you build a manageable pipeline of potential
-                                                funders</span>
+                                            <span class="text">Strong, specific applications based on your evidence</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000">
                                             <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
-                                            <span class="text">Supporting you to write clear, convincing cases for
-                                                support that funders connect with</span>
+                                            <span class="text">Regular communication and clear review points</span>
                                         </li>
                                         <li class="d-flex gap-3 mb-3" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1000">
                                             <span class="icon rounded-circle flex-shrink-0"><i class="bi bi-check-circle-fill"
                                                     style="color: var(--bs-primary)"></i></span>
-                                            <span class="text">Strengthening your trust fundraising skills and good
-                                                practice for the future</span>
+                                            <span class="text">A final handover showing decisions, next actions and ownership</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -268,7 +258,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
-                                    src="{{ asset('images/about-us.webp') }}" alt="image placeholder"
+                                    src="{{ asset('images/about-us.webp') }}" alt="Planning a focused fundraising project"
                                     width="1200" height="873"
                                     data-aos="fade-right"
                                     data-aos-delay="0" data-aos-duration="1000">
@@ -277,9 +267,9 @@
                                     <div class="mission-icon text-center rounded-circle"><i class="bi bi-lightbulb fs-4"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-uppercase fw-bold">Why Expertise Demands More Than Emotion</h3>
-                                        <p class="fs-5 mb-0">Emotional learning may be quick, but what we consider as
-                                            “expertise” usually takes a long time to develop.</p>
+                                        <h3 class="text-uppercase fw-bold">Experienced support, focused on the work</h3>
+                                        <p class="fs-5 mb-0">You get senior fundraising judgement and hands-on delivery,
+                                            shaped around a clear piece of work.</p>
                                     </div>
                                 </div>
                             </div>
@@ -295,9 +285,8 @@
                         <div class="col-md-8 mx-auto text-center">
                             <h2 class="mb-2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">My
                                 Process</h2>
-                            <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">This is how I usually
-                                work with
-                                clients, in a way that is structured, supportive, and focused on real results.</p>
+                            <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">A straightforward route
+                                from the first conversation to a completed piece of work.</p>
                         </div>
                     </div>
 
@@ -309,11 +298,10 @@
                                     <span
                                         class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                         style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">1</span>
-                                    <h3 class="fs-5 fw-bold mb-0">Understanding and Alignment</h3>
+                                    <h3 class="fs-5 fw-bold mb-0">Initial conversation</h3>
                                 </div>
-                                <p class="mb-0 text-muted">We start by getting clear on what you are funding and why it
-                                    matters. I help you align your projects, outcomes, and impact so your priorities are
-                                    easy to explain to funders.</p>
+                                <p class="mb-0 text-muted">We discuss the need, the intended result and whether I am the
+                                    right person to help.</p>
                             </div>
                         </div>
 
@@ -324,11 +312,10 @@
                                     <span
                                         class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                         style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">2</span>
-                                    <h3 class="fs-5 fw-bold mb-0">Research and Funder Mapping</h3>
+                                    <h3 class="fs-5 fw-bold mb-0">Agree the scope</h3>
                                 </div>
-                                <p class="mb-0 text-muted">Next, we look at who's out there. I help you build a strong,
-                                    realistic pipeline of trusts and foundations that genuinely fit your work, not just
-                                    a long list of names.</p>
+                                <p class="mb-0 text-muted">We confirm the outputs, information needed, timing, fee and
+                                    points for review.</p>
                             </div>
                         </div>
 
@@ -339,11 +326,10 @@
                                     <span
                                         class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                         style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">3</span>
-                                    <h3 class="fs-5 fw-bold mb-0">Case for Support Development</h3>
+                                    <h3 class="fs-5 fw-bold mb-0">Research and prepare</h3>
                                 </div>
-                                <p class="mb-0 text-muted">Together, we shape your story into a clear and honest case
-                                    for support that highlights your impact, evidence, and the difference funders can
-                                    make by supporting you.</p>
+                                <p class="mb-0 text-muted">I review your evidence, assess funder fit and identify any
+                                    gaps that need resolving before the main work is completed.</p>
                             </div>
                         </div>
 
@@ -354,11 +340,10 @@
                                     <span
                                         class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                         style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">4</span>
-                                    <h3 class="fs-5 fw-bold mb-0">Bid Writing and Submission</h3>
+                                    <h3 class="fs-5 fw-bold mb-0">Deliver and review</h3>
                                 </div>
-                                <p class="mb-0 text-muted">I then help you write, review, or refine your funding bids
-                                    so your proposals are persuasive and reflect your organisation's voice and values.
-                                </p>
+                                <p class="mb-0 text-muted">I complete the agreed research or writing, with clear review
+                                    points for decisions and feedback.</p>
                             </div>
                         </div>
 
@@ -369,10 +354,10 @@
                                     <span
                                         class="badge bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                         style="width: 50px; height: 50px; font-size: 1.25rem; font-weight: bold;">5</span>
-                                    <h3 class="fs-5 fw-bold mb-0">Relationship Building</h3>
+                                    <h3 class="fs-5 fw-bold mb-0">Final handover</h3>
                                 </div>
-                                <p class="mb-0 text-muted">Finally, I help you plan how to keep funders engaged through
-                                    good communication and reporting that builds lasting trust.</p>
+                                <p class="mb-0 text-muted">You receive the final work, a clear record of key decisions
+                                    and the next actions for your team.</p>
                             </div>
                         </div>
 
@@ -381,9 +366,9 @@
                             <div class="p-4 rounded-4 h-100 bg-primary text-white d-flex flex-column justify-content-center">
                                 <div class="text-center">
                                     <i class="bi bi-arrow-repeat fs-1 mb-3 d-block opacity-75"></i>
-                                    <h4 class="fw-bold mb-3">Continuous Support</h4>
-                                    <p class="mb-0">Every step is collaborative, flexible, and designed to build your
-                                        confidence and capacity for long-term success.</p>
+                                    <h4 class="fw-bold mb-3">Focused projects</h4>
+                                    <p class="mb-0">Work can be standalone or part of a larger programme. The scope and
+                                        finish point stay clear from the start.</p>
                                 </div>
                             </div>
                         </div>
@@ -412,9 +397,8 @@
                             </h2>
                             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                                 <p>
-                                    Practical, strategic support to strengthen your trust fundraising and secure
-                                    long-term
-                                    income.
+                                    Defined pieces of work that help charities plan, prioritise and deliver stronger
+                                    trusts and foundations fundraising.
                                 </p>
                             </div>
                         </div>
@@ -442,11 +426,11 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Fundraising Strategy
-                                        Development</h3>
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Trusts Fundraising
+                                        Strategy</h3>
                                     <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Developing clear, realistic fundraising strategies that support multi-year
-                                        funding and long-term sustainability.
+                                        A focused review of your current position, priorities and funding mix, followed
+                                        by a clear plan for the next stage of your trusts fundraising.
                                     </p>
                                 </div>
                             </div>
@@ -469,11 +453,11 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Trust and Foundation
-                                        Research</h3>
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Pipeline Research and
+                                        Prioritisation</h3>
                                     <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Identifying the right funders for your work and building a strong, focused
-                                        prospect pipeline.
+                                        Researching suitable trusts and foundations, checking eligibility and fit, then
+                                        building a prioritised pipeline your team can use.
                                     </p>
                                 </div>
                             </div>
@@ -496,11 +480,10 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Case for Support
-                                        Writing</h3>
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Case for Support</h3>
                                     <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Helping you explain your story and impact in a way that funders connect with and
-                                        want to invest in.
+                                        A clear core case explaining the need, your work, the difference it makes and
+                                        why funding is required.
                                     </p>
                                 </div>
                             </div>
@@ -524,11 +507,10 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Grant and Bid Writing
-                                    </h3>
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Funding Applications</h3>
                                     <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Support with writing and refining high-quality funding bids, including
-                                        multi-year and strategic applications.
+                                        Drafting or improving applications that answer the funder's questions and use
+                                        your evidence, budget and intended outcomes well.
                                     </p>
                                 </div>
                             </div>
@@ -546,16 +528,15 @@
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center rounded-3"
                                             style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-people" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            <i class="bi bi-building" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
-                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Funder Relationships
-                                        and Stewardship</h3>
+                                    <h3 class="fs-4 fw-bold mb-3" style="color: var(--bs-dark);">Capital Fundraising</h3>
                                     <p class="text-muted mb-0 lh-lg" style="font-size: 0.95rem;">
-                                        Guidance on maintaining good funder relationships, reporting well, and building
-                                        ongoing support.
+                                        Trust-led support for building purchases, refurbishment, major equipment and
+                                        other capital projects, from early planning to applications.
                                     </p>
                                 </div>
                             </div>
@@ -573,18 +554,17 @@
                                         </div>
                                         <div class="d-flex align-items-center justify-content-center rounded-3"
                                             style="width: 90px; height: 90px; background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.1) 0%, rgba(var(--bs-primary-rgb), 0.05) 100%); border: 2px solid rgba(var(--bs-primary-rgb), 0.2);">
-                                            <i class="bi bi-lightbulb"
+                                            <i class="bi bi-check2-square"
                                                 style="font-size: 2.5rem; color: var(--bs-primary);"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 pt-2">
                                     <h3 class="fs-4 fw-bold" style="color: var(--bs-dark); margin-bottom: 1.29rem;">
-                                        Mentoring and Ongoing
-                                        Support</h3>
+                                        Bid Review and Quality Assurance</h3>
                                     <p class="text-muted mb-4 lh-lg" style="font-size: 0.95rem;">
-                                        Practical, one-to-one help to strengthen your fundraising skills and confidence
-                                        over time.
+                                        An experienced review of applications, pipelines or supporting materials, with
+                                        clear recommendations for improvement.
                                     </p>
                                 </div>
                             </div>
@@ -607,8 +587,7 @@
                                 Frequently Asked Questions
                             </h2>
                             <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">
-                                Answers to common questions about fundraising strategy, income development, and building
-                                sustainable funding.
+                                Straight answers about the work, how projects are structured and whether I may be a good fit.
                             </p>
                         </div>
                     </div>
@@ -626,18 +605,15 @@
                                             data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="true"
                                             aria-controls="faq-1">
                                             <i class="bi bi-briefcase text-primary me-3 fs-5"></i>
-                                            <span class="fw-semibold">What kind of fundraising support do you
-                                                provide?</span>
+                                            <span class="fw-semibold">What work can you help with?</span>
                                         </button>
                                     </h2>
                                     <div class="accordion-collapse collapse show" id="faq-1"
                                         data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            I work with charities to strengthen their trust fundraising and income
-                                            development. This includes developing practical fundraising strategies,
-                                            helping you identify and build a realistic funder pipeline, writing or
-                                            reviewing funding bids and providing hands-on advice to grow your
-                                            funding confidence and skills.
+                                            I specialise in trusts and foundations fundraising. My work includes
+                                            strategy, funder research, prioritised pipelines, cases for support,
+                                            applications, bid reviews and capital fundraising projects.
                                         </div>
                                     </div>
                                 </div>
@@ -649,16 +625,13 @@
                                             data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false"
                                             aria-controls="faq-2">
                                             <i class="bi bi-pencil-square text-primary me-3 fs-5"></i>
-                                            <span class="fw-semibold">Do you only work on strategies or can you help
-                                                with actual bid writing too?</span>
+                                            <span class="fw-semibold">Do you write funding applications?</span>
                                         </button>
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-2" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            Both. Some clients need a full fundraising strategy, while others need
-                                            support writing specific cases for support or funding bids. I can help
-                                            with whatever stage you are at, from planning your approach to crafting
-                                            the applications themselves.
+                                            Yes. I can draft a complete application or improve an existing draft. Your
+                                            charity provides and approves the evidence, figures, budget and final submission.
                                         </div>
                                     </div>
                                 </div>
@@ -670,17 +643,14 @@
                                             data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false"
                                             aria-controls="faq-3">
                                             <i class="bi bi-gear text-primary me-3 fs-5"></i>
-                                            <span class="fw-semibold">How do you tailor your support to different
-                                                organisations?</span>
+                                            <span class="fw-semibold">How is a project structured?</span>
                                         </button>
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-3" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            Every organisation is unique, with different challenges, goals and
-                                            capacity. I start by listening and understanding your work, your current
-                                            funding mix and where you want to get to. From there, I design a
-                                            practical plan that suits your size, resources and ambitions without a
-                                            one size fits all approach.
+                                            We agree the scope, outputs, fee or number of days, information needed,
+                                            timing and review points before work begins. You then receive the completed
+                                            work and a clear handover.
                                         </div>
                                     </div>
                                 </div>
@@ -698,10 +668,8 @@
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-4" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            Yes. I can help you identify new funders who genuinely align with your
-                                            mission and create a focused prospect list. I also advise on how to
-                                            approach funders, what to include in your communications and how to
-                                            build stronger long-term relationships.
+                                            Yes. I research eligibility, interests, geography, typical grants and likely
+                                            fit, then build a focused shortlist your team can use.
                                         </div>
                                     </div>
                                 </div>
@@ -719,10 +687,10 @@
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-5" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            Most of my work is with small to medium-sized charities, community
-                                            organisations and social enterprises. I also support larger
-                                            organisations that want to strengthen their trust fundraising or refresh
-                                            their approach to strategy and funder engagement.
+                                            I mainly work with small and medium-sized UK charities, as well as larger
+                                            organisations needing help with a specific trusts workstream. My experience
+                                            includes children and young people, health, disability, social welfare,
+                                            education, community development and the arts.
                                         </div>
                                     </div>
                                 </div>
@@ -734,15 +702,14 @@
                                             data-bs-toggle="collapse" data-bs-target="#faq-6" aria-expanded="false"
                                             aria-controls="faq-6">
                                             <i class="bi bi-arrow-repeat text-primary me-3 fs-5"></i>
-                                            <span class="fw-semibold">Do you provide ongoing support after the strategy
-                                                is developed?</span>
+                                            <span class="fw-semibold">Can you help with a capital project?</span>
                                         </button>
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-6" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            Yes. Fundraising takes time and consistency. I offer mentoring and
-                                            follow up support to help you put the strategy into action, strengthen
-                                            your pipeline and stay on track with your fundraising goals.
+                                            Yes. I can help assess the trust fundraising case, build a suitable pipeline
+                                            and prepare applications for projects such as property purchases,
+                                            refurbishment, major equipment and vehicles.
                                         </div>
                                     </div>
                                 </div>
@@ -754,14 +721,14 @@
                                             data-bs-toggle="collapse" data-bs-target="#faq-7" aria-expanded="false"
                                             aria-controls="faq-7">
                                             <i class="bi bi-star text-primary me-3 fs-5"></i>
-                                            <span class="fw-semibold">What makes your approach different?</span>
+                                            <span class="fw-semibold">What happens first?</span>
                                         </button>
                                     </h2>
                                     <div class="accordion-collapse collapse" id="faq-7" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body ps-5 text-muted">
-                                            I keep things simple, strategic and realistic. My focus is on helping
-                                            you build confidence, develop good fundraising practice and secure
-                                            long-term sustainable funding rather than short-term wins.
+                                            We start with a short conversation about your charity, the work required and
+                                            the intended result. If the fit is right, I will set out the proposed scope,
+                                            outputs and fee clearly before you decide whether to proceed.
                                         </div>
                                     </div>
                                 </div>
@@ -772,11 +739,11 @@
                             <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
                                 <div class="card border-0 shadow-sm bg-primary bg-opacity-10">
                                     <div class="card-body py-4">
-                                        <h5 class="fw-bold mb-2">Still have questions?</h5>
-                                        <p class="text-muted mb-3">Can't find the answer you're looking for? Please get
-                                            in touch with us.</p>
+                                        <h5 class="fw-bold mb-2">Have a project in mind?</h5>
+                                        <p class="text-muted mb-3">Tell me what your charity needs and I will let you
+                                            know whether I can help.</p>
                                         <a href="#contact" class="btn btn-primary px-4">
-                                            <i class="bi bi-envelope me-2"></i>Contact Us
+                                            <i class="bi bi-envelope me-2"></i>Discuss your project
                                         </a>
                                     </div>
                                 </div>
@@ -792,9 +759,10 @@
                     <div class="row mb-5">
                         <div class="col-md-6 col-lg-7 mx-auto text-center"><span class="subtitle text-uppercase mb-3"
                                 data-aos="fade-up" data-aos-delay="0">Contact</span>
-                            <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Contact Us</h2>
-                            <p data-aos="fade-up" data-aos-delay="100">Utilize our tools to develop your concepts and
-                                bring your vision to life. Once complete, effortlessly share your creations.</p>
+                            <h2 class="h2 fw-bold mb-3" data-aos="fade-up" data-aos-delay="0">Discuss a project</h2>
+                            <p data-aos="fade-up" data-aos-delay="100">If your charity needs help with a trusts strategy,
+                                pipeline, applications or capital fundraising, tell me what you are working on and where
+                                you need support.</p>
                         </div>
                     </div>
                     <div class="row g-4 align-items-stretch">
@@ -804,12 +772,11 @@
                                 <span
                                     class="text-uppercase small text-primary fw-semibold d-inline-flex align-items-center gap-2">
                                     <i class="bi bi-stars"></i>
-                                    Let's collaborate
+                                    A straightforward first conversation
                                 </span>
-                                <h3 class="mt-3 mb-3">Share your fundraising goals</h3>
-                                <p class="text-muted mb-4">Tell me where you want to take your trust fundraising and
-                                    I'll recommend the right next steps—whether you need a roadmap, a partner, or a
-                                    second pair of eyes.</p>
+                                <h3 class="mt-3 mb-3">Tell me what you need</h3>
+                                <p class="text-muted mb-4">A brief outline of the charity, the work required and any key
+                                    timing is enough. I will let you know whether I can help and suggest a sensible next step.</p>
 
                                 <div class="d-flex flex-column gap-3 mt-auto">
                                     <a class="btn btn-primary d-inline-flex align-items-center gap-2"
@@ -824,7 +791,7 @@
                                     </div>
                                     <div class="d-flex align-items-center gap-2 text-muted small">
                                         <i class="bi bi-people text-primary"></i>
-                                        <span>Designed for charity leaders and in-house fundraisers.</span>
+                                        <span>For charity leaders and fundraising teams across the UK.</span>
                                     </div>
                                 </div>
                             </div>
@@ -833,8 +800,8 @@
                             <div class="form-wrapper rounded-4 border shadow-sm bg-white p-4 p-lg-5" data-aos="fade-up"
                                 data-aos-delay="150">
                                 <h3 class="h4 mb-3">Send a message</h3>
-                                <p class="text-muted small mb-4">Outline your challenge or idea and I'll be in touch
-                                    with a tailored response.</p>
+                                <p class="text-muted small mb-4">Give me a brief outline of the work and I will respond
+                                    within two business days.</p>
                                 <form id="contactForm" class="d-flex flex-column gap-3" action="{{ route('contact.send') }}" method="POST">
                                     @csrf
                                     <div class="row g-3">
@@ -861,7 +828,7 @@
                                         <label class="mb-2" for="message">Message <span
                                                 class="text-danger">*</span></label>
                                         <textarea class="form-control" id="message" name="message" rows="5" required maxlength="5000"
-                                            placeholder="Tell us about your fundraising goals and how we can help..."></textarea>
+                                            placeholder="Tell me about the charity, the work you need and any key timing..."></textarea>
                                         <small class="text-muted">Maximum 5000 characters</small>
                                     </div>
                                     <!-- Spatie Honeypot field for spam protection -->
@@ -874,7 +841,7 @@
                                 </form>
                                 <div class="mt-3 d-none alert alert-success" id="successMessage">
                                     <i class="bi bi-check-circle-fill me-2"></i>
-                                    <span id="successText">Thank you for your message! We'll get back to you within 2
+                                    <span id="successText">Thank you for your message. I will respond within two
                                         business days.</span>
                                 </div>
                                 <div class="mt-3 d-none alert alert-danger" id="errorMessage">
@@ -894,12 +861,12 @@
                     <div class="row g-4 align-items-center pb-4">
                         <div class="col-lg-8">
                             <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-4">
-                                <img class="img-fluid" src="{{ asset('images/navbar_logo.png') }}"
-                                    alt="John Field Fundraising logo" style="max-height: 52px;">
+                                <img class="img-fluid" src="{{ asset('images/navbar_logo.png') }}" width="195" height="52"
+                                    alt="John Field Fundraising logo" style="max-height: 52px; width: auto;">
                                 <div>
-                                    <h2 class="fs-5 mb-2">Helping charities build sustainable trust income</h2>
-                                    <p class="mb-0 text-muted">Strategy, mentoring, and bid support tailored to your
-                                        fundraising goals.</p>
+                                    <h2 class="fs-5 mb-2">Focused trusts and foundations support for charities</h2>
+                                    <p class="mb-0 text-muted">Strategy, pipelines, applications and capital fundraising
+                                        projects with clear outputs.</p>
                                 </div>
                             </div>
                         </div>
@@ -918,7 +885,7 @@
                                         <i class="bi bi-clock text-primary mt-1"></i>
                                         <div>
                                             <span class="d-block">Replies within two business days.</span>
-                                            <small>Based in Sheffield, UK · GMT</small>
+                                            <small>Based in Surrey, working with charities across the UK.</small>
                                         </div>
                                     </li>
                                     <li>
@@ -937,14 +904,14 @@
                                 <h3 class="fs-6 text-uppercase text-muted mb-2">Services</h3>
                                 <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
                                     <li class="d-flex align-items-start gap-2"><i
-                                            class="bi bi-check-circle text-primary"></i><span>Trust fundraising
+                                            class="bi bi-check-circle text-primary"></i><span>Trusts fundraising
                                             strategy</span></li>
                                     <li class="d-flex align-items-start gap-2"><i
                                             class="bi bi-check-circle text-primary"></i><span>Prospect research &amp;
                                             pipeline design</span></li>
                                     <li class="d-flex align-items-start gap-2"><i
-                                            class="bi bi-check-circle text-primary"></i><span>Bid writing, mentoring
-                                            &amp; reviews</span></li>
+                                            class="bi bi-check-circle text-primary"></i><span>Applications, cases for
+                                            support &amp; capital projects</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -952,13 +919,13 @@
                             <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
                                 <h3 class="fs-6 text-uppercase text-muted mb-2">Highlights</h3>
                                 <div class="d-flex flex-column gap-2 text-muted small">
-                                    <div><span class="d-block fw-semibold text-dark">32
-                                            charities</span><small>Supported with strategy and bids in 2025.</small>
+                                    <div><span class="d-block fw-semibold text-dark">More than 25 years</span><small>of
+                                            fundraising experience.</small>
                                     </div>
-                                    <div><span class="d-block fw-semibold text-dark">£450k award</span><small>Largest
-                                            multi-year funding secured this year.</small></div>
-                                    <div><span class="d-block fw-semibold text-dark">95% retention</span><small>Clients
-                                            returning for ongoing fundraising support.</small></div>
+                                    <div><span class="d-block fw-semibold text-dark">More than £10 million</span><small>
+                                            secured for charities through grant funding.</small></div>
+                                    <div><span class="d-block fw-semibold text-dark">Clear project scope</span><small>
+                                            agreed outputs, review points and handover.</small></div>
                                 </div>
                             </div>
                         </div>
