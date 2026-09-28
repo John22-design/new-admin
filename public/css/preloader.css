@@ -281,9 +281,9 @@
 }
 
 .preloader__logo-img {
-  height: 80px;
-  width: auto;
-  max-width: 200px;
+  height: auto;
+  width: 240px;
+  max-width: 70vw;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -494,7 +494,8 @@
   }
 
   .preloader__logo-img {
-    height: 60px;
+    height: auto;
+    width: 200px;
   }
 }
 

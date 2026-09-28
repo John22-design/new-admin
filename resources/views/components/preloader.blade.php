@@ -46,7 +46,7 @@
             {{-- Logo Section --}}
             <div class="preloader__logo-container">
                 <div class="preloader__logo-wrapper">
-                    <img src="{{ asset('images/navbar_logo.png') }}" alt="Logo" class="preloader__logo-img">
+                    <img src="{{ asset('images/preloader_logo.png') }}" alt="John Field Fundraising logo" class="preloader__logo-img">
 
                     {{-- Animated Ring Around Logo --}}
                     <div class="preloader__logo-ring"></div>

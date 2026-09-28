@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog · John Field Fundraising</title>
-    <meta name="description" content="Read practical fundraising tips, real-world lessons, and strategies to help your charity grow sustainable trust income.">
+    <meta name="description" content="Articles on trusts and foundations strategy, funder research, pipelines, applications and capital fundraising.">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <!-- Google Font -->
     <link class="font-pre" rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,8 +86,8 @@
             <div class="container d-flex align-items-center justify-content-between">
                 <!-- Logo -->
                 <a class="navbar-brand w-auto" href="{{ route('home') }}#home">
-                    <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="logo"
-                        width="80" height="40"
+                    <img class="logo dark img-fluid" src="{{ asset('images/navbar_logo.png') }}" alt="John Field Fundraising logo"
+                        width="150" height="40"
                         style="height:40px; width:auto; max-width:160px; border-radius:3px;">
                 </a>
 
@@ -98,9 +98,9 @@
                         <div class="offcanvas-header-logo">
                             <a class="logo-link" id="fbs__net-navbarsLabel" href="{{ route('home') }}">
                                 <img class="logo dark img-fluid"
-                                    width="80" height="40"
+                                    width="150" height="40"
                                     style="height:40px; width:auto; max-width:160px; border-radius:3px;"
-                                    src="{{ asset('images/navbar_logo.png') }}" alt="logo">
+                                    src="{{ asset('images/navbar_logo.png') }}" alt="John Field Fundraising logo">
                             </a>
                         </div>
                         {{-- <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
@@ -241,12 +241,12 @@
                     <div class="row g-4 align-items-center pb-4">
                         <div class="col-lg-8">
                             <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-4">
-                                <img class="img-fluid" src="{{ asset('images/navbar_logo.png') }}"
-                                    alt="John Field Fundraising logo" style="max-height: 52px;">
+                                <img class="img-fluid" src="{{ asset('images/navbar_logo.png') }}" width="195" height="52"
+                                    alt="John Field Fundraising logo" style="max-height: 52px; width: auto;">
                                 <div>
-                                    <h2 class="fs-5 mb-2">Helping charities build sustainable trust income</h2>
-                                    <p class="mb-0 text-muted">Strategy, mentoring, and bid support tailored to your
-                                        fundraising goals.</p>
+                                    <h2 class="fs-5 mb-2">Focused trusts and foundations support for charities</h2>
+                                    <p class="mb-0 text-muted">Strategy, pipelines, applications and capital fundraising
+                                        projects with clear outputs.</p>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +265,7 @@
                                         <i class="bi bi-clock text-primary mt-1"></i>
                                         <div>
                                             <span class="d-block">Replies within two business days.</span>
-                                            <small>Based in Sheffield, UK · GMT</small>
+                                            <small>Based in Surrey, working with charities across the UK.</small>
                                         </div>
                                     </li>
                                     <li>
@@ -284,14 +284,14 @@
                                 <h3 class="fs-6 text-uppercase text-muted mb-2">Services</h3>
                                 <ul class="list-unstyled text-muted small mb-0 d-flex flex-column gap-2">
                                     <li class="d-flex align-items-start gap-2"><i
-                                            class="bi bi-check-circle text-primary"></i><span>Trust fundraising
+                                            class="bi bi-check-circle text-primary"></i><span>Trusts fundraising
                                             strategy</span></li>
                                     <li class="d-flex align-items-start gap-2"><i
                                             class="bi bi-check-circle text-primary"></i><span>Prospect research &amp;
                                             pipeline design</span></li>
                                     <li class="d-flex align-items-start gap-2"><i
-                                            class="bi bi-check-circle text-primary"></i><span>Bid writing, mentoring
-                                            &amp; reviews</span></li>
+                                            class="bi bi-check-circle text-primary"></i><span>Applications, cases for
+                                            support &amp; capital projects</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -299,13 +299,13 @@
                             <div class="h-100 p-4 bg-white border rounded-4 shadow-sm text-center text-md-start">
                                 <h3 class="fs-6 text-uppercase text-muted mb-2">Highlights</h3>
                                 <div class="d-flex flex-column gap-2 text-muted small">
-                                    <div><span class="d-block fw-semibold text-dark">32
-                                            charities</span><small>Supported with strategy and bids in 2025.</small>
+                                    <div><span class="d-block fw-semibold text-dark">More than 25 years</span><small>of
+                                            fundraising experience.</small>
                                     </div>
-                                    <div><span class="d-block fw-semibold text-dark">£450k award</span><small>Largest
-                                            multi-year funding secured this year.</small></div>
-                                    <div><span class="d-block fw-semibold text-dark">95% retention</span><small>Clients
-                                            returning for ongoing fundraising support.</small></div>
+                                    <div><span class="d-block fw-semibold text-dark">More than £10 million</span><small>
+                                            secured for charities through grant funding.</small></div>
+                                    <div><span class="d-block fw-semibold text-dark">Clear project scope</span><small>
+                                            agreed outputs, review points and handover.</small></div>
                                 </div>
                             </div>
                         </div>
