@@ -18,8 +18,8 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Preload LCP Images -->
-    <link rel="preload" href="{{ asset('images/hero_1.webp') }}" as="image" type="image/webp">
-    <link rel="preload" href="{{ asset('images/hero_2.webp') }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ asset('images/homepage-planning-charts.webp') }}" as="image" type="image/webp">
+    <link rel="preload" href="{{ asset('images/homepage-laptop-charts.webp') }}" as="image" type="image/webp">
 
     <!-- Critical CSS Styles -->
     <link href="{{ asset('vendors/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
@@ -183,11 +183,11 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="hero-img mb-5"><img class="img-card img-fluid border-white"
-                                    src="{{ asset('images/hero_2.webp') }}" style="border: 2px white solid"
+                                    src="{{ asset('images/homepage-laptop-charts.webp') }}" style="border: 2px white solid"
                                     width="800" height="600"
-                                    alt="Image card" data-aos="fade-left" data-aos-delay="400"
+                                    alt="Laptop displaying charts" data-aos="fade-left" data-aos-delay="400"
                                     data-aos-duration="1000"><img class="img-main img-fluid rounded-4"
-                                    src="{{ asset('images/hero_1.webp') }}" alt="Hero Image"
+                                    src="{{ asset('images/homepage-planning-charts.webp') }}" alt="Printed charts, a laptop and notes on a desk"
                                     width="1200" height="800"
                                     data-aos="zoom-in"
                                     data-aos-delay="200" data-aos-duration="1200">
@@ -258,7 +258,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="img-wrap position-relative"><img class="img-fluid rounded-4"
-                                    src="{{ asset('images/about-us.webp') }}" alt="Planning a focused fundraising project"
+                                    src="{{ asset('images/homepage-planning-notes.webp') }}" alt="Planning notes and a keyboard on a white desk"
                                     width="1200" height="873"
                                     data-aos="fade-right"
                                     data-aos-delay="0" data-aos-duration="1000">
